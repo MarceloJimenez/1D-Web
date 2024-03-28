@@ -874,7 +874,7 @@ h5.subtitle {
 -----------------------*/
 #services-2 {
   position: relative;
-  background: url("../images/bg/6.jpg") no-repeat fixed 50% 50%;
+  background: url("../images/bg/Banner-3.jpg") no-repeat fixed 50% 50%;
   background-size: cover;
 }
 #services-2:before {
@@ -884,7 +884,7 @@ h5.subtitle {
   top: 0px;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(30deg, rgba(121, 110, 255, 0.95) 0%, rgba(33, 200, 122, 0.95) 100%);
+  background-image: linear-gradient(30deg, rgba(73, 59, 59, 0.559) 0%, rgb(0, 0, 0) 100%);
 }
 
 .web-service-block {
@@ -904,11 +904,13 @@ h5.subtitle {
 .web-service-block h3 {
   color: #fff;
   transition: 0.3s;
+  font-size: 30px;
 }
 .web-service-block p {
   color: #eee;
   margin-top: 15px;
   transition: 0.3s;
+  font-size: 16px;
 }
 .web-service-block:hover {
   background: #fff;
@@ -923,6 +925,10 @@ h5.subtitle {
 .web-service-block:hover p {
   color: #111;
 }
+.web-service-block:hover a {
+  color: #fff;
+  background: #095585;
+}
 
 .service-img {
   margin-bottom: -200px;
@@ -935,7 +941,7 @@ h5.subtitle {
 -----------------------*/
 #projects-wrap {
   position: relative;
-  background: url("../images/bg/banner_bg.jpg") no-repeat;
+  background: url("../images/bg/cuttingBars.jpg") no-repeat;
   background-size: cover;
 }
 #projects-wrap p.lead {
@@ -1131,6 +1137,11 @@ h5.subtitle {
   top: 5px;
   color: #095585;
   font-weight: 900;
+}
+
+.na {
+  color: #ccc;
+  text-decoration: line-through;
 }
 
 .pricing-block .price-features li {
