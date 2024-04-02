@@ -21,6 +21,7 @@ img {
 .section {
   position: relative;
   padding: 8.125rem 0;
+  overflow-x: hidden;
 }
 
 @media (min-width:768px) {
