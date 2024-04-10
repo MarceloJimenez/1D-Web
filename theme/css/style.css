@@ -146,6 +146,9 @@ img {
 @media (min-width: 768px) {
   .section {
     padding: 7.5rem 0;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
   }
 }
 .section-top {

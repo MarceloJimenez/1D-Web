@@ -22,11 +22,16 @@ img {
   position: relative;
   padding: 8.125rem 0;
   overflow-x: hidden;
+  
 }
 
 @media (min-width:768px) {
   .section {
-    padding: 7.5rem 0
+    padding: 7.5rem 0;
+    // height: 100vh;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
   }
 }
 
