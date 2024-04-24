@@ -9,6 +9,23 @@
 
 <html lang="en">
 <head>
+  <!-- Consent banner -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    
+    if(localStorage.getItem('consentMode') === null){
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'personalization_storage': 'denied',
+            'functionality_storage': 'denied',
+            'security_storage': 'denied',
+        });
+    } else {
+        gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+    }
+</script>
 
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEMX6GE7X1"></script>
@@ -300,7 +317,7 @@
                         <p>One Dimension Cutting Optimiser , is a simple, efficient and powerful tool to generate optimal cutting lists for industries like steel structure fabrication, aluminium manufacturing and many others that need to cut in shorter pieces "bars" of  raw material.</p>
                          <!-- Button -->
                          <p class="mb-0">
-                                <a href="https://1d-solutions.com/1dnest/engl/1dn35.exe" target="_blank" rel="noopener noreferrer" class="btn btn-light btn-circled" onclick="ga('send', 'event', 'Demo Ingles', 'Descargar')">
+                                <a href="https://1d-solutions.com/_downloads/1dn401_24.exe" target="_blank" rel="noopener noreferrer" class="btn btn-light btn-circled" onclick="ga('send', 'event', 'Demo Ingles', 'Descargar')">
 
                                 Free Trial
                             </a>
