@@ -37,6 +37,13 @@
   letter-spacing: .5px;
   text-transform: uppercase;
 }
+.navbar-light .navbar-nav .nav-link {
+  color: $black;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
 
 .rounded-radius {
   border-radius: 5px;
@@ -88,9 +95,9 @@
 .navbar-light {
   color: $black;
 
-  &:before {
-    opacity: 1;
-  }
+  // &:before {
+  //   opacity: 1;
+  // }
 }
 
 

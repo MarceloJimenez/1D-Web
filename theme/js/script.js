@@ -1,8 +1,5 @@
 /**
- * WEBSITE: https://themefisher.com
- * TWITTER: https://twitter.com/themefisher
- * FACEBOOK: https://www.facebook.com/themefisher
- * GITHUB: https://github.com/themefisher/
+ * WEBSITE: https://1d-solutions.com
  */
 
 (function ($) {
@@ -39,8 +36,13 @@
   $(window).on('scroll', function () {
     if ($(window).scrollTop() > 70) {
       $('.site-navigation,.trans-navigation').addClass('header-white');
+      $('.site-navigation,.trans-navigation').removeClass('navbar-light');
+      $('.site-navigation,.trans-navigation').addClass('navbar-dark');
+
     } else {
       $('.site-navigation,.trans-navigation').removeClass('header-white');
+      $('.site-navigation,.trans-navigation').addClass('navbar-light');
+      $('.site-navigation,.trans-navigation').removeClass('navbar-dark');
     }
   });
   

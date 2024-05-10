@@ -1,8 +1,5 @@
 /**
- * WEBSITE: https://themefisher.com
- * TWITTER: https://twitter.com/themefisher
- * FACEBOOK: https://www.facebook.com/themefisher
- * GITHUB: https://github.com/themefisher/
+ * WEBSITE: https://1d-solutions.com
  */
 
 /*=== MEDIA QUERY ===*/ /*-----------------------------
@@ -454,7 +451,6 @@ PAGE
 --------------------------*/
 .page-banner-area {
   padding: 180px 0px;
-  height: 100vh;
 }
 
 .page-contact {
@@ -545,6 +541,13 @@ PAGE
   text-transform: uppercase;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: #212529;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
 .rounded-radius {
   border-radius: 5px;
 }
@@ -589,9 +592,6 @@ PAGE
 
 .navbar-light {
   color: #212529;
-}
-.navbar-light:before {
-  opacity: 1;
 }
 
 .navbar .nav-item-divider {

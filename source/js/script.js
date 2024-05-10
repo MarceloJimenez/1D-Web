@@ -32,8 +32,13 @@
   $(window).on('scroll', function () {
     if ($(window).scrollTop() > 70) {
       $('.site-navigation,.trans-navigation').addClass('header-white');
+      $('.site-navigation,.trans-navigation').removeClass('navbar-light');
+      $('.site-navigation,.trans-navigation').addClass('navbar-dark');
+
     } else {
       $('.site-navigation,.trans-navigation').removeClass('header-white');
+      $('.site-navigation,.trans-navigation').addClass('navbar-light');
+      $('.site-navigation,.trans-navigation').removeClass('navbar-dark');
     }
   });
   
