@@ -1,9 +1,9 @@
 {
-  "name": "rappo",
-  "version": "1.0.0",
-  "description": "rappo free corporate website template",
-  "author": "Themefisher",
-  "license": "MIT",
+  "name": "1D-Solutions Web",
+  "version": "2.1.0",
+  "description": "1D Solutions web page",
+  "author": "MJ",
+  "license": "Proprietary License",
   "scripts": {
     "dev": "gulp",
     "build": "gulp build"

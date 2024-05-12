@@ -1,5 +1,8 @@
 /**
- * WEBSITE: https://1d-solutions.com
+ * WEBSITE: https://themefisher.com
+ * TWITTER: https://twitter.com/themefisher
+ * FACEBOOK: https://www.facebook.com/themefisher
+ * GITHUB: https://github.com/themefisher/
  */
 
 /*=== MEDIA QUERY ===*/ /*-----------------------------
@@ -451,13 +454,12 @@ PAGE
 --------------------------*/
 .page-banner-area {
   padding: 180px 0px;
-  height: 100vh;
 }
 
 .page-contact {
   position: relative;
   padding: 180px 0px;
-  background: url("../images/banner/p-6.jpg") fixed 50% 50% no-repeat;
+  background: url("../images/zused/banner-2.webp") fixed 50% 50% no-repeat;
   background-size: cover;
 }
 
