@@ -31,14 +31,17 @@
   // Fixed header
   $(window).on('scroll', function () {
     if ($(window).scrollTop() > 70) {
-      $('.site-navigation,.trans-navigation').addClass('header-white');
-      $('.site-navigation,.trans-navigation').removeClass('navbar-light');
-      $('.site-navigation,.trans-navigation').addClass('navbar-dark');
 
-    } else {
       $('.site-navigation,.trans-navigation').removeClass('header-white');
       $('.site-navigation,.trans-navigation').addClass('navbar-light');
       $('.site-navigation,.trans-navigation').removeClass('navbar-dark');
+      $('.navbar-brand img').attr('src', 'images/zused/logo_black.webp');
+
+    } else {
+      $('.site-navigation,.trans-navigation').addClass('header-white');
+      $('.site-navigation,.trans-navigation').removeClass('navbar-light');
+      $('.site-navigation,.trans-navigation').addClass('navbar-dark');
+      $('.navbar-brand img').attr('src', 'images/zused/Log_New_white_clean.webp');
     }
   });
   
