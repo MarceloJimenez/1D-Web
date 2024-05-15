@@ -2,6 +2,8 @@
 
 Rappo is a set of landing and support pages aimed at helping companies promote new products and business launches.
 
+https://docs.themefisher.com/rappo-bootstrap/
+
 <!-- demo -->
 ## Example Site
 
