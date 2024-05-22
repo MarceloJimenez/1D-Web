@@ -138,11 +138,21 @@
             About
           </a>
         </li>
-        <li class="nav-item ">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="index.html#services-2" id="navbarWelcome" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Products
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarWelcome">
+            <li><a class="dropdown-item" href="product.html">1D-Nest Software</a></li>
+            <!-- <li><a class="dropdown-item" href="index-2.html">CutLib DLL</a></li> -->
+          </ul>
+        </li>
+        <!-- <li class="nav-item ">
           <a href="index.html#services-2" class="nav-link js-scroll-trigger">
             Products
           </a>
-        </li>
+        </li> -->
         <li class="nav-item ">
           <a href="index.html#pricing" class="nav-link js-scroll-trigger">
             Pricing
@@ -461,63 +471,7 @@
 
 
     
-<script>
-function addToCartSingle() {
-    console.log("addToCartSingle")
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-    dataLayer.push({
-      event: "add_to_cart",
-      ecommerce: {
-        currency: "USD",
-        value: 171,
-        items: [
-        {
-          item_id: "166574",
-          item_name: "1DNest Single PC License",
-        }
-        ]
-      }
-    });
-  }
-  
-  function addToCartEnterprise() {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-    dataLayer.push({
-      event: "add_to_cart",
-      ecommerce: {
-        currency: "USD",
-        value: 675,
-        items: [
-        {
-          item_id: "167653",
-          item_name: "1DNes:t Length Nesting & Cutting Optimizer, Enterprise License",
-        }
-        ]
-      }
-    });
-  }
-  
-  function addToCartDLL() {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
-    dataLayer.push({
-      event: "add_to_cart",
-      ecommerce: {
-        currency: "USD",
-        value: 770,
-        items: [
-        {
-          item_id: "171600",
-          item_name: "CutLib.dll : 1DNEST optimizer library",
-        }
-        ]
-      }
-    });
-  }
-  
-</script>
+
 
 
 
@@ -646,29 +600,36 @@ function addToCartSingle() {
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 col-sm-6 mb-2">
                     <div class="single-project">
+                        <a href="images/zused/Graphic Layouts_page-0001.webp">
                         <img src="images/zused/Graphic Layouts_page-0001.webp" alt="Graphic Layouts Output" class="img-fluid">
                         <div class="project-content">
                             <!-- <h4>Project: onepage</h4> -->
                             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eligendi consequuntur veniam quod</p> -->
                         </div>
+                    </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 mb-5">
                     <div class="single-project single-project2">
+                        <a href="images/zused/1dSoftwareTest.webp">
                         <img src="images/zused/1dSoftwareTest.webp" alt="1D Nest Software capture" class="img-fluid">
                         <div class="project-content">
                             <!-- <h4>Project: business</h4> -->
                             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eligendi consequuntur veniam quod</p> -->
                         </div>
+                    </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-8 ">
                     <div class="single-project">
+                        <a href="images/zused/Summary Info_page-0001.webp">
                         <img src="images/zused/Summary Info_page-0001.webp" alt="Summary Information output" class="img-fluid">
                         <div class="project-content">
                             <!-- <h4>Project : Marketing</h4> -->
                             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eligendi consequuntur veniam quod</p> -->
                         </div>
+                    </a>
+                    
                     </div>
                 </div>
             </div>
@@ -725,7 +686,7 @@ function addToCartSingle() {
                     <form class="contact_form" action="https://api.web3forms.com/submit" method="POST">
                         <div class="row">
                              <!-- Replace with your Access Key -->
-                            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                            <input type="hidden" name="access_key" value="7d7a0ab3-e4ad-4a00-accf-396355e9c520">
                             <!-- Input -->    
                             <div class="col-sm-6 mb-6">
                                 <div class="form-group">
@@ -1035,6 +996,63 @@ function addToCartSingle() {
 
   <script defer src="js/script.js"></script>
 
+  <script>
+    function addToCartSingle() {
+        console.log("addToCartSingle")
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+        dataLayer.push({
+          event: "add_to_cart",
+          ecommerce: {
+            currency: "USD",
+            value: 171,
+            items: [
+            {
+              item_id: "166574",
+              item_name: "1DNest Single PC License",
+            }
+            ]
+          }
+        });
+      }
+      
+      function addToCartEnterprise() {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+        dataLayer.push({
+          event: "add_to_cart",
+          ecommerce: {
+            currency: "USD",
+            value: 675,
+            items: [
+            {
+              item_id: "167653",
+              item_name: "1DNes:t Length Nesting & Cutting Optimizer, Enterprise License",
+            }
+            ]
+          }
+        });
+      }
+      
+      function addToCartDLL() {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+        dataLayer.push({
+          event: "add_to_cart",
+          ecommerce: {
+            currency: "USD",
+            value: 770,
+            items: [
+            {
+              item_id: "171600",
+              item_name: "CutLib.dll : 1DNEST optimizer library",
+            }
+            ]
+          }
+        });
+      }
+      
+    </script>
 </body>
 </html>
    

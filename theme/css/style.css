@@ -466,7 +466,7 @@ PAGE
 .page-service {
   position: relative;
   padding: 180px 0px;
-  background: url("../images/banner/service.jpg") fixed 50% 50% no-repeat;
+  background: url("../images/zused/metal-banner.jpg") fixed 50% 50% no-repeat;
   background-size: cover;
 }
 
@@ -945,6 +945,7 @@ h5.subtitle {
 -----------------------*/
 #projects-wrap {
   position: relative;
+  background: url("../images/zused/cuttingBars.webp") no-repeat;
   background-size: cover;
 }
 #projects-wrap p.lead {
