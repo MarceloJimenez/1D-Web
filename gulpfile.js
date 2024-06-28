@@ -8,6 +8,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const bs = require("browser-sync").create();
 const rimraf = require("rimraf");
 const comments = require("gulp-header-comment");
+const i18n = require ("./lib/index");
 
 var path = {
   src: {
@@ -19,6 +20,7 @@ var path = {
     js: "source/js/*.js",
     scss: "source/scss/**/*.scss",
     images: "source/images/**/*.+(png|jpg|gif|svg|webp)",
+    translation:"source/lang/**/*.json",
   },
   build: {
     dirBuild: "theme/",
@@ -34,14 +36,6 @@ gulp.task("html:build", function () {
       fileinclude({
         basepath: path.src.incdir,
       })
-    )
-    .pipe(
-      comments(`
-    WEBSITE: https://themefisher.com
-    TWITTER: https://twitter.com/themefisher
-    FACEBOOK: https://www.facebook.com/themefisher
-    GITHUB: https://github.com/themefisher/
-    `)
     )
     .pipe(gulp.dest(path.build.dirDev))
     .pipe(
@@ -63,14 +57,6 @@ gulp.task("scss:build", function () {
     )
     .pipe(autoprefixer())
     .pipe(sourcemaps.write("/"))
-    .pipe(
-      comments(`
-    WEBSITE: https://themefisher.com
-    TWITTER: https://twitter.com/themefisher
-    FACEBOOK: https://www.facebook.com/themefisher
-    GITHUB: https://github.com/themefisher/
-    `)
-    )
     .pipe(gulp.dest(path.build.dirDev + "css/"))
     .pipe(
       bs.reload({
@@ -83,14 +69,6 @@ gulp.task("scss:build", function () {
 gulp.task("js:build", function () {
   return gulp
     .src(path.src.js)
-    .pipe(
-      comments(`
-  WEBSITE: https://themefisher.com
-  TWITTER: https://twitter.com/themefisher
-  FACEBOOK: https://www.facebook.com/themefisher
-  GITHUB: https://github.com/themefisher/
-  `)
-    )
     .pipe(gulp.dest(path.build.dirDev + "js/"))
     .pipe(
       bs.reload({
@@ -128,6 +106,24 @@ gulp.task("others:build", function () {
   return gulp.src(path.src.others).pipe(gulp.dest(path.build.dirDev));
 });
 
+// Translation 
+gulp.task("translation:index", function() {
+  var dest  = "./theme";
+  var index = "./theme/*.html";
+ 
+  return gulp
+  .src(index)
+    .pipe(i18n({
+      createLangDirs: true,
+      langDir: "./source/lang",
+      defaultLang: "en",
+      trace: true
+    }))
+    .pipe(gulp.dest(dest));
+});
+
+ 
+
 // Clean Build Folder
 gulp.task("clean", function (cb) {
   rimraf("./theme", cb);
@@ -141,6 +137,8 @@ gulp.task("watch:build", function () {
   gulp.watch(path.src.js, gulp.series("js:build"));
   gulp.watch(path.src.images, gulp.series("images:build"));
   gulp.watch(path.src.plugins, gulp.series("plugins:build"));
+  gulp.watch(path.src.translation, gulp.series("translation:index"));
+
 });
 
 // Dev Task
@@ -154,6 +152,7 @@ gulp.task(
     "images:build",
     "plugins:build",
     "others:build",
+    "translation:index",
     gulp.parallel("watch:build", function () {
       bs.init({
         server: {
@@ -172,6 +171,10 @@ gulp.task(
     "js:build",
     "scss:build",
     "images:build",
-    "plugins:build"
+    "plugins:build",
+    "translation:index",
   )
 );
+
+
+
