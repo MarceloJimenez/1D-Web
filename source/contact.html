@@ -1,8 +1,8 @@
 @@include('header.htm')
 @@include('blocks/nav-3.htm')
 @@include('blocks/page-contact.htm', {
-"title": "Got a question?",
-"description": "We'd love to talk about how we can help you."
+"title": "${{index.contact.title}}$",
+"description": "${{index.contact.description}}$"
 })
 
 <section id="contact-info" class="section mb-4">
@@ -11,24 +11,28 @@
             <div class="col-lg-4 col-sm-6 col-md-6">
                 <div class="contact-info-block text-center">
                     <i class="pe-7s-map-marker"></i>
-                    <h4>Address</h4>
+                    <h4>${{index.contact.address}}$</h4>
                     <p class="lead">Santiago, Chile</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6 col-md-6">
                 <div class="contact-info-block text-center">
                     <i class="pe-7s-mail"></i>
-                    <h4>Email</h4>
+                    <h4>${{index.contact.mail}}$</h4>
                     <p class="lead">info@1d-solutions.com</p>
                 </div>
             </div>
-            <!-- <div class="col-lg-4 col-sm-6 col-md-6">
+            <div class="col-lg-4 col-sm-6 col-md-6">
                 <div class="contact-info-block text-center">
-                    <i class="pe-7s-phone"></i>
-                    <h4>Phone Number</h4>
-                    <p class="lead">+23-68017684</p>
+                    <i class="pe-7s-help1"></i>
+                    <h4>Help</h4>
+                    <p class="lead">
+                        <a href="mailto:info@1d-solutions.com?subject=1D%20Support&body=Hello!%20My%20name%20is%20...%20%2C%20I%20have%20a%20single%2Fenterprise%2FDLL%20license%2C%20and%20I%20have%20encountered%20the%20following%20issue.">
+                            ${{index.contact.help}}$
+                           </a>
+                    </p>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </section>

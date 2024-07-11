@@ -57,24 +57,24 @@
   <!-- <meta name="theme-name" content="rappo" /> -->
 
   <!-- bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
   <!-- Animate -->
   <!-- <link rel="stylesheet" href="plugins/animate-css/animate.css"> -->
   <!-- Icon Font css -->
-  <link rel="stylesheet" href="plugins/fontawesome/css/all.css">
-  <link rel="stylesheet" href="plugins/fonts/Pe-icon-7-stroke.css">
+  <link rel="stylesheet" href="../plugins/fontawesome/css/all.css">
+  <link rel="stylesheet" href="../plugins/fonts/Pe-icon-7-stroke.css">
   <!-- Themify icon Css -->
-  <link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+  <link rel="stylesheet" href="../plugins/themify/css/themify-icons.css">
   <!-- Slick Carousel CSS -->
   <!-- <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css"> -->
   <!-- <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css"> -->
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-  <script type = "text/javascript" src="js/script.js"></script>  
+  <link rel="stylesheet" href="../css/style.css">
+  <script type = "text/javascript" src="../js/script.js"></script>  
   
   <!--Favicon-->
-  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 
     <!-- Insert Google Analystics code here -->
   <!-- <script>   
@@ -108,7 +108,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark header-white fixed-top navbar-togglable mb-4"> 
   <div class="container" id="header">
     <a class="navbar-brand" href="index.html">
-      <img src="images/zused/Log_New_white_clean.webp" alt="Logo White of 1D-solutions"  height="35px">
+      <img src="../images/zused/Log_New_white_clean.webp" alt="Logo White of 1D-solutions"  height="35px">
     </a>
     <!-- Toggler -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -124,10 +124,11 @@
           <a href="index.html" class="nav-link js-scroll-trigger">
             Home
           </a>
-        </li>
+        </li> 
         <li class="nav-item ">
           <a href="index.html#about" class="nav-link js-scroll-trigger">
             About
+
           </a>
         </li>
         <li class="nav-item dropdown">
@@ -145,12 +146,20 @@
             Pricing
           </a>
         </li>
-        <li class="nav-item ">
-          <a href="index.html#client-map" class="nav-link js-scroll-trigger">
-            Clients
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="index.html#services-2" id="navbarWelcome" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Language
           </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarWelcome">
+            <li><a class="dropdown-item" href="..\en\index.html">English</a></li>
+            <li><a class="dropdown-item" href="..\esp\index.html">Español</a></li>
+            <li><a class="dropdown-item" href="..\pt\index.html">Português</a></li>
+            <li><a class="dropdown-item" href="..\fr\index.html">Français</a></li>
+            <li><a class="dropdown-item" href="..\tr\index.html">Türkçe</a></li>
+            <li><a class="dropdown-item" href="..\sa\index.html">العربية</a></li>
+          </ul>
         </li>
-
         <li class="nav-item ">
           <a href="contact.html#contact" class="nav-link">
             Contact
@@ -172,7 +181,7 @@
             <div class="col-lg-9 col-md-12 col-12 text-center">
                 <div class="page-banner-content">
                     <h1 class="display-4 font-weight-bold">Got a question?</h1>
-                    <p>We'd love to talk about how we can help you.</p>
+                    <p>We'd love to talk about how we can help you. We speak English and Spanish.</p>
                 </div>
             </div>
         </div> <!-- / .row -->
@@ -197,13 +206,17 @@
                     <p class="lead">info@1d-solutions.com</p>
                 </div>
             </div>
-            <!-- <div class="col-lg-4 col-sm-6 col-md-6">
+            <div class="col-lg-4 col-sm-6 col-md-6">
                 <div class="contact-info-block text-center">
-                    <i class="pe-7s-phone"></i>
-                    <h4>Phone Number</h4>
-                    <p class="lead">+23-68017684</p>
+                    <i class="pe-7s-help1"></i>
+                    <h4>Help</h4>
+                    <p class="lead">
+                        <a href="mailto:info@1d-solutions.com?subject=1D%20Support&body=Hello!%20My%20name%20is%20...%20%2C%20I%20have%20a%20single%2Fenterprise%2FDLL%20license%2C%20and%20I%20have%20encountered%20the%20following%20issue.">
+                            Click here for help!
+                           </a>
+                    </p>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </section>
@@ -218,12 +231,12 @@
                     <h5>Leave a Message</h5>
                     <!-- Heading -->
                     <h2 class="section-title mb-2 ">
-                        Contact <span class="font-weight-normal"> Us</span>
+                        Contact Us
                     </h2>
 
                     <!-- Subheading -->
                     <p class="mb-5 ">
-                        Whether you have questions or you would just like to say hello, contact us.
+                        Whether you have questions or you would just like to say hello, contact us.                        
                     </p>
 
                 </div>
@@ -323,7 +336,7 @@
                             <div class="h-captcha" data-captcha="true"></div>
 
                         <div class="">
-                           <button name="submit" type="submit" class="btn btn-primary btn-circled"> Send Message </button>
+                           <button name="submit" type="submit" class="btn btn-primary btn-circled"> Send Message</button>
                            
                             <p class="small pt-3">We'll get back to you in 1-2 business days.</p>
                         </div>
@@ -352,8 +365,7 @@
            <a href="index.html" class="footer-brand text-white">
              1D-Solutions
            </a>
-           <p>This is our new landing page.
-            We are working hard to develop new products and improve our services.</p>
+           <p>This is our new landing page. We are working hard to develop new products and improve our services.</p>
          </div>
        </div>
 
@@ -379,7 +391,7 @@
              </li> -->
              <li>
               <a href="mailto:info@1d-solutions.com?subject=1D%20Support&body=Hello!%20My%20name%20is%20...%20%2C%20I%20have%20a%20single%2Fenterprise%2FDLL%20license%2C%20and%20I%20have%20encountered%20the%20following%20issue.">
-                 Help and support
+                Help and support
                </a>
              </li>
              <!-- <li>
@@ -399,17 +411,17 @@
            <ul class="footer-links">
             <li>
               <a href="#about">
-                About Us
+                About
               </a>
             </li>
              <li>
                <a href="#services-2">
-                 Products
+                Products
                </a>
              </li>
              <li>
                <a href="#pricing">
-                 Pricing
+                Pricing
                </a>
              </li>
              <li>
@@ -419,8 +431,8 @@
              </li>
 
              <li>
-               <a href="#projects-wrap">
-                 Download
+               <a href="#contact">
+                Contact
                </a>
              </li>
            </ul>
@@ -474,16 +486,16 @@
   Essential Scripts
   =====================================-->
   <!-- jQuery -->
-  <script defer src="plugins/jquery/jquery.min.js"></script>
+  <script defer src="../plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap -->
-  <script defer src="plugins/bootstrap/bootstrap.min.js"></script>
+  <script defer src="../plugins/bootstrap/bootstrap.min.js"></script>
   <!-- Slick Slider -->
   <!-- <script src="plugins/slick-carousel/slick/slick.min.js"></script> -->
   <!-- Google Map -->
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
   <script src="../plugins/google-map/gmap.js"></script>  -->
 
-  <script defer src="js/script.js"></script>
+  <script defer src="../js/script.js"></script>
 
   <script>
     function addToCartSingle() {

@@ -1,5 +1,141 @@
 {
-    "heading": "Welcome!, 1D Nest: Cutting Optimization software",
-    "footer":  "Copyright 2015",
-    "filename":"index"
+  "nav":{
+    "home": "Home",
+    "about": "About",
+    "products":"Products",
+    "pricing": "Pricing",
+    "clients": "Clients",
+    "language": "Language",
+    "contact": "Contact"
+  },
+
+  "slider":{ 
+    "heading": "1D Nest: Cutting Optimization software",
+    "subHeading": "The most simple and productive software tool to minimize waste and generate cutting plans with optimum efficiency to save materials such as metal profiles, bars, beams, tubes, rods, rolls or any material which to be manufactured must cut into smaller length pieces.",
+    "freeTrial": "Free trial!",
+    "buyNow": "Buy Now!"
+  },
+
+  "about":{
+    "title1": "Easy Operation",
+    "par1": "Very simple and easy to use software. Can be put into production in minutes.",
+    "title2": "Versatility",
+    "par2": "Use it in different kind of business areas like sales, production or supervision.",
+    "title3": "Power",
+    "par3": "It's cutting edge optimization algorithm outruns the competition delivering the best cutting plans in the shortest time possible.",
+    "title4": "Support",
+    "par4": "Our excelent client support team will response promptly any technical queries by e-mail."
+  },
+
+  "service":{ 
+    "heading": "Products",
+    "subHeading": "Cutting Optimization Sofware solutions for your enterprise",
+    "title1":"1DNest",
+    "par1": "One Dimension Cutting Optimiser , is a simple, efficient and powerful tool to generate optimal cutting lists for industries like steel structure fabrication, aluminium manufacturing and many others that need to cut in shorter pieces 'bars' of  raw material.",
+    "title2": "CutLib DLL",
+    "par2": "Our dynamic link library (or DLL), is a piece of software designed to integrate into larger software applications or systems. It allows access to the methods and functions for solving linear cutting requirements with optimum efficiency.",
+    "freeTrial": "Free trial!",
+    "quote": "Quote request"
+  },
+
+  "price":{
+    "heading": "Price",
+    "subHeading": "Purchase 1DNest safely through well known agents: Shareit/My Commerce of Digital River and Paypal.",
+    "title1": "Single PC License",
+    "feat1-1": "One time Payment",
+    "feat1-2": "Lifetime license",
+    "feat1-3": "1 Years of free support",
+    "feat1-4": "Aditional PC discount",
+    "feat1-5": "Unilimited PC installation",
+    "feat1-6": "Customizable Reports",
+    "title2": "Enterprise License",
+    "feat2-1": "One time Payment",
+    "feat2-2": "Lifetime license",
+    "feat2-3": "3 Years of free support",
+    "feat2-4": "Unlimited PC installation",
+    "feat2-5": "Customizable PDF Reports",
+    "title3": "CutLib License",
+    "feat3-1": "Integrate 1D-Nest Engine to you own software",
+    "feat3-2": "Invisible to the end user ",
+    "feat3-3": "Consultations and technical support available"
+  },
+
+  "clients":{
+    "heading": "Clients",
+    "subHeading": " With a 21-year journey, we've empowered over 3000 clients worldwide with expert cutting optimization solutions."
+  },
+
+  "portfolio":{
+    "heading": "Download 1D-Nest for free and try it for 30 days with no restrictions.",
+    "subHeading": "After the trial period the software will still remain some functionalities to help you with your cutting optimization needs.",
+    "button":"Download"
+  },
+
+  "contact":{ 
+    "superHeading":"Leave a Message",
+    "heading":"Contact Us",
+    "subHeading":"Whether you have questions or you would just like to say hello, contact us.",
+    "success":"Your message was sent successfully.",
+    "name": "Your name",
+    "name-ph": "John Doe",
+    "email":"Your email address",
+    "email-ph":"john@gmail.com",
+    "subject":"Subject",
+    "subject-ph": "Question about 1D-Solutions products",
+    "body":"How can we help you?",
+    "body-ph": "Hi there, I would like to ...",
+    "button":"Send Message",
+    "par":"We'll get back to you in 1-2 business days.",
+    "title": "Got a question?",
+    "description": "We'd love to talk about how we can help you. We speak English and Spanish.",
+    "address": "Address",
+    "mail":"Email",
+    "help":"Click here for help!"
+  },
+
+  "consent":{
+    "heading":"Cookie settings",
+    "subHeading":"We use standar cookies. They allow us to analyze and improve our marketing efforts.",
+    "acceptAll":"Accept All",
+    "acceptSel":"Accept Selection",
+    "rejectAll":"Reject All",
+    "necessary":"Necessary",
+    "analytics":"Analytics",
+    "preferences":"Preferences",
+    "marketing":"Marketing"
+  },
+
+  "footer":{
+    "par":"This is our new landing page. We are working hard to develop new products and improve our services.",
+    "title1":"Account",
+    "help": "Help and support",
+    "title2":"About"
+  },
+
+ "product":{
+  "title": "1D Nest: Length Cutting Optimizer",
+  "description": "Cutting optimizer for tubes, bars, metal profiles, beams, etc. Excel compatible. Length cutting optimization software for any kind of linear materials.",
+  "freeTrial": "Free trial!",
+  "buyNow": "Buy Now!"
+},
+
+  "portfolio2":{   
+    "heading": "1D Nest: Cutting Optimization software",
+    "subHeading":"The most simple and productive software tool to minimize waste and generate cutting plans with optimum efficiency to save materials such as metal profiles, bars, beams, tubes, rods, rolls or any material which to be manufactured must cut into smaller length pieces",
+    "title1": "Cutlist example",
+    "par1": "Guide your cuts with this simple and efficient cutlist",
+    "title2": "User Interface",
+    "par2": "A minimalistic interface for a simple usage",
+    "title3": "Summary example",
+    "par3": "All the necessary information in one page"
+  },
+
+  "call":{
+    "heading":"Download 1D-Nest for free and try it for 30 days with no restrictions.",
+    "par":"After the trial period the software will still remain some functionalities to help you with your cutting optimization needs.",
+    "button":"Download"
   }
+
+  
+}
+ 

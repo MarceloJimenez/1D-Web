@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "products": "Produits",
+    "pricing": "Tarifs",
+    "clients": "Clients",
+    "language": "Langue",
+    "contact": "Contact"
+  },
+
+  "slider": {
+    "heading": "1D Nest : logiciel d'optimisation de coupe",
+    "subHeading": "L'outil logiciel le plus simple et productif pour minimiser les déchets et générer des plans de coupe avec une efficacité optimale pour économiser des matériaux tels que des profilés métalliques, des barres, des poutres, des tubes, des tiges, des rouleaux ou tout autre matériau qui, pour être fabriqué, doit être coupé en morceaux plus petits.",
+    "freeTrial": "Essai gratuit !",
+    "buyNow": "Acheter maintenant !"
+  },
+
+  "about": {
+    "title1": "Utilisation Facile",
+    "par1": "Logiciel très simple et facile à utiliser. Peut être mis en production en quelques minutes.",
+    "title2": "Polyvalence",
+    "par2": "Utilisez-le dans différents domaines d'activité comme les ventes, la production ou la supervision.",
+    "title3": "Puissance",
+    "par3": "Son algorithme d'optimisation de pointe surpasse la concurrence en fournissant les meilleurs plans de coupe dans les plus brefs délais.",
+    "title4": "Support",
+    "par4": "Notre excellente équipe de support client répondra rapidement à toute question technique par e-mail."
+  },
+
+  "service": {
+    "heading": "Produits",
+    "subHeading": "Solutions logicielles d'optimisation de coupe pour votre entreprise",
+    "title1": "1DNest",
+    "par1": "Optimiseur de coupe unidimensionnel, est un outil simple, efficace et puissant pour générer des listes de coupe optimales pour des industries comme la fabrication de structures en acier, la fabrication d'aluminium et bien d'autres qui ont besoin de couper des 'barres' de matière première en morceaux plus petits.",
+    "title2": "CutLib DLL",
+    "par2": "Notre bibliothèque de liens dynamiques (ou DLL) est un logiciel conçu pour s'intégrer à des applications ou systèmes logiciels plus grands. Il permet d'accéder aux méthodes et fonctions pour résoudre les besoins de coupe linéaire avec une efficacité optimale.",
+    "freeTrial": "Essai gratuit !",
+    "quote": "Demande de devis"
+  },
+
+  "price": {
+    "heading": "Prix",
+    "subHeading": "Achetez 1DNest en toute sécurité via des agents reconnus : Shareit/My Commerce de Digital River et Paypal.",
+    "title1": "Licence pour PC unique",
+    "feat1-1": "Paiement unique",
+    "feat1-2": "Licence à vie",
+    "feat1-3": "1 an de support gratuit",
+    "feat1-4": "Réduction pour PC supplémentaire",
+    "feat1-5": "Installation illimitée sur PC",
+    "feat1-6": "Rapports personnalisables",
+    "title2": "Licence Entreprise",
+    "feat2-1": "Paiement unique",
+    "feat2-2": "Licence à vie",
+    "feat2-3": "3 ans de support gratuit",
+    "feat2-4": "Installation illimitée sur PC",
+    "feat2-5": "Rapports PDF personnalisables",
+    "title3": "Licence CutLib",
+    "feat3-1": "Intégrez le moteur 1D-Nest à votre propre logiciel",
+    "feat3-2": "Invisible pour l'utilisateur final",
+    "feat3-3": "Consultations et support technique disponibles"
+  },
+
+  "clients": {
+    "heading": "Clients",
+    "subHeading": "Avec un parcours de 21 ans, nous avons aidé plus de 3000 clients dans le monde entier avec des solutions expertes d'optimisation de coupe."
+  },
+
+  "portfolio": {
+    "heading": "Téléchargez 1D-Nest gratuitement et essayez-le pendant 30 jours sans restrictions.",
+    "subHeading": "Après la période d'essai, le logiciel conservera certaines fonctionnalités pour vous aider dans vos besoins d'optimisation de coupe.",
+    "button": "Télécharger"
+  },
+
+  "contact": {
+    "superHeading": "Laissez un message",
+    "heading": "Contactez-nous",
+    "subHeading": "Que vous ayez des questions ou que vous vouliez simplement dire bonjour, contactez-nous.",
+    "success": "Votre message a été envoyé avec succès.",
+    "name": "Votre nom",
+    "name-ph": "Jean Dupont",
+    "email": "Votre adresse e-mail",
+    "email-ph": "jean@gmail.com",
+    "subject": "Objet",
+    "subject-ph": "Question sur les produits de 1D-Solutions",
+    "body": "Comment pouvons-nous vous aider ?",
+    "body-ph": "Bonjour, je voudrais...",
+    "button": "Envoyer le message",
+    "par": "Nous vous répondrons dans 1-2 jours ouvrables.",
+    "title": "Une question ?",
+    "description": "Nous aimerions discuter de comment nous pouvons vous aider. Nous parlons anglais et espagnol.",
+    "address": "Adresse",
+    "mail": "E-mail",
+    "help": "Cliquez ici pour obtenir de l'aide !"
+  },
+
+  "consent": {
+    "heading": "Paramètres des cookies",
+    "subHeading": "Nous utilisons des cookies standards. Ils nous permettent d'analyser et d'améliorer nos efforts de marketing.",
+    "acceptAll": "Tout accepter",
+    "acceptSel": "Accepter la sélection",
+    "rejectAll": "Tout refuser",
+    "necessary": "Nécessaires",
+    "analytics": "Analyses",
+    "preferences": "Préférences",
+    "marketing": "Marketing"
+  },
+
+  "footer": {
+    "par": "Voici notre nouvelle page d'accueil. Nous travaillons dur pour développer de nouveaux produits et améliorer nos services.",
+    "title1": "Compte",
+    "help": "Aide et support",
+    "title2": "À propos"
+  },
+
+  "product": {
+    "title": "1D Nest : Optimiseur de coupe de longueur",
+    "description": "Optimiseur de coupe pour tubes, barres, profilés métalliques, poutres, etc. Compatible avec Excel. Logiciel d'optimisation de coupe de longueur pour tous types de matériaux linéaires.",
+    "freeTrial": "Essai gratuit !",
+    "buyNow": "Acheter maintenant !"
+  },
+
+  "portfolio2": {
+    "heading": "1D Nest : logiciel d'optimisation de coupe",
+    "subHeading": "L'outil logiciel le plus simple et productif pour minimiser les déchets et générer des plans de coupe avec une efficacité optimale pour économiser des matériaux tels que des profilés métalliques, des barres, des poutres, des tubes, des tiges, des rouleaux ou tout autre matériau qui, pour être fabriqué, doit être coupé en morceaux plus petits",
+    "title1": "Exemple de liste de coupe",
+    "par1": "Guidez vos coupes avec cette liste de coupe simple et efficace",
+    "title2": "Interface utilisateur",
+    "par2": "Une interface minimaliste pour une utilisation simple",
+    "title3": "Exemple de résumé",
+    "par3": "Toutes les informations nécessaires en une page"
+  },
+
+  "call": {
+    "heading": "Téléchargez 1D-Nest gratuitement et essayez-le pendant 30 jours sans restrictions.",
+    "par": "Après la période d'essai, le logiciel conservera certaines fonctionnalités pour vous aider dans vos besoins d'optimisation de coupe.",
+    "button": "Télécharger"
+  }
+}

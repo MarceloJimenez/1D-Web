@@ -1,5 +1,138 @@
 {
-    "heading": "Bienvenido, 1D Nest: Software de optimización de corte",
-    "footer":  "Copyright 2015",
-    "filename": "index-esp"
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "products": "Productos",
+    "pricing": "Precios",
+    "clients": "Clientes",
+    "language": "Idioma",
+    "contact": "Contacto"
+  },
+
+  "slider": {
+    "heading": "1D Nest: Software de optimización de corte",
+    "subHeading": "La herramienta de software más simple y productiva para minimizar el desperdicio y generar planes de corte con la eficiencia óptima para ahorrar materiales como perfiles metálicos, barras, vigas, tubos, varillas, rollos o cualquier material que para ser fabricado debe cortarse en piezas más pequeñas.",
+    "freeTrial": "¡Prueba gratis!",
+    "buyNow": "¡Compra Ahora!"
+  },
+
+  "about": {
+    "title1": "Operación Fácil",
+    "par1": "Software muy simple y fácil de usar. Puede ponerse en producción en minutos.",
+    "title2": "Versatilidad",
+    "par2": "Úselo en diferentes áreas de negocio como ventas, producción o supervisión.",
+    "title3": "Potencia",
+    "par3": "Su algoritmo de optimización de última generación supera a la competencia, entregando los mejores planes de corte en el menor tiempo posible.",
+    "title4": "Soporte",
+    "par4": "Nuestro excelente equipo de soporte al cliente responderá rápidamente a cualquier consulta técnica por correo electrónico."
+  },
+
+  "service": {
+    "heading": "Productos",
+    "subHeading": "Soluciones de software de optimización de corte para su empresa",
+    "title1": "1DNest",
+    "par1": "Optimizador de corte unidimensional, es una herramienta simple, eficiente y poderosa para generar listas de corte óptimas para industrias como la fabricación de estructuras de acero, manufactura de aluminio y muchas otras que necesitan cortar en piezas más cortas 'barras' de materia prima.",
+    "title2": "CutLib DLL",
+    "par2": "Nuestra biblioteca de enlace dinámico (o DLL), es una pieza de software diseñada para integrarse en aplicaciones o sistemas de software más grandes. Permite el acceso a los métodos y funciones para resolver requisitos de corte lineal con eficiencia óptima.",
+    "freeTrial": "¡Prueba gratis!",
+    "quote": "Solicitud de cotización"
+  },
+
+  "price": {
+    "heading": "Precio",
+    "subHeading": "Compre 1DNest de forma segura a través de agentes reconocidos: Shareit/My Commerce de Digital River y Paypal.",
+    "title1": "Licencia para PC Individual",
+    "feat1-1": "Pago único",
+    "feat1-2": "Licencia de por vida",
+    "feat1-3": "1 año de soporte gratuito",
+    "feat1-4": "Descuento para PC adicional",
+    "feat1-5": "Instalación ilimitada en PC",
+    "feat1-6": "Informes personalizables",
+    "title2": "Licencia Empresarial",
+    "feat2-1": "Pago único",
+    "feat2-2": "Licencia de por vida",
+    "feat2-3": "3 años de soporte gratuito",
+    "feat2-4": "Instalación ilimitada en PC",
+    "feat2-5": "Informes PDF personalizables",
+    "title3": "Licencia CutLib",
+    "feat3-1": "Integre el motor 1D-Nest a su propio software",
+    "feat3-2": "Invisible para el usuario final",
+    "feat3-3": "Consultas y soporte técnico disponibles"
+  },
+
+  "clients": {
+    "heading": "Clientes",
+    "subHeading": "Con un recorrido de 21 años, hemos empoderado a más de 3000 clientes en todo el mundo con soluciones expertas de optimización de corte."
+  },
+
+  "portfolio": {
+    "heading": "Descargue 1D-Nest gratis y pruébelo durante 30 días sin restricciones.",
+    "subHeading": "Después del período de prueba, el software seguirá manteniendo algunas funcionalidades para ayudarlo con sus necesidades de optimización de corte.",
+    "button": "Descargar"
+  },
+
+  "contact": {
+    "superHeading": "Deje un Mensaje",
+    "heading": "Contáctenos",
+    "subHeading": "Si tiene preguntas o simplemente desea saludar, contáctenos.",
+    "success": "Su mensaje fue enviado con éxito.",
+    "name": "Su nombre",
+    "name-ph": "Juan Pérez",
+    "email": "Su dirección de correo electrónico",
+    "email-ph": "juan@gmail.com",
+    "subject": "Asunto",
+    "subject-ph": "Pregunta sobre productos de 1D-Solutions",
+    "body": "¿Cómo podemos ayudarlo?",
+    "body-ph": "Hola, me gustaría...",
+    "button": "Enviar Mensaje",
+    "par": "Nos pondremos en contacto con usted en 1-2 días hábiles.",
+    "title": "¿Tiene una pregunta?",
+    "description": "Nos encantaría hablar sobre cómo podemos ayudarlo. Hablamos inglés y español.",
+    "address": "Dirección",
+    "mail": "Correo electrónico",
+    "help": "¡Haga clic aquí para ayuda!"
+  },
+
+  "consent": {
+    "heading": "Configuración de cookies",
+    "subHeading": "Usamos cookies estándar. Nos permiten analizar y mejorar nuestros esfuerzos de marketing.",
+    "acceptAll": "Aceptar Todo",
+    "acceptSel": "Aceptar Selección",
+    "rejectAll": "Rechazar Todo",
+    "necessary": "Necesarias",
+    "analytics": "Analíticas",
+    "preferences": "Preferencias",
+    "marketing": "Marketing"
+  },
+
+  "footer": {
+    "par": "Esta es nuestra nueva página de aterrizaje. Estamos trabajando arduamente para desarrollar nuevos productos y mejorar nuestros servicios.",
+    "title1": "Cuenta",
+    "help": "Ayuda y soporte",
+    "title2": "Acerca de"
+  },
+
+  "product": {
+    "title": "1D Nest: Optimizador de Corte de Longitud",
+    "description": "Optimizador de corte para tubos, barras, perfiles metálicos, vigas, etc. Compatible con Excel. Software de optimización de corte de longitud para cualquier tipo de materiales lineales.",
+    "freeTrial": "¡Prueba gratis!",
+    "buyNow": "¡Compra Ahora!"
+  },
+
+  "portfolio2": {
+    "heading": "1D Nest: Software de Optimización de Corte",
+    "subHeading": "La herramienta de software más simple y productiva para minimizar el desperdicio y generar planes de corte con eficiencia óptima para ahorrar materiales como perfiles metálicos, barras, vigas, tubos, varillas, rollos o cualquier material que para ser fabricado debe cortarse en piezas más pequeñas",
+    "title1": "Ejemplo de lista de cortes",
+    "par1": "Guíe sus cortes con esta lista de cortes simple y eficiente",
+    "title2": "Interfaz de usuario",
+    "par2": "Una interfaz minimalista para un uso sencillo",
+    "title3": "Ejemplo de resumen",
+    "par3": "Toda la información necesaria en una página"
+  },
+
+  "call": {
+    "heading": "Descargue 1D-Nest gratis y pruébelo durante 30 días sin restricciones.",
+    "par": "Después del período de prueba, el software seguirá manteniendo algunas funcionalidades para ayudarlo con sus necesidades de optimización de corte.",
+    "button": "Descargar"
   }
+}

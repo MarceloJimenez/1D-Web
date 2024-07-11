@@ -106,8 +106,8 @@ gulp.task("others:build", function () {
   return gulp.src(path.src.others).pipe(gulp.dest(path.build.dirDev));
 });
 
-// Translation 
-gulp.task("translation:index", function() {
+// Translation
+gulp.task("translation:build", function() {
   var dest  = "./theme";
   var index = "./theme/*.html";
  
@@ -129,15 +129,22 @@ gulp.task("clean", function (cb) {
   rimraf("./theme", cb);
 });
 
+
 // Watch Task
 gulp.task("watch:build", function () {
   gulp.watch(path.src.html, gulp.series("html:build"));
   gulp.watch(path.src.htminc, gulp.series("html:build"));
+  gulp.watch(path.src.translation, gulp.series("html:build"));
+
+  gulp.watch(path.src.html, gulp.series("translation:build"));
+  gulp.watch(path.src.htminc, gulp.series("translation:build"));
+  gulp.watch(path.src.translation, gulp.series("translation:build"));
+
   gulp.watch(path.src.scss, gulp.series("scss:build"));
   gulp.watch(path.src.js, gulp.series("js:build"));
   gulp.watch(path.src.images, gulp.series("images:build"));
   gulp.watch(path.src.plugins, gulp.series("plugins:build"));
-  gulp.watch(path.src.translation, gulp.series("translation:index"));
+
 
 });
 
@@ -152,7 +159,7 @@ gulp.task(
     "images:build",
     "plugins:build",
     "others:build",
-    "translation:index",
+    "translation:build",
     gulp.parallel("watch:build", function () {
       bs.init({
         server: {
@@ -172,7 +179,7 @@ gulp.task(
     "scss:build",
     "images:build",
     "plugins:build",
-    "translation:index",
+    "translation:build",
   )
 );
 

@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkında",
+    "products": "Ürünler",
+    "pricing": "Fiyatlandırma",
+    "clients": "Müşteriler",
+    "language": "Dil",
+    "contact": "İletişim"
+  },
+
+  "slider": {
+    "heading": "1D Nest: Kesim Optimizasyon Yazılımı",
+    "subHeading": "Atıkları en aza indirmek ve kesim planlarını en yüksek verimlilikle oluşturmak için en basit ve üretken yazılım aracı, metal profiller, çubuklar, kirişler, borular, çubuklar, rulolar veya daha küçük parçalara kesilmesi gereken herhangi bir malzemeyi korumak için.",
+    "freeTrial": "Ücretsiz deneme!",
+    "buyNow": "Şimdi Satın Al!"
+  },
+
+  "about": {
+    "title1": "Kolay Kullanım",
+    "par1": "Çok basit ve kullanımı kolay yazılım. Dakikalar içinde üretime geçebilir.",
+    "title2": "Çeşitlilik",
+    "par2": "Satış, üretim veya denetim gibi farklı iş alanlarında kullanın.",
+    "title3": "Güç",
+    "par3": "Kesim planlarını en kısa sürede sunan ileri düzey optimizasyon algoritmasıyla rekabeti geride bırakır.",
+    "title4": "Destek",
+    "par4": "Mükemmel müşteri destek ekibimiz teknik soruları e-posta ile hızlı bir şekilde yanıtlar."
+  },
+
+  "service": {
+    "heading": "Ürünler",
+    "subHeading": "İşletmeniz için Kesim Optimizasyon Yazılımı çözümleri",
+    "title1": "1DNest",
+    "par1": "Bir Boyutlu Kesim Optimizatörü, çelik yapı imalatı, alüminyum üretimi ve daha birçok endüstride hammadde 'çubuklarını' daha küçük parçalara kesmesi gerekenler için basit, verimli ve güçlü bir araçtır.",
+    "title2": "CutLib DLL",
+    "par2": "Dinamik bağlantı kütüphanemiz (DLL), daha büyük yazılım uygulamaları veya sistemlerine entegre edilmek üzere tasarlanmış bir yazılım parçasıdır. Doğrusal kesim gereksinimlerini en yüksek verimlilikle çözmek için yöntemlere ve işlevlere erişim sağlar.",
+    "freeTrial": "Ücretsiz deneme!",
+    "quote": "Fiyat teklifi talebi"
+  },
+
+  "price": {
+    "heading": "Fiyat",
+    "subHeading": "1DNest'i tanınmış ajanlar aracılığıyla güvenle satın alın: Digital River'ın Shareit/My Commerce ve Paypal.",
+    "title1": "Tek PC Lisansı",
+    "feat1-1": "Tek seferlik ödeme",
+    "feat1-2": "Ömür boyu lisans",
+    "feat1-3": "1 yıl ücretsiz destek",
+    "feat1-4": "Ekstra PC indirimi",
+    "feat1-5": "Sınırsız PC kurulumu",
+    "feat1-6": "Özelleştirilebilir raporlar",
+    "title2": "Kurumsal Lisans",
+    "feat2-1": "Tek seferlik ödeme",
+    "feat2-2": "Ömür boyu lisans",
+    "feat2-3": "3 yıl ücretsiz destek",
+    "feat2-4": "Sınırsız PC kurulumu",
+    "feat2-5": "Özelleştirilebilir PDF raporlar",
+    "title3": "CutLib Lisansı",
+    "feat3-1": "1D-Nest Motorunu kendi yazılımınıza entegre edin",
+    "feat3-2": "Son kullanıcıya görünmez",
+    "feat3-3": "Danışmanlık ve teknik destek mevcut"
+  },
+
+  "clients": {
+    "heading": "Müşteriler",
+    "subHeading": "21 yıllık bir yolculukla, dünya çapında 3000'den fazla müşteriye uzman kesim optimizasyon çözümleri sağladık."
+  },
+
+  "portfolio": {
+    "heading": "1D-Nest'i ücretsiz indirin ve 30 gün boyunca kısıtlama olmadan deneyin.",
+    "subHeading": "Deneme süresinin ardından yazılım, kesim optimizasyon ihtiyaçlarınızda size yardımcı olacak bazı işlevselliklerini koruyacaktır.",
+    "button": "İndir"
+  },
+
+  "contact": {
+    "superHeading": "Mesaj Bırakın",
+    "heading": "Bize Ulaşın",
+    "subHeading": "Sorularınız varsa veya sadece merhaba demek istiyorsanız, bizimle iletişime geçin.",
+    "success": "Mesajınız başarıyla gönderildi.",
+    "name": "Adınız",
+    "name-ph": "John Doe",
+    "email": "E-posta adresiniz",
+    "email-ph": "john@gmail.com",
+    "subject": "Konu",
+    "subject-ph": "1D-Solutions ürünleri hakkında soru",
+    "body": "Size nasıl yardımcı olabiliriz?",
+    "body-ph": "Merhaba, ben ...",
+    "button": "Mesaj Gönder",
+    "par": "1-2 iş günü içinde size geri döneceğiz.",
+    "title": "Bir sorunuz mu var?",
+    "description": "Nasıl yardımcı olabileceğimiz hakkında konuşmak isteriz. İngilizce ve İspanyolca konuşuyoruz.",
+    "address": "Adres",
+    "mail": "E-posta",
+    "help": "Yardım için buraya tıklayın!"
+  },
+
+  "consent": {
+    "heading": "Çerez ayarları",
+    "subHeading": "Standart çerezleri kullanıyoruz. Pazarlama çabalarımızı analiz etmeyi ve iyileştirmeyi sağlarlar.",
+    "acceptAll": "Hepsini Kabul Et",
+    "acceptSel": "Seçimi Kabul Et",
+    "rejectAll": "Hepsini Reddet",
+    "necessary": "Gerekli",
+    "analytics": "Analitik",
+    "preferences": "Tercihler",
+    "marketing": "Pazarlama"
+  },
+
+  "footer": {
+    "par": "Bu, yeni açılış sayfamızdır. Yeni ürünler geliştirmek ve hizmetlerimizi iyileştirmek için çok çalışıyoruz.",
+    "title1": "Hesap",
+    "help": "Yardım ve destek",
+    "title2": "Hakkında"
+  },
+
+  "product": {
+    "title": "1D Nest: Uzunluk Kesim Optimizatörü",
+    "description": "Borular, çubuklar, metal profiller, kirişler vb. için kesim optimizasyonu. Excel ile uyumlu. Her türlü doğrusal malzeme için uzunluk kesim optimizasyon yazılımı.",
+    "freeTrial": "Ücretsiz deneme!",
+    "buyNow": "Şimdi Satın Al!"
+  },
+
+  "portfolio2": {
+    "heading": "1D Nest: Kesim Optimizasyon Yazılımı",
+    "subHeading": "Atıkları en aza indirmek ve kesim planlarını en yüksek verimlilikle oluşturmak için en basit ve üretken yazılım aracı, metal profiller, çubuklar, kirişler, borular, çubuklar, rulolar veya daha küçük parçalara kesilmesi gereken herhangi bir malzemeyi korumak için",
+    "title1": "Kesim listesi örneği",
+    "par1": "Bu basit ve verimli kesim listesiyle kesimlerinizi yönlendirin",
+    "title2": "Kullanıcı Arayüzü",
+    "par2": "Basit kullanım için minimalist bir arayüz",
+    "title3": "Özet örneği",
+    "par3": "Gerekli tüm bilgiler tek bir sayfada"
+  },
+
+  "call": {
+    "heading": "1D-Nest'i ücretsiz indirin ve 30 gün boyunca kısıtlama olmadan deneyin.",
+    "par": "Deneme süresinin ardından yazılım, kesim optimizasyon ihtiyaçlarınızda size yardımcı olacak bazı işlevselliklerini koruyacaktır.",
+    "button": "İndir"
+  }
+}

@@ -5,15 +5,15 @@
         <div class="container">
             <div class="row mb-4">
                 <div class="col-md-8 col-lg-6">
-                    <h5>Leave a Message</h5>
+                    <h5>${{index.contact.superHeading}}$</h5>
                     <!-- Heading -->
                     <h2 class="section-title mb-2 ">
-                        Contact <span class="font-weight-normal"> Us</span>
+                        ${{index.contact.heading}}$
                     </h2>
 
                     <!-- Subheading -->
                     <p class="mb-5 ">
-                        Whether you have questions or you would just like to say hello, contact us.
+                        ${{index.contact.subHeading}}$                        
                     </p>
 
                 </div>
@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                                Your message was sent successfully.
+                                ${{index.contact.success}}$
                             </div>
                         </div>
                     </div>
@@ -39,11 +39,11 @@
                             <div class="col-sm-6 mb-6">
                                 <div class="form-group">
                                     <label class="h6 small d-block text-uppercase">
-                                        Your name
+                                        ${{index.contact.name}}$
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="input-group">
-                                        <input class="form-control" name="name" id="name" required="" placeholder="John Doe" type="text">
+                                        <input class="form-control" name="name" id="name" required="" placeholder="${{index.contact.name-ph}}$" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -53,12 +53,12 @@
                             <div class="col-sm-6 mb-6">
                                 <div class="form-group">
                                     <label class="h6 small d-block text-uppercase">
-                                        Your email address
+                                        ${{index.contact.email}}$
                                         <span class="text-danger">*</span>
                                     </label>
 
                                     <div class="input-group ">
-                                        <input class="form-control" name="email" id="email" required="" placeholder="john@gmail.com" type="email">
+                                        <input class="form-control" name="email" id="email" required="" placeholder="${{index.contact.email-ph}}$" type="email">
                                     </div>
                                 </div>
                             </div>
@@ -70,12 +70,12 @@
                             <div class="col-sm-12 mb-6">
                                 <div class="form-group">
                                     <label class="h6 small d-block text-uppercase">
-                                        Subject
+                                        ${{index.contact.subject}}$
                                         <span class="text-danger">*</span>
                                     </label>
 
                                     <div class="input-group">
-                                        <input class="form-control" name="subject" id="subject" required="" placeholder="Question about 1D-Solutions products" type="text">
+                                        <input class="form-control" name="subject" id="subject" required="" placeholder="${{index.contact.subject-ph}}$" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -100,12 +100,12 @@
                         <!-- Input -->
                         <div class="form-group mb-5">
                             <label class="h6 small d-block text-uppercase">
-                                How can we help you?
+                                ${{index.contact.body}}$
                                 <span class="text-danger">*</span>
                             </label>
 
                             <div class="input-group">
-                                <textarea class="form-control" rows="4" name="message" id="message" required="" placeholder="Hi there, I would like to ..."></textarea>
+                                <textarea class="form-control" rows="4" name="message" id="message" required="" placeholder="${{index.contact.body-ph}}$"></textarea>
                             </div>
                         </div>
                         <!-- End Input -->
@@ -113,9 +113,9 @@
                             <div class="h-captcha" data-captcha="true"></div>
 
                         <div class="">
-                           <button name="submit" type="submit" class="btn btn-primary btn-circled"> Send Message </button>
+                           <button name="submit" type="submit" class="btn btn-primary btn-circled"> ${{index.contact.button}}$</button>
                            
-                            <p class="small pt-3">We'll get back to you in 1-2 business days.</p>
+                            <p class="small pt-3">${{index.contact.par}}$</p>
                         </div>
                     </form>
                     <!-- End Contacts Form -->
