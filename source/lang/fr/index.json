@@ -1,4 +1,8 @@
 {
+  "header": {
+    "description": "Optimisation de coupe unidimensionnelle avec 1D Solutions. Notre logiciel d'optimisation de coupe rationalise l'utilisation des matériaux, générant des plans de coupe optimaux pour des industries comme la fabrication d'acier. Téléchargez gratuitement!"
+  },
+  
   "nav": {
     "home": "Accueil",
     "about": "À propos",

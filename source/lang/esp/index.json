@@ -1,4 +1,8 @@
-{
+{ 
+  "header": {
+    "description": "Optimización de corte unidimensional con 1D Solutions. Nuestro software de optimización de corte optimiza el uso de materiales, generando planes de corte óptimos para industrias como la fabricación de acero. ¡Descárgalo gratis!"
+  },
+
   "nav": {
     "home": "Inicio",
     "about": "Acerca de",

@@ -1,4 +1,8 @@
 {
+  "header": {
+    "description": "1D Solutions ile tek boyutlu kesim optimizasyonu. Kesim optimizasyon yazılımımız, çelik üretimi gibi endüstriler için en uygun kesim planlarını oluşturarak malzeme kullanımını optimize eder. Ücretsiz indirin!"
+  },
+  
   "nav": {
     "home": "Ana Sayfa",
     "about": "Hakkında",
