@@ -21,15 +21,6 @@
     }
   </script>
 
-      <!-- Google tag (gtag.js) GA4 -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEMX6GE7X1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-GEMX6GE7X1');
-    </script> -->
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -39,11 +30,86 @@
       })(window,document,'script','dataLayer','GTM-TGXKJ8P');</script>
       <!-- End Google Tag Manager -->
 
+      <!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1072606647">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-1072606647');
+</script> -->
+
+<!-- Google tag (gtag.js) event - delayed navigation helper -->
+<!-- <script>
+  // Helper function to delay opening a URL until a gtag event is sent.
+  // Call it in response to an action that should navigate to a URL.
+  function gtagSendEvent(url) {
+    var callback = function () {
+      if (typeof url === 'string') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'add_to_cart', {
+      'event_callback': callback,
+      'event_timeout': 2000,
+      // <event_parameters>
+    });
+    return false;
+  }
+</script> -->
+
+<!-- Google tag (gtag.js) event - delayed navigation helper -->
+<!-- <script>
+  // Helper function to delay opening a URL until a gtag event is sent.
+  // Call it in response to an action that should navigate to a URL.
+  function gtagSendEvent(url) {
+    var callback = function () {
+      if (typeof url === 'string') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'file_download', {
+      'event_callback': callback,
+      'event_timeout': 2000,
+      // <event_parameters>
+    });
+    return false;
+  }
+</script> -->
+
+<!-- Google tag (gtag.js) event - delayed navigation helper -->
+<script>
+  // Helper function to delay opening a URL until a gtag event is sent.
+  // Call it in response to an action that should navigate to a URL.
+  function gtagSendEvent(url) {
+    var callback = function () {
+      if (typeof url === 'string') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion_event_begin_checkout', {
+      'event_callback': callback,
+      'event_timeout': 2000,
+      // <event_parameters>
+    });
+    return false;
+  }
+</script>
+
+
+
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>1D Solutions - Length Cutting Optimizer </title>
-  <link rel="canonical" href="https:\\1d-solutions.com\${{ _filepath_ }}$"/>
+  <title>  ${{index.header.title}}$</title>
+  ${{index.header.canonical}}$
+<script>
+  // Replace backslashes with forward slashes in the _filepath_ variable
+  const filepath = "${{ _filepath_ }}$".replace(/\\/g, '/');
+  document.write(`<link rel="canonical" href="https://1d-solutions.com/${filepath}"/>`);
+</script>
   <link rel="alternate" hreflang="x-default" href="https://1d-solutions.com/en/${{ _filename_ }}$" />
   <link rel="alternate" hreflang="en"        href="https://1d-solutions.com/en/${{ _filename_ }}$" />
   <link rel="alternate" hreflang="esp"       href="https://1d-solutions.com/esp/${{ _filename_ }}$" />
@@ -52,7 +118,6 @@
   <link rel="alternate" hreflang="tr"        href="https://1d-solutions.com/tr/${{ _filename_ }}$" />
   <link rel="alternate" hreflang="sa"        href="https://1d-solutions.com/sa/${{ _filename_ }}$" />
 
-  <link rel="canonical" hreflang="esp"       href="https://www.1d-solutions.com/1dnest/indice.html" />
   
 
 

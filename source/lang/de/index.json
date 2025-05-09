@@ -1,0 +1,145 @@
+{
+    "header": {
+      "description": "Optimieren Sie den Materialeinsatz mit unserem 1D-Schneid- und Verschachtelungsoptimierer. Perfekt für Branchen wie die Stahlverarbeitung. Laden Sie noch heute kostenlos herunter!",
+      "canonical": " ",
+      "title": "1D Solutions - 1D Schneidoptimierer - 1D Verschachtelungsoptimierer - Längenschneidoptimierer"
+    },
+  
+    "nav": {
+      "home": "Startseite",
+      "about": "Über uns",
+      "products": "Produkte",
+      "pricing": "Preise",
+      "clients": "Kunden",
+      "language": "Sprache",
+      "contact": "Kontakt"
+    },
+  
+    "slider": {
+      "heading": "1D Nest: Schnittoptimierer",
+      "subHeading": "Das einfachste und produktivste Softwaretool zur Minimierung von Abfällen und zur Erstellung von Schneidplänen mit optimaler Effizienz, um Materialien wie Metallprofile, Stangen, Träger, Rohre, Stäbe, Rollen oder jedes Material zu sparen, das zur Herstellung in kleinere Stücke geschnitten werden muss.",
+      "freeTrial": "Kostenlose Testversion!",
+      "buyNow": "Jetzt kaufen!"
+    },
+  
+    "about": {
+      "title1": "Einfache Bedienung",
+      "par1": "Sehr einfache und benutzerfreundliche Software. Kann in wenigen Minuten in Produktion genommen werden.",
+      "title2": "Vielseitigkeit",
+      "par2": "Verwenden Sie es in verschiedenen Geschäftsbereichen wie Vertrieb, Produktion oder Überwachung.",
+      "title3": "Leistung",
+      "par3": "Der fortschrittliche Optimierungsalgorithmus übertrifft die Konkurrenz und liefert die besten Schneidpläne in kürzester Zeit.",
+      "title4": "Support",
+      "par4": "Unser exzellentes Kundensupport-Team beantwortet technische Anfragen per E-Mail schnell und zuverlässig."
+    },
+  
+    "service": {
+      "heading": "Produkte",
+      "subHeading": "Schneidoptimierungssoftware-Lösungen für Ihr Unternehmen",
+      "title1": "1DNest",
+      "par1": "Der eindimensionale Schneidoptimierer ist ein einfaches, effizientes und leistungsstarkes Werkzeug zur Erstellung optimaler Schneidlisten für Branchen wie Stahlbau, Aluminiumherstellung und viele andere, die Rohmaterialien 'Stäbe' in kürzere Stücke schneiden müssen.",
+      "title2": "CutLib DLL",
+      "par2": "Unsere dynamische Linkbibliothek (DLL) ist eine Softwarekomponente, die für die Integration in größere Softwareanwendungen oder Systeme entwickelt wurde. Sie ermöglicht den Zugriff auf Methoden und Funktionen zur Lösung linearer Schneidanforderungen mit optimaler Effizienz.",
+      "freeTrial": "Kostenlose Testversion!",
+      "quote": "Angebotsanfrage"
+    },
+  
+    "price": {
+      "heading": "Preis",
+      "subHeading": "Kaufen Sie 1D-Solutions-Produkte sicher über PayPro Global. Über 70 verschiedene Zahlungsmethoden. Weltweit verfügbar.",
+      "title1": "Einzellizenz für PC",
+      "feat1-1": "Einmalige Zahlung",
+      "feat1-2": "Lebenslange Lizenz",
+      "feat1-3": "1 Jahr kostenloser Support",
+      "feat1-4": "Rabatt für zusätzliche PCs",
+      "feat1-5": "Unbegrenzte PC-Installation",
+      "feat1-6": "Anpassbare Berichte",
+      "title2": "Unternehmenslizenz",
+      "feat2-1": "Einmalige Zahlung",
+      "feat2-2": "Lebenslange Lizenz",
+      "feat2-3": "3 Jahre kostenloser Support",
+      "feat2-4": "Unbegrenzte PC-Installation",
+      "feat2-5": "Anpassbare PDF-Berichte",
+      "title3": "CutLib-Lizenz",
+      "feat3-1": "Integrieren Sie die 1D-Nest-Engine in Ihre eigene Software",
+      "feat3-2": "Für den Endbenutzer unsichtbar",
+      "feat3-3": "Beratung und technischer Support verfügbar"
+    },
+  
+    "clients": {
+      "heading": "Kunden",
+      "subHeading": "Mit einer 21-jährigen Erfahrung haben wir über 3000 Kunden weltweit mit erstklassigen Schneidoptimierungslösungen unterstützt."
+    },
+  
+    "portfolio": {
+      "heading": "Laden Sie 1D-Nest kostenlos herunter und testen Sie es 30 Tage lang ohne Einschränkungen.",
+      "subHeading": "Nach der Testphase bleiben einige Funktionen erhalten, um Ihnen bei Ihren Schneidoptimierungsanforderungen zu helfen.",
+      "button": "Herunterladen"
+    },
+  
+    "contact": {
+      "superHeading": "Hinterlassen Sie eine Nachricht",
+      "heading": "Kontaktieren Sie uns",
+      "subHeading": "Ob Sie Fragen haben oder einfach nur Hallo sagen möchten, kontaktieren Sie uns.",
+      "success": "Ihre Nachricht wurde erfolgreich gesendet.",
+      "name": "Ihr Name",
+      "name-ph": "Max Mustermann",
+      "email": "Ihre E-Mail-Adresse",
+      "email-ph": "max@gmail.com",
+      "subject": "Betreff",
+      "subject-ph": "Frage zu 1D-Solutions-Produkten",
+      "body": "Wie können wir Ihnen helfen?",
+      "body-ph": "Hallo, ich möchte...",
+      "button": "Nachricht senden",
+      "par": "Wir melden uns in 1-2 Werktagen bei Ihnen.",
+      "title": "Haben Sie eine Frage?",
+      "description": "Wir freuen uns darauf, mit Ihnen zu besprechen, wie wir Ihnen helfen können. Wir sprechen Englisch und Spanisch.",
+      "address": "Adresse",
+      "mail": "E-Mail",
+      "help": "Hier klicken für Hilfe!"
+    },
+  
+    "consent": {
+      "heading": "Cookie-Einstellungen",
+      "subHeading": "Wir verwenden Standard-Cookies. Sie ermöglichen es uns, unsere Marketingbemühungen zu analysieren und zu verbessern.",
+      "acceptAll": "Alle akzeptieren",
+      "acceptSel": "Auswahl akzeptieren",
+      "rejectAll": "Alle ablehnen",
+      "necessary": "Notwendig",
+      "analytics": "Analyse",
+      "preferences": "Präferenzen",
+      "marketing": "Marketing"
+    },
+  
+    "footer": {
+      "par": "Dies ist unsere neue Landingpage. Wir arbeiten hart daran, neue Produkte zu entwickeln und unsere Dienstleistungen zu verbessern.",
+      "title1": "Konto",
+      "help": "Hilfe und Support",
+      "title2": "Über uns"
+    },
+  
+    "product": {
+      "title": "1D Nest: Längenschneidoptimierer",
+      "description": "Schneidoptimierer für Rohre, Stäbe, Metallprofile, Träger usw. Excel-kompatibel. Längenschneidoptimierungssoftware für alle Arten von linearen Materialien.",
+      "freeTrial": "Kostenlose Testversion!",
+      "buyNow": "Jetzt kaufen!"
+    },
+
+    "portfolio2": {
+        "heading": "1D Nest: Schneidoptimierungssoftware",
+        "subHeading": "Das einfachste und produktivste Softwaretool zur Minimierung von Abfällen und zur Erstellung von Schneidplänen mit optimaler Effizienz, um Materialien wie Metallprofile, Stangen, Träger, Rohre, Stäbe, Rollen oder jedes Material zu sparen, das zur Herstellung in kleinere Stücke geschnitten werden muss.",
+        "title1": "Beispiel für eine Schnittliste",
+        "par1": "Führen Sie Ihre Schnitte mit dieser einfachen und effizienten Schnittliste",
+        "title2": "Benutzeroberfläche",
+        "par2": "Eine minimalistische Benutzeroberfläche für eine einfache Nutzung",
+        "title3": "Beispiel für eine Zusammenfassung",
+        "par3": "Alle notwendigen Informationen auf einer Seite"
+      },    
+  
+    "call": {
+      "heading": "Laden Sie 1D-Nest kostenlos herunter und testen Sie es 30 Tage lang ohne Einschränkungen.",
+      "par": "Nach der Testphase bleiben einige Funktionen erhalten, um Ihnen bei Ihren Schneidoptimierungsanforderungen zu helfen.",
+      "button": "Herunterladen"
+    }
+  }
+  

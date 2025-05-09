@@ -1,7 +1,10 @@
 {
   "header": {
-    "description": "Optimisation de coupe unidimensionnelle avec 1D Solutions. Notre logiciel d'optimisation de coupe rationalise l'utilisation des matériaux, générant des plans de coupe optimaux pour des industries comme la fabrication d'acier. Téléchargez gratuitement!"
-  },
+    "description": "Optimisez l'utilisation des matériaux avec notre optimiseur de découpe et de nesting unidimensionnel. Parfait pour des industries comme la fabrication d'acier. Téléchargez gratuitement dès aujourd'hui !",
+    "canonical": " ",
+    "title": "1D Solutions - Optimiseur de Découpe 1D - Optimiseur d'Imbrication 1D - Optimiseur de Découpe Longitudinale"
+
+    },
   
   "nav": {
     "home": "Accueil",

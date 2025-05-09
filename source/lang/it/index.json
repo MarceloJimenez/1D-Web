@@ -1,0 +1,144 @@
+{
+  "header": {
+    "description": "Ottimizza l'uso dei materiali con il nostro ottimizzatore di taglio e annidamento 1D. Perfetto per industrie come la fabbricazione di acciaio. Scarica gratis oggi!",
+    "canonical": " ",
+    "title": "1D Solutions - Ottimizzatore di Taglio 1D - Ottimizzatore di Annidamento 1D - Ottimizzatore di Taglio di Lunghezza"
+  },
+
+  "nav": {
+    "home": "Home",
+    "about": "Chi siamo",
+    "products": "Prodotti",
+    "pricing": "Prezzi",
+    "clients": "Clienti",
+    "language": "Lingua",
+    "contact": "Contatto"
+  },
+
+  "slider": {
+    "heading": "1D Nest: Software di ottimizzazione del taglio",
+    "subHeading": "Lo strumento software più semplice e produttivo per minimizzare gli scarti e generare piani di taglio con efficienza ottimale per risparmiare materiali come profili metallici, barre, travi, tubi, aste, rotoli o qualsiasi materiale che, per essere fabbricato, deve essere tagliato in pezzi più piccoli.",
+    "freeTrial": "Prova gratuita!",
+    "buyNow": "Acquista ora!"
+  },
+
+  "about": {
+    "title1": "Facilità d'uso",
+    "par1": "Software molto semplice e facile da usare. Può essere messo in produzione in pochi minuti.",
+    "title2": "Versatilità",
+    "par2": "Usalo in diversi ambiti aziendali come vendite, produzione o supervisione.",
+    "title3": "Potenza",
+    "par3": "Il suo algoritmo di ottimizzazione all'avanguardia supera la concorrenza offrendo i migliori piani di taglio nel minor tempo possibile.",
+    "title4": "Supporto",
+    "par4": "Il nostro eccellente team di supporto clienti risponderà prontamente a qualsiasi domanda tecnica via e-mail."
+  },
+
+  "service": {
+    "heading": "Prodotti",
+    "subHeading": "Soluzioni software di ottimizzazione del taglio per la tua azienda",
+    "title1": "1DNest",
+    "par1": "Ottimizzatore di Taglio Unidimensionale, uno strumento semplice, efficiente e potente per generare liste di taglio ottimali per industrie come la fabbricazione di strutture in acciaio, produzione di alluminio e molte altre che necessitano di tagliare 'barre' di materia prima in pezzi più piccoli.",
+    "title2": "CutLib DLL",
+    "par2": "La nostra libreria a collegamento dinamico (DLL) è un componente software progettato per integrarsi in applicazioni o sistemi software più grandi. Consente l'accesso ai metodi e alle funzioni per risolvere i requisiti di taglio lineare con efficienza ottimale.",
+    "freeTrial": "Prova gratuita!",
+    "quote": "Richiesta di preventivo"
+  },
+
+  "price": {
+    "heading": "Prezzo",
+    "subHeading": "Acquista i prodotti 1D-Solutions in modo sicuro tramite PayPro Global. Oltre 70 metodi di pagamento differenti. Disponibile in tutto il mondo.",
+    "title1": "Licenza per PC singolo",
+    "feat1-1": "Pagamento unico",
+    "feat1-2": "Licenza a vita",
+    "feat1-3": "1 anno di supporto gratuito",
+    "feat1-4": "Sconto per PC aggiuntivo",
+    "feat1-5": "Installazione illimitata su PC",
+    "feat1-6": "Report personalizzabili",
+    "title2": "Licenza aziendale",
+    "feat2-1": "Pagamento unico",
+    "feat2-2": "Licenza a vita",
+    "feat2-3": "3 anni di supporto gratuito",
+    "feat2-4": "Installazione illimitata su PC",
+    "feat2-5": "Report PDF personalizzabili",
+    "title3": "Licenza CutLib",
+    "feat3-1": "Integra il motore 1D-Nest nel tuo software",
+    "feat3-2": "Invisibile per l'utente finale",
+    "feat3-3": "Consulenze e supporto tecnico disponibili"
+  },
+
+  "clients": {
+    "heading": "Clienti",
+    "subHeading": "Con un percorso di 21 anni, abbiamo aiutato oltre 3000 clienti in tutto il mondo con soluzioni esperte di ottimizzazione del taglio."
+  },
+
+  "portfolio": {
+    "heading": "Scarica 1D-Nest gratuitamente e provalo per 30 giorni senza restrizioni.",
+    "subHeading": "Dopo il periodo di prova, il software manterrà alcune funzionalità per aiutarti con le tue esigenze di ottimizzazione del taglio.",
+    "button": "Scarica"
+  },
+
+  "contact": {
+    "superHeading": "Lascia un messaggio",
+    "heading": "Contattaci",
+    "subHeading": "Che tu abbia domande o voglia solo salutare, contattaci.",
+    "success": "Il tuo messaggio è stato inviato con successo.",
+    "name": "Il tuo nome",
+    "name-ph": "Mario Rossi",
+    "email": "Il tuo indirizzo email",
+    "email-ph": "mario@gmail.com",
+    "subject": "Oggetto",
+    "subject-ph": "Domanda sui prodotti 1D-Solutions",
+    "body": "Come possiamo aiutarti?",
+    "body-ph": "Ciao, vorrei...",
+    "button": "Invia Messaggio",
+    "par": "Ti risponderemo entro 1-2 giorni lavorativi.",
+    "title": "Hai una domanda?",
+    "description": "Saremo felici di parlare di come possiamo aiutarti. Parliamo inglese e spagnolo.",
+    "address": "Indirizzo",
+    "mail": "Email",
+    "help": "Clicca qui per aiuto!"
+  },
+
+  "consent": {
+    "heading": "Impostazioni dei cookie",
+    "subHeading": "Utilizziamo cookie standard. Ci consentono di analizzare e migliorare i nostri sforzi di marketing.",
+    "acceptAll": "Accetta tutto",
+    "acceptSel": "Accetta selezione",
+    "rejectAll": "Rifiuta tutto",
+    "necessary": "Necessari",
+    "analytics": "Analitici",
+    "preferences": "Preferenze",
+    "marketing": "Marketing"
+  },
+
+  "footer": {
+    "par": "Questa è la nostra nuova pagina di atterraggio. Stiamo lavorando duramente per sviluppare nuovi prodotti e migliorare i nostri servizi.",
+    "title1": "Account",
+    "help": "Aiuto e supporto",
+    "title2": "Informazioni"
+  },
+
+  "product": {
+    "title": "1D Nest: Ottimizzatore di Taglio di Lunghezza",
+    "description": "Ottimizzatore di taglio per tubi, barre, profili metallici, travi, ecc. Compatibile con Excel. Software di ottimizzazione del taglio di lunghezza per qualsiasi tipo di materiale lineare.",
+    "freeTrial": "Prova gratuita!",
+    "buyNow": "Acquista ora!"
+  },
+
+  "portfolio2": {
+    "heading": "1D Nest: Software di Ottimizzazione del Taglio",
+    "subHeading": "Lo strumento software più semplice e produttivo per minimizzare gli scarti e generare piani di taglio con efficienza ottimale per risparmiare materiali come profili metallici, barre, travi, tubi, aste, rotoli o qualsiasi materiale che, per essere fabbricato, deve essere tagliato in pezzi più piccoli.",
+    "title1": "Esempio di lista di taglio",
+    "par1": "Guida i tuoi tagli con questa lista di taglio semplice ed efficiente",
+    "title2": "Interfaccia utente",
+    "par2": "Un'interfaccia minimalista per un utilizzo semplice",
+    "title3": "Esempio di riepilogo",
+    "par3": "Tutte le informazioni necessarie in una sola pagina"
+  },
+
+  "call": {
+    "heading": "Scarica 1D-Nest gratuitamente e provalo per 30 giorni senza restrizioni.",
+    "par": "Dopo il periodo di prova, il software manterrà alcune funzionalità per aiutarti con le tue esigenze di ottimizzazione del taglio.",
+    "button": "Scarica"
+  }
+}
