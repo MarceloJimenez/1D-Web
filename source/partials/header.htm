@@ -104,15 +104,17 @@
   ================================================== -->
   <meta charset="utf-8">
   <title>  ${{index.header.title}}$</title>
-  ${{index.header.canonical}}$
+  <!-- ${{index.header.canonical}}$
+  <link rel="canonical" href="https://1d-solutions.com/${{ _filename_ }}$"/>
 <script>
   // Replace backslashes with forward slashes in the _filepath_ variable
   const filepath = "${{ _filepath_ }}$".replace(/\\/g, '/');
   document.write(`<link rel="canonical" href="https://1d-solutions.com/${filepath}"/>`);
-</script>
-  <link rel="alternate" hreflang="x-default" href="https://1d-solutions.com/en/${{ _filename_ }}$" />
-  <link rel="alternate" hreflang="en"        href="https://1d-solutions.com/en/${{ _filename_ }}$" />
-  <link rel="alternate" hreflang="esp"       href="https://1d-solutions.com/esp/${{ _filename_ }}$" />
+</script> -->
+  <link rel="canonical" hreflang="${{ _lang_ }}$" href="https://1d-solutions.com/${{ _lang_ }}$/${{ _filename_ }}$" />
+  <link rel="alternate" hreflang="x-default" href="https://1d-solutions.com/${{ _filename_ }}$" />
+  <link rel="alternate" hreflang="en"        href="https://1d-solutions.com/${{ _filename_ }}$" />
+  <link rel="alternate" hreflang="es"        href="https://1d-solutions.com/es/${{ _filename_ }}$" />
   <link rel="alternate" hreflang="pt"        href="https://1d-solutions.com/pt/${{ _filename_ }}$" />
   <link rel="alternate" hreflang="fr"        href="https://1d-solutions.com/fr/${{ _filename_ }}$" />
   <link rel="alternate" hreflang="tr"        href="https://1d-solutions.com/tr/${{ _filename_ }}$" />

@@ -54,7 +54,7 @@ The final, production-ready files will be output to the [`theme/`](theme/) direc
 ## Multilanguage & Translation Architecture
 
 - **Language Files**:  
-  All translatable content is stored in JSON files under [`source/lang/`](source/lang/), e.g., [`source/lang/en/index.json`](source/lang/en/index.json), [`source/lang/esp/index.json`](source/lang/esp/index.json), etc.
+  All translatable content is stored in JSON files under [`source/lang/`](source/lang/), e.g., [`source/lang/en/index.json`](source/lang/en/index.json), [`source/lang/es/index.json`](source/lang/es/index.json), etc.
 - **Template Placeholders**:  
   HTML templates use placeholders like `${{index.about.title1}}$` which are replaced at build time with the correct translation.
 - **Automated Build**:  
