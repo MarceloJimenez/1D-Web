@@ -10,7 +10,8 @@
     padding: 8px;
 
     a {
-      color: #2674A4;
+      // color: #2674A4;
+      color: $primary-color;
     }
   }
 }
@@ -36,7 +37,8 @@
 
 .icon-block {
   margin-right: 20px;
-  color: #2674A4;
+  // color: #2674A4;
+  color: $primary-color2;
   font-size: 40px;
   line-height: 20px;
   font-weight: 400;

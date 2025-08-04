@@ -121,8 +121,10 @@ img {
 .bg-primary,
 .btn-primary,
 .btn-white:hover {
-  background: #2674A4 !important;
-  border-color: #2674A4 !important;
+  // background: #2674A4 !important;
+  // border-color: #2674A4 !important;
+    background: $primary-color2 !important;
+  border-color: $primary-color2 !important;
   color: #fff;
 }
 
