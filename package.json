@@ -6,7 +6,7 @@
   "license": "Proprietary License",
   "scripts": {
     "dev": "gulp",
-    "build": "gulp build"
+    "build": "NODE_ENV=production gulp build"
   },
   "dependencies": {
     "browser-sync": "^2.27.10",
@@ -21,6 +21,10 @@
     "sass": "^1.52.3"
   },
   "devDependencies": {
-    "del": "^7.1.0"
+    "critical": "^7.2.1",
+    "del": "^7.1.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-purgecss": "^8.0.0",
+    "sharp": "^0.34.5"
   }
 }

@@ -113,6 +113,11 @@
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
+  <!-- Preconnect + preload LCP image to shorten critical chain -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" href="../images/zused/old-opti-pipes.webp" as="image">
   <title>  ${{index.header.title}}$</title>
   <!-- ${{index.header.canonical}}$
   <link rel="canonical" href="https://1d-solutions.com/${{ _filename_ }}$"/>
@@ -144,24 +149,34 @@
   <!-- theme meta -->
   <!-- <meta name="theme-name" content="rappo" /> -->
 
-  <!-- bootstrap -->
+  <!-- Critical CSS (blocking): layout and main styles only -->
   <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
-  <!-- Animate -->
-  <!-- <link rel="stylesheet" href="plugins/animate-css/animate.css"> -->
-  <!-- Icon Font css -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Non-critical CSS: load after load event so LCP is not blocked (keeps them out of critical chain) -->
+  <script>
+  (function(){
+    function loadNonCritical(){
+      var l=[
+        {h:'../plugins/fontawesome/css/all.css'},
+        {h:'../plugins/themify/css/themify-icons.css'},
+        {h:'https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css'},
+        {h:'https://fonts.googleapis.com/css?family=Muli:300,400,500,700,900&display=swap'}
+      ];
+      l.forEach(function(o){
+        var link=document.createElement('link');link.rel='stylesheet';link.href=o.h;document.head.appendChild(link);
+      });
+    }
+    if (document.readyState === 'complete') setTimeout(loadNonCritical, 0);
+    else window.addEventListener('load', function(){ setTimeout(loadNonCritical, 0); });
+  })();
+  </script>
+  <noscript>
   <link rel="stylesheet" href="../plugins/fontawesome/css/all.css">
-  <link rel="stylesheet" href="../plugins/fonts/Pe-icon-7-stroke.css">
-  <!-- Themify icon Css -->
   <link rel="stylesheet" href="../plugins/themify/css/themify-icons.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
-  <!-- Slick Carousel CSS -->
-  <!-- <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css"> -->
-  <!-- <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,500,700,900&display=swap">
+  </noscript>
 
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="../css/style.css">
-  <script type = "text/javascript" src="../js/script.js"></script>  
-  
   <!--Favicon-->
   <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 

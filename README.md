@@ -47,7 +47,16 @@ This will start a local server with live reload and watch for changes.
 ```sh
 npm run build
 ```
-The final, production-ready files will be output to the [`theme/`](theme/) directory.
+The final, production-ready files will be output to the [`theme/`](theme/) directory. The build uses `NODE_ENV=production` to minify CSS (Sass compressed + clean-css), run PurgeCSS on `theme/css/style.css`, and remove unused styles for faster load times.
+
+---
+
+## Performance
+
+- **Script loading**: `script.js` is loaded only once, deferred in the footer (no blocking script in the head).
+- **CSS**: Production build minifies and purges main CSS; Pe-icon (unused) was removed from the head. Icon sets in use: Font Awesome, Themify, flag-icons.
+- **Images**: The `images:optimize` Gulp task (Sharp) generates WebP versions and responsive widths (400w/800w, 540w/1080w) for key assets (logo, hero, portfolio). HTML uses `<picture>`/`srcset`/`sizes`, `width`/`height`, and `loading="lazy"` where appropriate to reduce LCP and layout shift.
+- **Render-blocking**: In production build, critical (above-the-fold) CSS is extracted and inlined in the `<head>`; Bootstrap and `style.css` then load asynchronously so they no longer block LCP. Font Awesome, Themify, flag-icons, and Google Fonts (Muli) already load async. Critical CSS extraction uses the `critical` package (Puppeteer); if Puppeteer is unavailable or times out (e.g. in CI), the build continues without inlining and Bootstrap/style.css remain blocking. Run `npm run build` on a machine with Chrome for full critical CSS inlining.
 
 ---
 

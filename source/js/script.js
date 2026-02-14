@@ -8,46 +8,37 @@
     });
   });
 
-	// navbarDropdown
-	if ($(window).width() < 992) {
-		$('.has-dropdown .dropdown-toggle').on('click', function () {
-			$(this).siblings('.dropdown-menu').animate({
-				height: 'toggle'
-			}, 300);
-		});
-	}
+  // navbarDropdown – use matchMedia to avoid layout read (no forced reflow)
+  if (window.matchMedia && window.matchMedia('(max-width: 991px)').matches) {
+    $('.has-dropdown .dropdown-toggle').on('click', function () {
+      $(this).siblings('.dropdown-menu').slideToggle(300);
+    });
+  }
 
-
-  // SCROLL TO TOP
-  $(window).on('scroll', function () {
-    if ($(window).scrollTop() > 70) {
-      $('.scroll-to-top').addClass('reveal');
-    } else {
-      $('.scroll-to-top').removeClass('reveal');
+  // Single scroll handler + rAF to avoid forced reflow (read layout once per frame)
+  var scrollTicking = false;
+  function onScrollTick() {
+    var top = window.pageYOffset || document.documentElement.scrollTop;
+    var past = top > 70;
+    $('.scroll-to-top').toggleClass('reveal', past);
+    $('.site-navigation,.trans-navigation').toggleClass('header-white', past);
+    scrollTicking = false;
+  }
+  function onScroll() {
+    if (!scrollTicking) {
+      scrollTicking = true;
+      requestAnimationFrame(onScrollTick);
     }
-  });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
 
-
-  // Fixed header
-  $(window).on('scroll', function () {
-    if ($(window).scrollTop() > 70) {
-      $('.site-navigation,.trans-navigation').addClass('header-white');
-    } else {
-      $('.site-navigation,.trans-navigation').removeClass('header-white');
-    }
-  });
-  
-
-	// scroll-to-top
-	if ($('#scroll-to-top').length) {
-		$('#scroll-to-top').on('click', function () {
-			$('body,html').animate({
-				scrollTop: 0
-			}, 600);
-			return false;
-		});
-	}
-
+  // scroll-to-top – native smooth scroll to avoid jQuery animate reflows
+  if ($('#scroll-to-top').length) {
+    $('#scroll-to-top').on('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // Closes responsive menu when a scroll trigger link is clicked
   $('.js-scroll-trigger').on('click', function (event) {
