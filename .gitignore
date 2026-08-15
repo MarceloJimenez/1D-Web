@@ -9,3 +9,11 @@ package-lock.json
 yarn.lock
 netlify
 theme/
+
+# Copias sueltas del build. Finder crea "theme 2/" al descomprimir junto a una
+# theme/ existente, y los zips son el artefacto que se sube al hosting. Ninguno
+# debe entrar en git: son la salida del build, no la fuente. Y una copia vieja
+# a mano tirada en la raíz es justo lo que hace falta para publicar por error
+# una versión de hace seis meses.
+theme */
+*.zip
