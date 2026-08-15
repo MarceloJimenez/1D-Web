@@ -13,6 +13,11 @@
 
   <script defer src="../js/script.js"></script>
 
+  <!-- Carries the GA4 client id and the Google Ads click id into the PayPro
+       checkout URL, so the purchase our server later receives can be tied back
+       to this visit. See source/js/checkout-attribution.js for the details. -->
+  <script defer src="../js/checkout-attribution.js"></script>
+
   <script>
     function addToCartSingle() {
         console.log("addToCartSingle")
