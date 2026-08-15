@@ -9,24 +9,34 @@
  * cannot tag. Google Analytics has therefore never recorded a single purchase:
  * it sees the click on "Purchase Now" (add_to_cart) and then nothing.
  *
- * We close that gap on the server: PayPro sends our server a notification when
- * an order is charged, and our server reports the purchase to Google Analytics.
+ * PayPro can close that gap themselves: their checkout pages will fire the GA4
+ * "purchase" event directly, provided each product carries our Measurement ID in
+ * their control panel (Store Settings -> Product Setup). But an event fired on
+ * their domain has no idea *whose* visit it belongs to, because the analytics
+ * cookies live on ours.
  *
- * But a purchase reported by a server has no idea *whose* visit it belongs to.
  * That is what this file supplies. Just before the customer leaves for PayPro,
- * we attach two identifiers to the checkout URL:
+ * we attach four parameters to the checkout URL:
  *
- *   x-cid    the Google Analytics client id  -> which visitor/session this is
- *   x-gclid  the Google Ads click id         -> which ad brought them here
+ *   ga-client-id   GA4 client id   -> PayPro's own GA4 integration reads these
+ *   ga-session-id  GA4 session id  -> and attributes the purchase to this visit
  *
- * PayPro keeps any parameter beginning with "x-" and hands it back to us in the
- * purchase notification. So the round trip is:
+ *   x-cid          the same client id, under a name PayPro hands back verbatim
+ *   x-gclid        the Google Ads click id
  *
- *   this file  ->  PayPro checkout  ->  PayPro notification  ->  our server  ->  GA4
+ * The two pairs serve different consumers, which is why both are sent:
+ *
+ *   ga-*  PayPro reads them and reports the purchase to GA4 for us. No server
+ *         of ours involved. This is the path that actually runs today.
+ *   x-*   PayPro stores them and returns them in the purchase notification, for
+ *         a webhook of ours to use. That webhook is written and tested but not
+ *         yet reachable, and the x- parameters cost nothing to keep sending.
+ *         They are also the only route by which a gclid could ever reach Google
+ *         Ads as an offline conversion, which the ga- pair does not cover.
  *
  * This is the only step that cannot be added later. A payment whose identifiers
  * were never attached at click time is permanently unattributable, so it is
- * worth having even before the server half exists.
+ * worth having regardless of which consumer ends up using them.
  *
  * WHAT IT DOES NOT DO
  *
@@ -41,6 +51,14 @@
   'use strict';
 
   var CHECKOUT_HOST = 'store.payproglobal.com';
+
+  /*
+   * The GA4 property this site reports to. Used to find the session cookie,
+   * which Google names after the measurement id with the "G-" removed:
+   * G-GEMX6GE7X1 -> _ga_GEMX6GE7X1. If the property ever changes, this is the
+   * one line to change with it.
+   */
+  var MEASUREMENT_ID = 'G-GEMX6GE7X1';
 
   /* ---------------------------------------------------------------- reading */
 
@@ -72,6 +90,40 @@
       return null; // unfamiliar shape; better to send nothing than send junk
     }
     return parts.slice(-2).join('.');
+  }
+
+  /*
+   * The session id lives in a second cookie, named after the measurement id.
+   * Google has used two shapes for it, and both are still out there:
+   *
+   *   GS2.1.s1786810041$o2$g0$t1786810041$j60$l0$h883238766
+   *          ^--------- session id, after the "s", before the "$"
+   *
+   *   GS1.1.1786810041.2.1.1786810100.0.0.0
+   *         ^--------- session id, third dot-separated field
+   *
+   * This site currently writes the GS2 shape (checked 2026-08-15), but reading
+   * both costs three lines and saves a silent breakage the day Google switches
+   * again. Returning null is always safe: PayPro treats a missing session id as
+   * "start a new session", which loses the join to this visit but never
+   * corrupts anything.
+   */
+  function googleAnalyticsSessionId() {
+    var raw = readCookie('_ga_' + MEASUREMENT_ID.replace(/^G-/, ''));
+    if (!raw) {
+      return null;
+    }
+
+    var gs2 = raw.match(/(?:^|\.)s(\d+)(?:\$|$)/);
+    if (gs2) {
+      return gs2[1];
+    }
+
+    var parts = raw.split('.');
+    if (parts.length > 2 && /^\d+$/.test(parts[2])) {
+      return parts[2];
+    }
+    return null;
   }
 
   /*
@@ -114,11 +166,22 @@
 
     // Remove any values we appended earlier, so running this twice on the same
     // link cannot produce "&x-cid=a&x-cid=b".
-    url = url.replace(/[?&]x-cid=[^&]*/g, '').replace(/[?&]x-gclid=[^&]*/g, '');
+    url = url.replace(/[?&](x-cid|x-gclid|ga-client-id|ga-session-id)=[^&]*/g, '');
 
     var clientId = googleAnalyticsClientId();
+    var sessionId = googleAnalyticsSessionId();
     var clickId = googleAdsClickId();
 
+    // Read by PayPro's own GA4 integration, which fires the purchase event.
+    if (clientId) {
+      url += separatorFor(url) + 'ga-client-id=' + encodeURIComponent(clientId);
+    }
+    if (sessionId) {
+      url += separatorFor(url) + 'ga-session-id=' + encodeURIComponent(sessionId);
+    }
+
+    // Handed back to us verbatim in the purchase notification. Nothing consumes
+    // these yet; see the note at the top of this file for why they are sent.
     if (clientId) {
       url += separatorFor(url) + 'x-cid=' + encodeURIComponent(clientId);
     }
