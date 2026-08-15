@@ -20,40 +20,42 @@
     "heading": "1D Nest: Cutting Optimization software",
     "subHeading": "The most simple and productive software tool to minimize waste and generate cutting plans with optimum efficiency to save materials such as metal profiles, bars, beams, tubes, rods, rolls or any material which to be manufactured must cut into smaller length pieces.",
     "freeTrial": "Free trial!",
-    "buyNow": "Buy Now!"
+    "buyNow": "Buy Now!",
+    "afterTrialMessage": "After the trial, a limited free version remains available for your cutting needs."
   },
 
   "about":{
     "title1": "Easy Operation",
     "par1": "Very simple and easy to use software. Can be put into production in minutes.",
     "title2": "Versatility",
-    "par2": "Use it in different kind of business areas like sales, production or supervision.",
+    "par2": "Use it in different kinds of business areas like sales, production or supervision.",
     "title3": "Power",
-    "par3": "It's cutting edge optimization algorithm outruns the competition delivering the best cutting plans in the shortest time possible.",
+    "par3": "Its cutting-edge optimization algorithm outruns the competition, delivering the best cutting plans in the shortest time possible.",
     "title4": "Support",
-    "par4": "Our excelent client support team will response promptly any technical queries by e-mail."
+    "par4": "Our excellent client support team will respond promptly to any technical queries by e-mail."
   },
 
   "service":{ 
     "heading": "Products",
-    "subHeading": "Cutting Optimization Sofware solutions for your enterprise",
+    "subHeading": "Cutting Optimization Software solutions for your enterprise",
     "title1":"1DNest",
-    "par1": "One Dimension Cutting Optimiser , is a simple, efficient and powerful tool to generate optimal cutting lists for industries like steel structure fabrication, aluminium manufacturing and many others that need to cut in shorter pieces 'bars' of  raw material.",
+    "par1": "One Dimension Cutting Optimizer: a simple, efficient and powerful tool to generate optimal cutting lists for industries like steel structure fabrication, aluminium manufacturing and many others that need to cut raw material 'bars' into shorter pieces.",
     "title2": "CutLib DLL",
     "par2": "Our dynamic link library (or DLL), is a piece of software designed to integrate into larger software applications or systems. It allows access to the methods and functions for solving linear cutting requirements with optimum efficiency.",
     "freeTrial": "Free trial!",
-    "quote": "Quote request"
+    "quote": "Quote request",
+    "afterTrialMessage": "After the trial, a limited free version remains available for your cutting needs."
   },
 
   "price":{
     "heading": "Price",
-    "subHeading": "Purchase 1D-Solutions products safely through PayPro Global. Over 70 diferent payment methods. Available worldwide.",
+    "subHeading": "Purchase 1D-Solutions products safely through PayPro Global. Over 70 different payment methods. Available worldwide.",
     "title1": "Single PC License",
     "feat1-1": "One time Payment",
     "feat1-2": "Lifetime license",
-    "feat1-3": "1 Years of free support",
-    "feat1-4": "Aditional PC discount",
-    "feat1-5": "Unilimited PC installation",
+    "feat1-3": "1 Year of free support",
+    "feat1-4": "Additional PC discount",
+    "feat1-5": "Unlimited PC installation",
     "feat1-6": "Customizable Reports",
     "title2": "Enterprise License",
     "feat2-1": "One time Payment",
@@ -62,7 +64,7 @@
     "feat2-4": "Unlimited PC installation",
     "feat2-5": "Customizable PDF Reports",
     "title3": "CutLib License",
-    "feat3-1": "Integrate 1D-Nest Engine to you own software",
+    "feat3-1": "Integrate 1D-Nest Engine to your own software",
     "feat3-2": "Invisible to the end user ",
     "feat3-3": "Consultations and technical support available"
   },
@@ -74,7 +76,7 @@
 
   "portfolio":{
     "heading": "Download 1D-Nest for free and try it for 30 days with no restrictions.",
-    "subHeading": "After the trial period the software will still remain some functionalities to help you with your cutting optimization needs.",
+    "subHeading": "After the trial, a limited free version remains available for your cutting needs.",
     "button":"Download"
   },
 
@@ -102,7 +104,7 @@
 
   "consent":{
     "heading":"Cookie settings",
-    "subHeading":"We use standar cookies. They allow us to analyze and improve our marketing efforts.",
+    "subHeading":"We use standard cookies. They allow us to analyze and improve our marketing efforts.",
     "acceptAll":"Accept All",
     "acceptSel":"Accept Selection",
     "rejectAll":"Reject All",
@@ -123,7 +125,8 @@
   "title": "1D Nest: Length Cutting Optimizer",
   "description": "Cutting optimizer for tubes, bars, metal profiles, beams, etc. Excel compatible. Length cutting optimization software for any kind of linear materials.",
   "freeTrial": "Free trial!",
-  "buyNow": "Buy Now!"
+  "buyNow": "Buy Now!",
+  "afterTrialMessage": "After the trial, a limited free version remains available for your cutting needs."
 },
 
   "portfolio2":{   
@@ -139,7 +142,7 @@
 
   "call":{
     "heading":"Download 1D-Nest for free and try it for 30 days with no restrictions.",
-    "par":"After the trial period the software will still remain some functionalities to help you with your cutting optimization needs.",
+    "par":"After the trial, a limited free version remains available for your cutting needs.",
     "button":"Download"
   }
 

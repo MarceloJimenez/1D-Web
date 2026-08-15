@@ -20,7 +20,8 @@
     "heading": "1D Nest: Software de Otimização de Corte",
     "subHeading": "A ferramenta de software mais simples e produtiva para minimizar o desperdício e gerar planos de corte com eficiência ótima para economizar materiais como perfis metálicos, barras, vigas, tubos, varas, rolos ou qualquer material que para ser fabricado deve ser cortado em pedaços menores.",
     "freeTrial": "Teste grátis!",
-    "buyNow": "Compre Agora!"
+    "buyNow": "Compre Agora!",
+    "afterTrialMessage": "Após o teste, uma versão limitada gratuita permanece disponível para suas necessidades de corte."
   },
 
   "about": {
@@ -42,7 +43,8 @@
     "title2": "CutLib DLL",
     "par2": "Nossa biblioteca de vínculo dinâmico (ou DLL), é uma peça de software projetada para se integrar a aplicativos ou sistemas de software maiores. Permite o acesso aos métodos e funções para resolver requisitos de corte linear com eficiência ótima.",
     "freeTrial": "Teste grátis!",
-    "quote": "Solicitação de cotação"
+    "quote": "Solicitação de cotação",
+    "afterTrialMessage": "Após o teste, uma versão limitada gratuita permanece disponível para suas necessidades de corte."
   },
 
   "price": {
@@ -73,12 +75,12 @@
 
   "portfolio": {
     "heading": "Baixe 1D-Nest gratuitamente e experimente por 30 dias sem restrições.",
-    "subHeading": "Após o período de teste, o software ainda manterá algumas funcionalidades para ajudá-lo com suas necessidades de otimização de corte.",
+    "subHeading": "Após o teste, uma versão limitada gratuita permanece disponível para suas necessidades de corte.",
     "button": "Baixar"
   },
 
   "contact": {
-    "superHeading": "Deixe uma Mensagem",
+    "superHeading": "Deixe uma mensagem",
     "heading": "Contate-Nos",
     "subHeading": "Se você tiver perguntas ou simplesmente quiser dizer olá, entre em contato conosco.",
     "success": "Sua mensagem foi enviada com sucesso.",
@@ -90,7 +92,7 @@
     "subject-ph": "Pergunta sobre produtos da 1D-Solutions",
     "body": "Como podemos ajudá-lo?",
     "body-ph": "Olá, gostaria de...",
-    "button": "Enviar Mensagem",
+    "button": "Enviar mensagem",
     "par": "Responderemos em 1-2 dias úteis.",
     "title": "Tem uma pergunta?",
     "description": "Adoraríamos conversar sobre como podemos ajudá-lo. Falamos inglês e espanhol.",
@@ -122,7 +124,8 @@
     "title": "1D Nest: Otimizador de Corte de Comprimento",
     "description": "Otimizador de corte para tubos, barras, perfis metálicos, vigas, etc. Compatível com Excel. Software de otimização de corte de comprimento para qualquer tipo de materiais lineares.",
     "freeTrial": "Teste grátis!",
-    "buyNow": "Compre Agora!"
+    "buyNow": "Compre Agora!",
+    "afterTrialMessage": "Após o teste, uma versão limitada gratuita permanece disponível para suas necessidades de corte."
   },
 
   "portfolio2": {
@@ -138,7 +141,7 @@
 
   "call": {
     "heading": "Baixe 1D-Nest gratuitamente e experimente por 30 dias sem restrições.",
-    "par": "Após o período de teste, o software ainda manterá algumas funcionalidades para ajudá-lo com suas necessidades de otimização de corte.",
+    "par": "Após o teste, uma versão limitada gratuita permanece disponível para suas necessidades de corte.",
     "button": "Baixar"
   }
 }
