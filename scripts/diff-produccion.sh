@@ -25,7 +25,11 @@ DETALLE="no"
 [[ "${1:-}" == "--detalle" ]] && DETALLE="si"
 
 IDIOMAS=("" de/ en/ es/ fr/ it/ pt/ sa/ tr/)
-PAGINAS=(index.html product.html contact.html)
+# privacy.html se añadió el 2026-08-15 y todavía NO está publicada. Hasta que se
+# suba, el script la contará como "el servidor responde 404" en los nueve idiomas.
+# Eso es la señal correcta, no un fallo del script: dice que hay una página
+# construida esperando publicación. Cuando se suba, se callará sola.
+PAGINAS=(index.html product.html contact.html privacy.html)
 
 # ------------------------------------------------------- diferencias aceptadas
 #
