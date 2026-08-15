@@ -29,18 +29,17 @@ PAGINAS=(index.html product.html contact.html)
 
 # ------------------------------------------------------- diferencias aceptadas
 #
-# Estas líneas difieren A PROPÓSITO y no deben contarse como divergencia:
+# Líneas que difieren A PROPÓSITO y no deben contarse como divergencia.
 #
-#  1. El CSS crítico incrustado y la carga diferida de Bootstrap. Es la mejora de
-#     rendimiento del repositorio, que aún no se ha publicado. Cuando se publique,
-#     estas exclusiones dejarán de hacer falta.
-#  2. El <script> de checkout-attribution.js, que adjunta los identificadores de
-#     GA4 y Google Ads a los enlaces de PayPro. Mismo caso: en el repo, aún no
-#     publicado.
+# Ahora mismo NO HAY NINGUNA: el 2026-08-15 se publicó todo lo que el repositorio
+# tenía pendiente —el script de atribución y la mejora de rendimiento— y desde
+# entonces producción y repositorio coinciden línea por línea. Ésa es la situación
+# sana, y conviene que dé miedo romperla.
 #
-# Cuando algo de esto llegue al servidor, borrar su línea de aquí. Si la lista se
-# queda vacía, mejor: significa que repositorio y producción coinciden del todo.
-ACEPTADAS='^[[:space:]]*<style>:root\{--blue|Critical CSS \(blocking\)|Full Bootstrap \+ style\.css load async|rel="preload".*as="style"|<noscript><link rel="stylesheet"|<link rel="stylesheet" href="\.\./(plugins/bootstrap/bootstrap\.min|css/style)\.css">|checkout-attribution|Carries the GA4 client id|checkout URL, so the purchase|to this visit\. See source/js'
+# Si alguna vez hace falta añadir algo aquí, que sea con fecha y motivo, y que se
+# borre en cuanto se publique. Una lista que crece es una forma elegante de dejar
+# de comparar nada.
+ACEPTADAS='^$'
 
 normalizar() {
   # Quita espacios al final y líneas vacías, que cambian sin significar nada.
