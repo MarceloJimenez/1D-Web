@@ -7,8 +7,15 @@ si alguien los había cambiado.
 
 | Archivo | Va a | Cómo |
 | --- | --- | --- |
-| `htaccess.txt` | `public_html/.htaccess` | **Se añade al final del que ya existe.** Ver abajo. |
+| `htaccess.txt` | `public_html/.htaccess` | Es el archivo **completo**: parte del que había en el servidor el 2026-08-15, con lo añadido marcado. Reemplaza el contenido entero. |
 | `robots.txt` | `public_html/robots.txt` | Reemplaza al actual (sólo cambia `http://` por `https://` en la línea del sitemap). |
+
+`htaccess.txt` conserva las cinco directivas que ya tenía el servidor —forzado de
+HTTPS, `<files .htaccess>`, `mod_expires`, `Header set Vary`, `mod_deflate`— sin
+modificar ninguna. Lo añadido va entre marcas `▼▼▼ INICIO AÑADIDO` y
+`▲▲▲ FIN AÑADIDO`, todo al final. Para deshacer cualquier parte, se borra su
+bloque. (Único cambio cosmético: se quitó un espacio sobrante al final de la
+línea `ExpiresActive On`.)
 
 ---
 
@@ -73,9 +80,14 @@ Se corrigió con `RedirectMatch`. Por eso se prueba en vez de revisar.
    aparece en la lista.
 3. **Copia de seguridad primero**: clic derecho sobre `.htaccess` → *Copy* →
    guardarlo como `.htaccess.backup`. Es la marcha atrás de un clic.
-4. Clic derecho → *Edit* sobre `.htaccess`, ir al final del contenido y pegar
-   `htaccess.txt` entero debajo. **No borrar nada de lo que ya hay.**
+4. Clic derecho → *Edit* sobre `.htaccess`, seleccionar todo y pegar encima el
+   contenido de `htaccess.txt`.
 5. Guardar.
+
+Antes de pegar, conviene comparar el contenido actual del servidor con la primera
+mitad de `htaccess.txt`: si alguien ha tocado el `.htaccess` desde el 2026-08-15,
+ese cambio hay que traerlo aquí primero. Es el mismo problema de los dos autores
+que describe [[publicacion-del-sitio-1d]], aplicado a la configuración.
 
 **Al pegar la línea de la CSP no la partas en varias.** Es larguísima a
 propósito: Apache admite cortar líneas con `\` al final, pero si el editor deja

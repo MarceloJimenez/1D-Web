@@ -1,47 +1,76 @@
 # =============================================================================
-# 1d-solutions.com  ·  bloque para AÑADIR a public_html/.htaccess
+# public_html/.htaccess  ·  1d-solutions.com
 # =============================================================================
 #
-# ATENCIÓN — ESTO NO SUSTITUYE AL .htaccess QUE YA HAY
+# Este archivo ES el .htaccess completo del servidor, listo para sustituir al
+# actual. Todo lo que ya había se conserva palabra por palabra y en el mismo
+# orden: no se ha modificado ni eliminado ninguna directiva existente.
 #
-# El servidor ya tiene un .htaccess con el forzado de HTTPS (se comprobó el
-# 2026-08-15: la redirección de http a https conserva la ruta y los parámetros,
-# que es la firma de mod_rewrite, no de una redirección del hosting). Si se
-# reemplaza el archivo, el sitio deja de forzar HTTPS.
+# Lo añadido el 2026-08-15 por la auditoría de seguridad va entre marcas
+# «INICIO AÑADIDO» y «FIN AÑADIDO», y va todo al final, después de lo original.
+# Para deshacerlo basta con borrar esos bloques.
 #
-# Este bloque se PEGA AL FINAL del .htaccess existente, sin borrar nada.
-#
-# Todas las directivas van dentro de <IfModule>. Si un módulo no está cargado,
-# Apache se salta el bloque en lugar de devolver un error. No hay ninguna
-# directiva suelta que pueda tumbar el sitio por sí misma.
-#
-# Instalación y marcha atrás: ver README.md en esta misma carpeta.
+# Contexto y motivos: 1D-Web/server/README.md
 #
 # =============================================================================
 
 
-# -----------------------------------------------------------------------------
-# 1. Cabeceras de seguridad
-# -----------------------------------------------------------------------------
+# Redirige todos mis dominios a https://1d-solutions.com
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Protege el archivo htaccess
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+<IfModule mod_expires.c>
+# Enable expirations
+ExpiresActive On
+# Default directive
+ExpiresDefault "access plus 1 days"
+ExpiresByType application/x-msdownload "access 6 hour"
+</IfModule>
+
+<ifModule mod_headers.c>
+    Header set Vary "Accept-Encoding"
+</ifModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/css text/html text/javascript text/plain text/xml
+    AddOutputFilterByType DEFLATE font/opentype font/otf font/ttf image/svg+xml image/x-icon
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-font application/x-font-truetype
+    AddOutputFilterByType DEFLATE application/x-font-opentype application/x-font-otf
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/xhtml+xml application/xml application/rss+xml
+</IfModule>
+
+
+# ▼▼▼ INICIO AÑADIDO 2026-08-15 — 1. Cabeceras de seguridad ▼▼▼
 #
-# Hasta 2026-08-15 la respuesta del sitio no traía ni una. El netlify.toml de la
-# raíz del repositorio declara algunas, pero el sitio no está en Netlify y nadie
-# las aplicaba — es justamente la prueba de que ese archivo no se usa.
+# Hasta hoy la respuesta del sitio no traía ninguna cabecera de seguridad. El
+# único "Header" que había arriba es Vary, que es de caché, no de seguridad.
 #
-# Ninguna de estas cambia el contenido ni las rutas: sólo añaden cabeceras a la
-# respuesta. Es la parte de menos riesgo de todo el archivo.
+# Se usa un <IfModule mod_headers.c> nuevo en vez de meter estas líneas en el
+# que ya existe más arriba, para que el bloque añadido se pueda borrar entero
+# sin tocar nada de lo original. Tener dos <IfModule> del mismo módulo es
+# perfectamente válido en Apache.
+#
+# Ninguna de estas directivas cambia el contenido ni las rutas: sólo añaden
+# cabeceras a la respuesta.
 #
 <IfModule mod_headers.c>
 
-  # Obliga a HTTPS durante un año. El sitio ya redirige a HTTPS y el certificado
-  # de GoDaddy se renueva solo. Deliberadamente SIN includeSubDomains y SIN
-  # preload:
-  #   - includeSubDomains alcanzaría a cualquier subdominio futuro, incluido uno
-  #     de pruebas sin certificado, y lo dejaría inaccesible.
-  #   - preload es prácticamente irreversible (hay que pedir la baja a Google y
-  #     esperar meses).
-  # Es la única directiva con efecto persistente en el navegador del visitante:
-  # quien la reciba usará HTTPS durante un año aunque mañana se quite de aquí.
+  # Obliga a HTTPS durante un año. El sitio ya lo fuerza con el RewriteRule de
+  # arriba y el certificado de GoDaddy se renueva solo. Deliberadamente SIN
+  # includeSubDomains (alcanzaría a un subdominio futuro sin certificado y lo
+  # dejaría inaccesible) y SIN preload (es casi irreversible).
+  #
+  # Es la ÚNICA directiva de este archivo con efecto persistente en el visitante:
+  # un navegador que la reciba usará HTTPS durante un año aunque mañana se quite.
   Header always set Strict-Transport-Security "max-age=31536000"
 
   # Impide que el navegador adivine el tipo de un archivo ignorando el
@@ -49,13 +78,14 @@
   # como HTML.
   Header always set X-Content-Type-Options "nosniff"
 
-  # Nadie puede meter el sitio en un iframe salvo el propio sitio. Evita
-  # clickjacking. Ningún tercero embebe 1d-solutions.com: el checkout de PayPro
-  # es un enlace que abre su dominio, no un iframe.
+  # Nadie puede meter el sitio en un iframe salvo el propio sitio (clickjacking).
+  # Ningún tercero embebe 1d-solutions.com: el checkout de PayPro es un enlace
+  # que abre su dominio, no un iframe.
   Header always set X-Frame-Options "SAMEORIGIN"
 
   # Al salir hacia otro dominio se envía sólo el origen, no la URL completa.
-  # Dentro del sitio se sigue enviando entera, que es lo que Analytics necesita.
+  # Dentro del sitio se sigue enviando entera, que es lo que Analytics necesita
+  # para el informe de páginas de referencia.
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
   # El sitio no usa cámara, micrófono, geolocalización ni pagos del navegador.
@@ -67,43 +97,56 @@
   Header always unset X-Powered-By
 
 </IfModule>
-
-
-# -----------------------------------------------------------------------------
-# 2. Content-Security-Policy — EN MODO INFORME, a propósito
-# -----------------------------------------------------------------------------
 #
-# Report-Only NO bloquea nada: sólo escribe las violaciones en la consola del
-# navegador. Está así por dos razones concretas:
+# ▲▲▲ FIN AÑADIDO — 1. Cabeceras de seguridad ▲▲▲
+
+
+# ▼▼▼ INICIO AÑADIDO 2026-08-15 — 2. Content-Security-Policy (MODO INFORME) ▼▼▼
+#
+# "Report-Only" NO bloquea nada: sólo escribe las violaciones en la consola del
+# navegador. Por definición no puede romper el sitio. Está así por dos motivos:
 #
 #   a) Todo el HTML lleva scripts en línea (el snippet de GTM, loadNonCritical,
 #      addToCartSingle, el document.write del año). Una CSP sin 'unsafe-inline'
-#      los mataría todos, y con 'unsafe-inline' la protección contra XSS es
-#      floja de todas formas. Lo que aporta de verdad es la lista de dominios.
+#      los mataría todos, y con 'unsafe-inline' la protección contra XSS es floja
+#      igualmente. Lo que aporta de verdad es la lista de dominios permitidos.
 #
-#   b) GTM inyecta etiquetas en tiempo de ejecución. Añadir una etiqueta nueva
-#      en GTM-TGXKJ8P puede introducir un dominio que no esté en esta lista, y
-#      en modo bloqueo eso rompe la medición sin que nadie lo note hasta pasadas
-#      semanas — que es exactamente el modo de fallo que este proyecto persigue.
+#   b) GTM inyecta etiquetas en tiempo de ejecución. Añadir una etiqueta nueva en
+#      GTM-TGXKJ8P puede introducir un dominio que no esté en esta lista, y en
+#      modo bloqueo eso rompería la medición sin que nadie lo notase hasta pasadas
+#      semanas — justo el modo de fallo que este proyecto persigue.
 #
-# Va en UNA SOLA LÍNEA aunque sea larguísima, a propósito. Apache admite partir
-# líneas con "\" al final, pero si al pegar en el editor de cPanel queda un
-# espacio detrás de la barra, Apache falla y el sitio devuelve 500. Una línea
-# larga no tiene ese problema. NO la partas al copiarla.
+# LA LÍNEA DE ABAJO ES UNA SOLA, larguísima, A PROPÓSITO. Apache admite partirla
+# con "\" al final, pero si al pegar queda un espacio detrás de la barra, Apache
+# falla y el sitio devuelve 500. NO LA PARTAS al copiar.
 #
-# CÓMO PASARLA A BLOQUEO, cuando toque: navegar el sitio entero (3 páginas × 9
-# idiomas, más el formulario de contacto y un clic de compra) con la consola
-# abierta, apuntar cada violación, añadir los dominios que falten, y sólo
-# entonces quitar el sufijo "-Report-Only" del nombre de la cabecera.
+# QUÉ REPORTA HOY. Medido el 2026-08-15 con un navegador real sobre producción
+# (home, contact y product). Sólo dos cosas, y ningún dominio faltante:
+#
+#   15x  "Refused to evaluate a string as JavaScript" ('unsafe-eval')
+#        Lo provoca GTM, que evalúa cadenas como código. EN MODO BLOQUEO GTM SE
+#        ROMPERÍA, y con él toda la medición. Para pasar a bloqueo hay que elegir:
+#        añadir 'unsafe-eval' al script-src —que debilita bastante la política,
+#        porque es justo la capacidad que explota un XSS— o aceptar perder GTM.
+#        No es una casilla que marcar: es la decisión de fondo, y por eso esta
+#        cabecera sigue en modo informe.
+#
+#    3x  La hoja de estilo de cdn.jsdelivr.net (flag-icons), una por página.
+#        Desaparece sola en cuanto se publique el build que la autoaloja. Si
+#        sigue apareciendo después de publicar, es que el build no llegó a subirse.
+#
+# CÓMO PASARLA A BLOQUEO más adelante: repetir la medición sobre las 3 páginas ×
+# 9 idiomas más el formulario y un clic de compra, resolver lo de 'unsafe-eval',
+# y sólo entonces quitar el sufijo "-Report-Only" del nombre de la cabecera.
 #
 <IfModule mod_headers.c>
   Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.google.com https://web3forms.com https://*.hcaptcha.com https://hcaptcha.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.hcaptcha.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://googleads.g.doubleclick.net https://td.doubleclick.net https://pagead2.googlesyndication.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://api.web3forms.com https://pagead2.googlesyndication.com https://*.hcaptcha.com; frame-src https://www.googletagmanager.com https://td.doubleclick.net https://*.hcaptcha.com https://hcaptcha.com; form-action 'self' https://api.web3forms.com https://store.payproglobal.com; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
 </IfModule>
+#
+# ▲▲▲ FIN AÑADIDO — 2. Content-Security-Policy ▲▲▲
 
 
-# -----------------------------------------------------------------------------
-# 3. Las páginas de /1dnest/
-# -----------------------------------------------------------------------------
+# ▼▼▼ INICIO AÑADIDO 2026-08-15 — 3. Redirección de las páginas de /1dnest/ ▼▼▼
 #
 # Cuatro páginas de 2021-2024 que seguían respondiendo 200, con analítica vieja
 # (UA-209685-2, una propiedad Universal Analytics que ya ni recoge datos) y
@@ -114,8 +157,8 @@
 # 301 en vez de borrarlas: conserva el poco enlazado externo que tengan y evita
 # 404 en Search Console. Van al español porque el contenido estaba en español.
 #
-# Esto SÍ cambia el comportamiento de URLs. Son las cuatro de /1dnest/ y nada
-# más; ninguna página viva del sitio pasa por aquí.
+# ESTAS SON LAS ÚNICAS URLs DEL SITIO CUYO COMPORTAMIENTO CAMBIA. Ninguna página
+# viva pasa por aquí.
 #
 <IfModule mod_alias.c>
   Redirect 301 /1dnest/product.html  https://1d-solutions.com/es/product.html
@@ -123,34 +166,43 @@
   Redirect 301 /1dnest/library.html  https://1d-solutions.com/es/index.html
   Redirect 301 /1dnest/1DNest.html   https://1d-solutions.com/es/index.html
 
-  # Cualquier otra cosa que quede colgando bajo /1dnest/ va a la home en español.
-  # Va al final porque gana la primera regla que encaja: las cuatro de arriba
-  # tienen que poder ganar.
+  # Cualquier otra cosa colgando de /1dnest/ va a la home en español. Va al final
+  # porque gana la primera regla que encaja: las cuatro de arriba deben poder ganar.
   #
-  # RedirectMatch y no Redirect, y no es un detalle de estilo: "Redirect" casa
-  # por prefijo y AÑADE al destino lo que sobra de la ruta, así que
-  # /1dnest/otra.html habría acabado en ".../es/index.htmlotra.html". Se vio
-  # probándolo contra un Apache local el 2026-08-15. RedirectMatch sin grupos de
-  # captura usa el destino tal cual.
+  # RedirectMatch y no Redirect, y no es estilo: "Redirect" casa por prefijo y
+  # AÑADE al destino lo que sobra de la ruta, así que /1dnest/otra.html habría
+  # acabado en ".../es/index.htmlotra.html". Se descubrió probándolo contra un
+  # Apache local el 2026-08-15. RedirectMatch sin grupos usa el destino tal cual.
   RedirectMatch 301 ^/1dnest/ https://1d-solutions.com/es/index.html
 </IfModule>
+#
+# ▲▲▲ FIN AÑADIDO — 3. Redirección de /1dnest/ ▲▲▲
 
 
-# -----------------------------------------------------------------------------
-# 4. Denegar acceso a archivos que no deberían servirse nunca
-# -----------------------------------------------------------------------------
+# ▼▼▼ INICIO AÑADIDO 2026-08-15 — 4. Archivos que no deben servirse nunca ▼▼▼
 #
-# Hoy ninguno de estos existe en public_html — se comprobó el 2026-08-15 y todos
-# daban 404. Esto es una red de seguridad para el día en que alguien suba una
-# carpeta de más: el despliegue es arrastrar archivos a mano, y ya pasó una vez
-# que el sitio entero acabara duplicado en public_html/theme/.
+# Hoy ninguno de estos existe en public_html (comprobado el 2026-08-15: todos
+# daban 404). Es una red de seguridad para el día en que alguien suba una carpeta
+# de más: el despliegue es arrastrar archivos a mano, y ya pasó una vez que el
+# sitio entero acabara duplicado en public_html/theme/.
 #
-# El patrón no toca .html, .css, .js, .svg, .webp ni nada que el sitio sirva.
-# Sí bloquea .zip: si alguna vez se quiere ofrecer un zip para descarga, hay que
-# quitarlo de aquí. Los .exe de /_downloads/ no están en la lista y siguen
-# funcionando.
+# Sobre "^\." (archivos que empiezan por punto): SÍ hace falta. Parecía que este
+# hosting ya los bloqueaba, porque /.env y /.git/config devolvían 403 — pero
+# /.DS_Store devolvía 404, y si el bloqueo fuese por patrón habría dado 403
+# existiera o no. O sea: GoDaddy bloquea .env y .git por nombre, no el patrón.
+# Y .DS_Store es justo el que puede colarse en una subida a mano, filtrando el
+# listado del directorio.
 #
-<FilesMatch "(^\.|composer\.(json|lock)|package(-lock)?\.json|gulpfile\.js|netlify\.toml|\.(env|sh|bak|sql|log|zip|md)$)">
+# Que este bloque alcance también al .htaccess, que ya tiene su <files> con
+# sintaxis de Apache 2.2 más arriba, se probó explícitamente: sigue devolviendo
+# 403 con los dos bloques activos. Son contextos distintos, así que no es la
+# mezcla de modelos de autorización que desaconseja la documentación de Apache.
+#
+# El patrón no toca .html, .css, .js, .svg, .webp ni nada que el sitio sirva. Los
+# .exe de /_downloads/ siguen funcionando. Sí bloquea .zip: si algún día se quiere
+# ofrecer un zip para descarga, hay que quitarlo de la lista.
+#
+<FilesMatch "(^\.|composer\.(json|lock)|package(-lock)?\.json|gulpfile\.js|netlify\.toml|\.(sh|bak|sql|log|zip|md)$)">
   # El guardia IfModule no es decorativo: "Require" es sintaxis de Apache 2.4 y
   # en 2.2 provoca un 500 en TODO el sitio, no sólo en los archivos afectados.
   <IfModule mod_authz_core.c>
@@ -167,3 +219,5 @@
 <IfModule mod_autoindex.c>
   Options -Indexes
 </IfModule>
+#
+# ▲▲▲ FIN AÑADIDO — 4. Archivos que no deben servirse nunca ▲▲▲
