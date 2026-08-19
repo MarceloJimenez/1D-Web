@@ -199,10 +199,12 @@ ExpiresByType application/x-msdownload "access 6 hour"
 # mezcla de modelos de autorización que desaconseja la documentación de Apache.
 #
 # El patrón no toca .html, .css, .js, .svg, .webp ni nada que el sitio sirva. Los
-# .exe de /_downloads/ siguen funcionando. Sí bloquea .zip: si algún día se quiere
-# ofrecer un zip para descarga, hay que quitarlo de la lista.
+# .exe y .zip de /_downloads/ siguen funcionando. El .zip estuvo en la lista hasta
+# el 2026-08-18: circulan enlaces externos a /_downloads/*.zip (p. ej.
+# 1dn402_25.zip) que devolvían 403, así que se quitó — editado a mano en cPanel y
+# sincronizado aquí después.
 #
-<FilesMatch "(^\.|composer\.(json|lock)|package(-lock)?\.json|gulpfile\.js|netlify\.toml|\.(sh|bak|sql|log|zip|md)$)">
+<FilesMatch "(^\.|composer\.(json|lock)|package(-lock)?\.json|gulpfile\.js|netlify\.toml|\.(sh|bak|sql|log|md)$)">
   # El guardia IfModule no es decorativo: "Require" es sintaxis de Apache 2.4 y
   # en 2.2 provoca un 500 en TODO el sitio, no sólo en los archivos afectados.
   <IfModule mod_authz_core.c>
