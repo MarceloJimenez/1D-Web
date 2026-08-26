@@ -241,10 +241,10 @@ RewriteCond %{HTTP_HOST} ^www\.1d-solutions\.com$ [NC]
 RewriteRule ^(.*)$ https://1d-solutions.com/$1 [L,R=301]
 
 # b) Los dos restos de /pt/ del sitio viejo (ver la nota sitio-zombi-1dnest del
-#    vault de 1d-ads): seguían con 200 el 2026-08-26, con enlace de compra a
-#    ShareIt (la pasarela anterior a PayPro), UA muerta y dos GA4 ajenas. El
-#    bloque 3 solo cubría /1dnest/. Mismo criterio: 301 y no borrado, para
-#    conservar el enlazado externo que tengan.
+#    vault de 1d-ads). Los archivos se BORRARON en la limpieza de public_html
+#    del 2026-08-27 y hoy devuelven 404; estas 301 quedan para el enlazado
+#    externo antiguo que pueda apuntar ahí: mejor 301 al equivalente vivo que
+#    un 404. El bloque 3 solo cubría /1dnest/.
 #
 <IfModule mod_alias.c>
   Redirect 301 /pt/indice.html   https://1d-solutions.com/pt/index.html

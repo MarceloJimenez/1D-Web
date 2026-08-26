@@ -32,15 +32,10 @@
 
 
 /*-------------------------
- HOME -2 
+ HOME -2
 -----------------------------*/
-#banner{
-    position: relative;
-    background: url("/images/bg/banner_bg.jpg")no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-}
-
+/* La regla #banner del template referenciaba images/bg/banner_bg.jpg, borrada
+   del repo en 2024-05-12; ninguna página tiene id="banner". Eliminada 2026-08-27. */
 
 .banner-content {
     padding: 150px 0px;

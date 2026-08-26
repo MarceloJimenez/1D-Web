@@ -117,10 +117,11 @@ fi
 
 # ------------------------------------------------------------------- subida
 # Sin --delete, siempre. Se excluyen los zips porque theme/ arrastra alguno
-# (Archive.zip) que no pinta nada en producción.
+# (Archive.zip) que no pinta nada en producción, y los `._*`/.DS_Store de macOS
+# (metadatos AppleDouble) para no volver a sembrar el sitio de basura de Finder.
 printf '\n\033[1mSubiendo theme/ a %s:%s\033[0m\n' "$DESTINO" "$RUTA_REMOTA"
 rsync -rlvzc \
-  --exclude '.DS_Store' --exclude 'Thumbs.db' --exclude '*.zip' \
+  --exclude '.DS_Store' --exclude '._*' --exclude 'Thumbs.db' --exclude '*.zip' \
   "${RAIZ}/theme/" "${DESTINO}:${RUTA_REMOTA}/"
 
 # ------------------------------------------------------------ verificación
