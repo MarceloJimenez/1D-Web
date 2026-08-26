@@ -223,3 +223,32 @@ ExpiresByType application/x-msdownload "access 6 hour"
 </IfModule>
 #
 # ▲▲▲ FIN AÑADIDO — 4. Archivos que no deben servirse nunca ▲▲▲
+
+
+# ▼▼▼ INICIO AÑADIDO 2026-08-26 — 5. SEO: www → sin-www, y los zombis de /pt/ ▼▼▼
+#
+# a) www.1d-solutions.com servía el sitio COMPLETO con 200, sin redirigir
+#    (verificado el 2026-08-26): un duplicado entero a ojos de Google. La regla
+#    de HTTPS de arriba conserva el host (%{HTTP_HOST}), así que nunca quitó el
+#    www pese a lo que dice su comentario. Esta regla lo hace. El certificado
+#    cubre www (curl -sI https://www... respondía 200 sin error TLS), así que
+#    la redirección funciona también para quien entre por https://www.
+#
+#    Una petición http://www hará dos saltos (→ https://www → https://apex):
+#    aceptado a propósito para no tocar la regla original de arriba.
+#
+RewriteCond %{HTTP_HOST} ^www\.1d-solutions\.com$ [NC]
+RewriteRule ^(.*)$ https://1d-solutions.com/$1 [L,R=301]
+
+# b) Los dos restos de /pt/ del sitio viejo (ver la nota sitio-zombi-1dnest del
+#    vault de 1d-ads): seguían con 200 el 2026-08-26, con enlace de compra a
+#    ShareIt (la pasarela anterior a PayPro), UA muerta y dos GA4 ajenas. El
+#    bloque 3 solo cubría /1dnest/. Mismo criterio: 301 y no borrado, para
+#    conservar el enlazado externo que tengan.
+#
+<IfModule mod_alias.c>
+  Redirect 301 /pt/indice.html   https://1d-solutions.com/pt/index.html
+  Redirect 301 /pt/library.html  https://1d-solutions.com/pt/index.html
+</IfModule>
+#
+# ▲▲▲ FIN AÑADIDO — 5. SEO ▲▲▲

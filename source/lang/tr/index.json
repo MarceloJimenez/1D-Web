@@ -1,10 +1,21 @@
 {
   "header": {
-    "canonical": " ",
-    "title": "1D Kesim Yazılımı – Nesting Optimizasyonu ve Destek",
-    "description": "Ücretsiz 1D yazılımımızla kesimlerinizi optimize edin. Ahşap ve metal için idealdir. Destek ve lisans seçenekleriyle hemen indirin."
+    "title": "1D Kesim Yazılımı – Nesting Optimizasyonu, Ücretsiz Deneme",
+    "description": "Ücretsiz 1D yazılımımızla kesimlerinizi optimize edin. Ahşap ve metal için idealdir. Destek ve lisans seçenekleriyle hemen indirin.",
+    "htmlLang": "tr",
+    "langPath": "tr/",
+    "ogLocale": "tr_TR"
+  },
 
-
+  "meta": {
+    "product": {
+      "title": "1DNest Fiyatları – Kesim Optimizasyonu Yazılımı Lisansları",
+      "description": "1DNest lisanslarını karşılaştırın: Tek PC 171 $, Kurumsal 675 $, geliştiriciler için CutLib DLL. Tek seferlik ödeme, ömür boyu lisans, ücretsiz deneme."
+    },
+    "contact": {
+      "title": "İletişim – 1DNest Destek ve Satış | 1D-Solutions",
+      "description": "1DNest veya CutLib hakkında sorularınız mı var? Teknik destek, lisanslama ve satış için bize yazın — dünya çapında hizmet veriyoruz."
+    }
   },
   
   "nav": {
@@ -116,7 +127,7 @@
   },
 
   "footer": {
-    "par": "Bu, yeni açılış sayfamızdır. Yeni ürünler geliştirmek ve hizmetlerimizi iyileştirmek için çok çalışıyoruz.",
+    "par": "1D-Solutions, dünya çapında metal, alüminyum ve PVC üreticilerinin kullandığı doğrusal kesim optimizasyonu yazılımı 1DNest'i geliştirir.",
     "title1": "Hesap",
     "help": "Yardım ve destek",
     "title2": "Hakkında"

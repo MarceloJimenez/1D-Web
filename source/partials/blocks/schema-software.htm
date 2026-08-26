@@ -1,0 +1,42 @@
+<!-- Structured data: SoftwareApplication + Organization.
+     Prices must match the pricing block and the PayPro checkout (171/675/770 USD).
+     No aggregateRating on purpose: there are no real user ratings, and inventing
+     them violates Google's structured data guidelines. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://1d-solutions.com/#software",
+      "name": "1DNest",
+      "alternateName": "1D Nest Cutting Optimizer",
+      "operatingSystem": "Windows",
+      "applicationCategory": "BusinessApplication",
+      "url": "https://1d-solutions.com/index.html",
+      "image": "https://1d-solutions.com/images/zused/1dSoftwareTest.png",
+      "description": "1D cutting optimization software that generates minimal-waste cutting plans for bars, tubes, profiles, beams and other linear materials. Free 30-day trial with no restrictions; a limited free version remains available after the trial.",
+      "publisher": { "@id": "https://1d-solutions.com/#organization" },
+      "offers": [
+        { "@type": "Offer", "name": "Free limited version", "price": "0", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Single PC License", "price": "171", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Enterprise License", "price": "675", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "CutLib DLL License", "price": "770", "priceCurrency": "USD" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://1d-solutions.com/#organization",
+      "name": "1D-Solutions",
+      "url": "https://1d-solutions.com/",
+      "logo": "https://1d-solutions.com/images/zused/1D_Solutions_Horizontal.png",
+      "email": "info@1d-solutions.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santiago",
+        "addressCountry": "CL"
+      }
+    }
+  ]
+}
+</script>

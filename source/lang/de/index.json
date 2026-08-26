@@ -1,9 +1,22 @@
 {
     "header": {
       "description": "Kostenlose 1D-Schneidsoftware für Stahl und Holz. Optimieren Sie den Verschnitt, erhalten Sie Support und flexible Lizenzen. Jetzt herunterladen.",
-      "canonical": " ",
-      "title": "1D Schneidsoftware - Nesting, Optimierung & Support"
+      "title": "1D Schneidsoftware - Zuschnittoptimierung, gratis testen",
+      "htmlLang": "de",
+      "langPath": "de/",
+      "ogLocale": "de_DE"
     },
+
+  "meta": {
+    "product": {
+      "title": "1DNest Preise - Lizenzen der Zuschnittoptimierungs-Software",
+      "description": "1DNest-Lizenzen im Vergleich: Einzelplatz 171 $, Enterprise 675 $, CutLib DLL für Entwickler. Einmalzahlung, lebenslange Lizenz, kostenlose Testversion."
+    },
+    "contact": {
+      "title": "Kontakt - 1DNest Support & Vertrieb | 1D-Solutions",
+      "description": "Fragen zu 1DNest oder CutLib? Kontaktieren Sie uns für technischen Support, Lizenzen und Vertrieb - weltweit, auf Englisch und Spanisch."
+    }
+  },
   
     "nav": {
       "home": "Startseite",
@@ -114,7 +127,7 @@
     },
   
     "footer": {
-      "par": "Dies ist unsere neue Landingpage. Wir arbeiten hart daran, neue Produkte zu entwickeln und unsere Dienstleistungen zu verbessern.",
+      "par": "1D-Solutions entwickelt 1DNest, die Software zur Zuschnittoptimierung für Metall-, Aluminium- und PVC-Verarbeiter weltweit.",
       "title1": "Konto",
       "help": "Hilfe und Support",
       "title2": "Über uns"

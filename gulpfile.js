@@ -28,7 +28,7 @@ process.on("unhandledRejection", function (reason) {
 var path = {
   src: {
     html: "source/*.html",
-    others: "source/*.+(php|ico|png)",
+    others: "source/*.+(php|ico|png|xml)",
     htminc: "source/partials/**/*.htm",
     incdir: "source/partials/",
     plugins: "source/plugins/**/*.*",
@@ -342,6 +342,7 @@ gulp.task(
     "images:build",
     "images:optimize",
     "plugins:build",
+    "others:build",
     "translation:build",
     "critical:extract",
     "critical:inject",

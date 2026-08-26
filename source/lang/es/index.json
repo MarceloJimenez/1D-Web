@@ -1,9 +1,21 @@
 { 
   "header": {
-    "canonical": " ",
     "title": "Software de Corte 1DNest - Optimizador de Corte Lineal",
-    "description": "Optimiza cortes con nuestro software gratuito 1D. Ideal para madera y metal. Incluye soporte técnico y licencias flexibles. Descárgalo ahora."
+    "description": "Optimiza cortes con nuestro software gratuito 1D. Ideal para madera y metal. Incluye soporte técnico y licencias flexibles. Descárgalo ahora.",
+    "htmlLang": "es",
+    "langPath": "es/",
+    "ogLocale": "es_ES"
+  },
 
+  "meta": {
+    "product": {
+      "title": "Precios de 1DNest - Licencias del Software de Corte Lineal",
+      "description": "Compara las licencias de 1DNest: PC Individual $171, Empresa $675 y CutLib DLL para desarrolladores. Pago único, licencia de por vida y prueba gratuita."
+    },
+    "contact": {
+      "title": "Contacto - Soporte y Ventas de 1DNest | 1D-Solutions",
+      "description": "¿Dudas sobre 1DNest o CutLib? Escríbenos para soporte técnico, licencias y ventas. Atendemos a todo el mundo, en español e inglés."
+    }
   },
 
   "nav": {
@@ -115,7 +127,7 @@
   },
 
   "footer": {
-    "par": "Esta es nuestra nueva página de aterrizaje. Estamos trabajando arduamente para desarrollar nuevos productos y mejorar nuestros servicios.",
+    "par": "1D-Solutions desarrolla 1DNest, el software de optimización de corte lineal usado por fabricantes de metal, aluminio y PVC en todo el mundo.",
     "title1": "Cuenta",
     "help": "Ayuda y soporte",
     "title2": "Acerca de"

@@ -1,9 +1,21 @@
 {
   "header":{
     "description": "Free 1D cutting optimization software for metal and wood. Get support, license options, and boost productivity with our products. Download now.",
-    "canonical": "<link rel='canonical' href= 'https://1d-solutions.com/index.html'/>",
-    "title": "1D Cutting Software - Nesting Optimization & Support"
+    "title": "1D Cutting Software - Nesting Optimizer, Free Trial",
+    "htmlLang": "en",
+    "langPath": "",
+    "ogLocale": "en_US"
+  },
 
+  "meta":{
+    "product":{
+      "title": "1DNest Pricing & Licenses - 1D Cutting Optimization Software",
+      "description": "Compare 1DNest licenses: Single PC $171, Enterprise $675, CutLib DLL for developers. One-time payment, lifetime license, free trial included."
+    },
+    "contact":{
+      "title": "Contact 1D-Solutions - 1DNest Support & Sales",
+      "description": "Questions about 1DNest or CutLib? Contact 1D-Solutions for technical support, licensing and sales - we answer worldwide, in English and Spanish."
+    }
   },
 
   "nav":{
@@ -17,9 +29,9 @@
   },
 
   "slider":{ 
-    "heading": "1D Nest: Cutting Optimization software",
+    "heading": "1D Nest: Cutting Optimizer Software",
     "subHeading": "The most simple and productive software tool to minimize waste and generate cutting plans with optimum efficiency to save materials such as metal profiles, bars, beams, tubes, rods, rolls or any material which to be manufactured must cut into smaller length pieces.",
-    "freeTrial": "Free trial!",
+    "freeTrial": "Free Trial!",
     "buyNow": "Buy Now!",
     "afterTrialMessage": "After the trial, a limited free version remains available for your cutting needs."
   },
@@ -115,7 +127,7 @@
   },
 
   "footer":{
-    "par":"This is our new landing page. We are working hard to develop new products and improve our services.",
+    "par":"1D-Solutions builds 1DNest, the linear cutting optimization software used by metal, aluminium and PVC fabricators worldwide.",
     "title1":"Account",
     "help": "Help and support",
     "title2":"About"

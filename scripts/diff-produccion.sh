@@ -12,7 +12,11 @@
 # subir es seguro. Si las hay, son cambios hechos en el servidor que hay que
 # traer a source/ primero — si no, se pierden.
 #
-# Uso:  bash scripts/diff-produccion.sh [--detalle]
+# Uso:  bash scripts/diff-produccion.sh [--detalle] [--sin-build]
+#
+# --sin-build compara contra el theme/ que ya está en disco, sin reconstruir.
+# Lo usa publicar.sh para verificar DESPUÉS de subir: así comprueba exactamente
+# el build que acaba de publicar, no uno nuevo que podría no ser idéntico.
 
 set -euo pipefail
 
@@ -22,13 +26,18 @@ TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
 DETALLE="no"
-[[ "${1:-}" == "--detalle" ]] && DETALLE="si"
+SIN_BUILD="no"
+for arg in "$@"; do
+  case "$arg" in
+    --detalle) DETALLE="si" ;;
+    --sin-build) SIN_BUILD="si" ;;
+    *) printf 'argumento no reconocido: %s\n' "$arg"; exit 2 ;;
+  esac
+done
 
 IDIOMAS=("" de/ en/ es/ fr/ it/ pt/ sa/ tr/)
-# privacy.html se añadió el 2026-08-15 y todavía NO está publicada. Hasta que se
-# suba, el script la contará como "el servidor responde 404" en los nueve idiomas.
-# Eso es la señal correcta, no un fallo del script: dice que hay una página
-# construida esperando publicación. Cuando se suba, se callará sola.
+# privacy.html se añadió el 2026-08-15 sin publicar; entre esa fecha y el
+# 2026-08-26 alguien la subió y ya responde 200, así que se compara como las demás.
 PAGINAS=(index.html product.html contact.html privacy.html)
 
 # ------------------------------------------------------- diferencias aceptadas
@@ -50,9 +59,14 @@ normalizar() {
   sed 's/[[:space:]]*$//' "$1" | grep -Ev "$ACEPTADAS" | grep -v '^$'
 }
 
-printf '\n\033[1mConstruyendo desde source/\033[0m\n'
-(cd "$RAIZ" && npm run build >/dev/null 2>&1)
-printf '  hecho\n'
+if [[ "$SIN_BUILD" == "si" ]]; then
+  [[ -d "${RAIZ}/theme" ]] || { printf 'no hay theme/ en disco; --sin-build necesita un build previo\n'; exit 2; }
+  printf '\n\033[1mUsando el build que ya está en theme/ (--sin-build)\033[0m\n'
+else
+  printf '\n\033[1mConstruyendo desde source/\033[0m\n'
+  (cd "$RAIZ" && npm run build >/dev/null 2>&1)
+  printf '  hecho\n'
+fi
 
 printf '\n\033[1mComparando %s con theme/\033[0m\n\n' "$SITIO"
 

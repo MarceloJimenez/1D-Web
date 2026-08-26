@@ -1,10 +1,22 @@
 {
   "header": {
-    "canonical": " ",
-    "title": "Logiciel de Découpe 1D - Optimisation de Nesting & Support",
-    "description": "Optimisez la découpe avec notre logiciel gratuit 1D. Idéal pour le métal et le bois. Assistance incluse, licences flexibles. Téléchargez-le maintenant."
-
+    "title": "Logiciel de Découpe 1D - Optimiseur de Nesting, Essai Gratuit",
+    "description": "Optimisez la découpe avec notre logiciel gratuit 1D. Idéal pour le métal et le bois. Assistance incluse, licences flexibles. Téléchargez-le maintenant.",
+    "htmlLang": "fr",
+    "langPath": "fr/",
+    "ogLocale": "fr_FR"
     },
+
+  "meta": {
+    "product": {
+      "title": "Tarifs 1DNest - Licences du Logiciel d'Optimisation de Découpe",
+      "description": "Comparez les licences 1DNest : PC unique 171 $, Entreprise 675 $, CutLib DLL pour développeurs. Paiement unique, licence à vie, essai gratuit inclus."
+    },
+    "contact": {
+      "title": "Contact - Support et Ventes 1DNest | 1D-Solutions",
+      "description": "Des questions sur 1DNest ou CutLib ? Contactez-nous pour le support technique, les licences et les ventes, partout dans le monde."
+    }
+  },
   
   "nav": {
     "home": "Accueil",
@@ -114,7 +126,7 @@
   },
 
   "footer": {
-    "par": "Voici notre nouvelle page d'accueil. Nous travaillons dur pour développer de nouveaux produits et améliorer nos services.",
+    "par": "1D-Solutions développe 1DNest, le logiciel d'optimisation de découpe linéaire utilisé par des fabricants de métal, d'aluminium et de PVC dans le monde entier.",
     "title1": "Compte",
     "help": "Aide et support",
     "title2": "À propos"

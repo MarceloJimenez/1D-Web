@@ -1,4 +1,9 @@
-@@include('header.htm')
+@@include('header.htm', {
+"pageTitle": "${{index.meta.product.title}}$",
+"pageDesc": "${{index.meta.product.description}}$"
+})
+@@include('blocks/schema-software.htm')
+
 @@include('blocks/nav-3.htm')
 @@include('blocks/page-service.htm', {
 "title": "${{index.product.title}}$",

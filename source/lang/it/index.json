@@ -1,9 +1,21 @@
 {
   "header": {
-    "canonical": " ",
-    "title": "Software di Taglio 1D - Ottimizzazione Nesting e Supporto",
-    "description": "Ottimizza il materiale con il nostro software gratuito 1D. Perfetto per metallo e legno. Supporto incluso. Scaricalo ora."
+    "title": "Software di Taglio 1D - Ottimizzatore Nesting, Prova Gratuita",
+    "description": "Ottimizza il materiale con il nostro software gratuito 1D. Perfetto per metallo e legno. Supporto incluso. Scaricalo ora.",
+    "htmlLang": "it",
+    "langPath": "it/",
+    "ogLocale": "it_IT"
+  },
 
+  "meta": {
+    "product": {
+      "title": "Prezzi 1DNest - Licenze del Software di Ottimizzazione Taglio",
+      "description": "Confronta le licenze 1DNest: PC singolo 171 $, Enterprise 675 $, CutLib DLL per sviluppatori. Pagamento unico, licenza a vita, prova gratuita inclusa."
+    },
+    "contact": {
+      "title": "Contatti - Supporto e Vendite 1DNest | 1D-Solutions",
+      "description": "Domande su 1DNest o CutLib? Contattaci per supporto tecnico, licenze e vendite, in tutto il mondo."
+    }
   },
 
   "nav": {
@@ -115,7 +127,7 @@
   },
 
   "footer": {
-    "par": "Questa è la nostra nuova pagina di atterraggio. Stiamo lavorando duramente per sviluppare nuovi prodotti e migliorare i nostri servizi.",
+    "par": "1D-Solutions sviluppa 1DNest, il software di ottimizzazione del taglio lineare usato da produttori di metallo, alluminio e PVC in tutto il mondo.",
     "title1": "Account",
     "help": "Aiuto e supporto",
     "title2": "Informazioni"

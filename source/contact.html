@@ -1,4 +1,7 @@
-@@include('header.htm')
+@@include('header.htm', {
+"pageTitle": "${{index.meta.contact.title}}$",
+"pageDesc": "${{index.meta.contact.description}}$"
+})
 @@include('blocks/nav-3.htm')
 @@include('blocks/page-contact.htm', {
 "title": "${{index.contact.title}}$",

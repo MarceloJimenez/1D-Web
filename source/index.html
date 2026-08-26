@@ -1,4 +1,9 @@
-@@include('header.htm')
+@@include('header.htm', {
+"pageTitle": "${{index.header.title}}$",
+"pageDesc": "${{index.header.description}}$"
+})
+
+@@include('blocks/schema-software.htm')
 
 @@include('blocks/nav-3.htm')
 

@@ -17,3 +17,11 @@ theme/
 # una versión de hace seis meses.
 theme */
 *.zip
+
+# Volcados de public_html bajados del servidor para auditar. Contienen datos de
+# clientes (Docus/, _downloads/) y nunca deben entrar en git.
+1d_public_html_*/
+
+# Credenciales SSH del hosting para scripts/publicar.sh. La plantilla
+# commiteada es publicar.env.ejemplo; el archivo real no entra nunca en git.
+scripts/publicar.env
