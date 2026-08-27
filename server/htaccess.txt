@@ -2,15 +2,12 @@
 # public_html/.htaccess  ·  1d-solutions.com
 # =============================================================================
 #
-# Este archivo ES el .htaccess completo del servidor, listo para sustituir al
-# actual. Todo lo que ya había se conserva palabra por palabra y en el mismo
-# orden: no se ha modificado ni eliminado ninguna directiva existente.
+# Este archivo ES el .htaccess completo del servidor. Los bloques numerados están
+# marcados con «INICIO/FIN AÑADIDO» y su fecha: cada uno se puede borrar entero
+# sin tocar el resto.
 #
-# Lo añadido el 2026-08-15 por la auditoría de seguridad va entre marcas
-# «INICIO AÑADIDO» y «FIN AÑADIDO», y va todo al final, después de lo original.
-# Para deshacerlo basta con borrar esos bloques.
-#
-# Contexto y motivos: 1D-Web/server/README.md
+# El porqué, las mediciones y el historial están en el vault de 1d-ads, no aquí.
+# Cada bloque cita sus notas y tareas; en Obsidian se abren buscando el nombre.
 #
 # =============================================================================
 
@@ -51,46 +48,31 @@ ExpiresByType application/x-msdownload "access 6 hour"
 
 # ▼▼▼ INICIO AÑADIDO 2026-08-15 — 1. Cabeceras de seguridad ▼▼▼
 #
-# Hasta hoy la respuesta del sitio no traía ninguna cabecera de seguridad. El
-# único "Header" que había arriba es Vary, que es de caché, no de seguridad.
+# Sólo añaden cabeceras a la respuesta: no cambian contenido ni rutas. Van en su
+# propio <IfModule> para que el bloque se pueda borrar de una pieza.
 #
-# Se usa un <IfModule mod_headers.c> nuevo en vez de meter estas líneas en el
-# que ya existe más arriba, para que el bloque añadido se pueda borrar entero
-# sin tocar nada de lo original. Tener dos <IfModule> del mismo módulo es
-# perfectamente válido en Apache.
-#
-# Ninguna de estas directivas cambia el contenido ni las rutas: sólo añaden
-# cabeceras a la respuesta.
+# vault: postura-de-seguridad-del-sitio · decisión 0003
 #
 <IfModule mod_headers.c>
 
-  # Obliga a HTTPS durante un año. El sitio ya lo fuerza con el RewriteRule de
-  # arriba y el certificado de GoDaddy se renueva solo. Deliberadamente SIN
-  # includeSubDomains (alcanzaría a un subdominio futuro sin certificado y lo
-  # dejaría inaccesible) y SIN preload (es casi irreversible).
-  #
-  # Es la ÚNICA directiva de este archivo con efecto persistente en el visitante:
-  # un navegador que la reciba usará HTTPS durante un año aunque mañana se quite.
+  # HTTPS obligatorio durante un año. Sin includeSubDomains (dejaría inaccesible
+  # un subdominio futuro sin certificado) y sin preload (es casi irreversible).
+  # Única directiva del archivo con efecto persistente en el navegador: quien la
+  # reciba usará HTTPS un año aunque mañana se quite.
   Header always set Strict-Transport-Security "max-age=31536000"
 
-  # Impide que el navegador adivine el tipo de un archivo ignorando el
-  # Content-Type. Sin esto, un .txt subido por error puede acabar ejecutándose
-  # como HTML.
+  # El navegador no adivina el tipo del archivo: respeta el Content-Type.
   Header always set X-Content-Type-Options "nosniff"
 
-  # Nadie puede meter el sitio en un iframe salvo el propio sitio (clickjacking).
-  # Ningún tercero embebe 1d-solutions.com: el checkout de PayPro es un enlace
-  # que abre su dominio, no un iframe.
+  # Sólo el propio sitio puede embeberlo en un iframe (clickjacking).
   Header always set X-Frame-Options "SAMEORIGIN"
 
-  # Al salir hacia otro dominio se envía sólo el origen, no la URL completa.
-  # Dentro del sitio se sigue enviando entera, que es lo que Analytics necesita
-  # para el informe de páginas de referencia.
+  # Hacia otro dominio se envía sólo el origen; dentro del sitio, la URL
+  # completa, que es lo que Analytics necesita para el informe de referencias.
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
-  # El sitio no usa cámara, micrófono, geolocalización ni pagos del navegador.
-  # Declararlo vacío impide que se los pida cualquier script inyectado — o
-  # cualquier etiqueta que alguien añada a GTM sin pensarlo.
+  # El sitio no usa estas APIs. Declararlas vacías impide que las pida un script
+  # inyectado o una etiqueta nueva de GTM.
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
 
   # Oculta la versión de PHP si el hosting la anuncia.
@@ -103,41 +85,15 @@ ExpiresByType application/x-msdownload "access 6 hour"
 
 # ▼▼▼ INICIO AÑADIDO 2026-08-15 — 2. Content-Security-Policy (MODO INFORME) ▼▼▼
 #
-# "Report-Only" NO bloquea nada: sólo escribe las violaciones en la consola del
-# navegador. Por definición no puede romper el sitio. Está así por dos motivos:
+# "Report-Only" no bloquea: sólo registra las violaciones en la consola del
+# navegador, así que no puede romper el sitio. Lo que aporta es la lista de
+# dominios permitidos. Sigue en modo informe porque pasarlo a bloqueo exige
+# decidir qué hacer con el 'unsafe-eval' que GTM necesita.
 #
-#   a) Todo el HTML lleva scripts en línea (el snippet de GTM, loadNonCritical,
-#      addToCartSingle, el document.write del año). Una CSP sin 'unsafe-inline'
-#      los mataría todos, y con 'unsafe-inline' la protección contra XSS es floja
-#      igualmente. Lo que aporta de verdad es la lista de dominios permitidos.
+# LA CABECERA VA EN UNA SOLA LÍNEA. Apache admite partirla con "\", pero si
+# queda un espacio detrás de la barra el sitio devuelve 500. No la partas.
 #
-#   b) GTM inyecta etiquetas en tiempo de ejecución. Añadir una etiqueta nueva en
-#      GTM-TGXKJ8P puede introducir un dominio que no esté en esta lista, y en
-#      modo bloqueo eso rompería la medición sin que nadie lo notase hasta pasadas
-#      semanas — justo el modo de fallo que este proyecto persigue.
-#
-# LA LÍNEA DE ABAJO ES UNA SOLA, larguísima, A PROPÓSITO. Apache admite partirla
-# con "\" al final, pero si al pegar queda un espacio detrás de la barra, Apache
-# falla y el sitio devuelve 500. NO LA PARTAS al copiar.
-#
-# QUÉ REPORTA HOY. Medido el 2026-08-15 con un navegador real sobre producción
-# (home, contact y product). Sólo dos cosas, y ningún dominio faltante:
-#
-#   15x  "Refused to evaluate a string as JavaScript" ('unsafe-eval')
-#        Lo provoca GTM, que evalúa cadenas como código. EN MODO BLOQUEO GTM SE
-#        ROMPERÍA, y con él toda la medición. Para pasar a bloqueo hay que elegir:
-#        añadir 'unsafe-eval' al script-src —que debilita bastante la política,
-#        porque es justo la capacidad que explota un XSS— o aceptar perder GTM.
-#        No es una casilla que marcar: es la decisión de fondo, y por eso esta
-#        cabecera sigue en modo informe.
-#
-#    3x  La hoja de estilo de cdn.jsdelivr.net (flag-icons), una por página.
-#        Desaparece sola en cuanto se publique el build que la autoaloja. Si
-#        sigue apareciendo después de publicar, es que el build no llegó a subirse.
-#
-# CÓMO PASARLA A BLOQUEO más adelante: repetir la medición sobre las 3 páginas ×
-# 9 idiomas más el formulario y un clic de compra, resolver lo de 'unsafe-eval',
-# y sólo entonces quitar el sufijo "-Report-Only" del nombre de la cabecera.
+# vault: decisión 0003 · postura-de-seguridad-del-sitio
 #
 <IfModule mod_headers.c>
   Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.google.com https://web3forms.com https://*.hcaptcha.com https://hcaptcha.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.hcaptcha.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://googleads.g.doubleclick.net https://td.doubleclick.net https://pagead2.googlesyndication.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://api.web3forms.com https://pagead2.googlesyndication.com https://*.hcaptcha.com; frame-src https://www.googletagmanager.com https://td.doubleclick.net https://*.hcaptcha.com https://hcaptcha.com; form-action 'self' https://api.web3forms.com https://store.payproglobal.com; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
@@ -148,38 +104,28 @@ ExpiresByType application/x-msdownload "access 6 hour"
 
 # ▼▼▼ INICIO AÑADIDO 2026-08-15 — 3. Redirección de las páginas de /1dnest/ ▼▼▼
 #
-# Cuatro páginas de 2021-2024 que seguían respondiendo 200, con analítica vieja
-# (UA-209685-2, una propiedad Universal Analytics que ya ni recoge datos) y
-# enlaces a ShareIt, la pasarela anterior a PayPro. Además cargaban
-# https://cdn.ywxi.net/js/1.js — el sello de TrustedSite, 42 KB de JavaScript de
-# terceros con ejecución completa, en páginas que no mantiene nadie.
+# Sub-sitio retirado de 2021-2024: llevaba analítica muerta y enlaces a ShareIt,
+# la pasarela anterior a PayPro, que ya no cobra. Se redirige en vez de borrar
+# para conservar el enlazado externo. Contenido en español → destino /es/.
 #
-# 301 en vez de borrarlas: conserva el poco enlazado externo que tengan y evita
-# 404 en Search Console. Van al español porque el contenido estaba en español.
-#
-# ESTAS SON LAS ÚNICAS URLs DEL SITIO CUYO COMPORTAMIENTO CAMBIA. Ninguna página
-# viva pasa por aquí.
+# vault: sitio-zombi-1dnest · t0013 (borrar los archivos del servidor)
 #
 <IfModule mod_alias.c>
   Redirect 301 /1dnest/product.html  https://1d-solutions.com/es/product.html
   Redirect 301 /1dnest/indice.html   https://1d-solutions.com/es/index.html
   Redirect 301 /1dnest/1DNest.html   https://1d-solutions.com/es/index.html
 
-  # AFINADO 2026-08-27: estas dos apuntaban a /es/index.html como todo lo demás.
-  # Al leer el <title> original se vio que library.html era «1D Solutions, DLL»
-  # (la CutLib) y contac.html era «Contacto». Mandar a quien buscaba la DLL a la
-  # página donde figura con su precio convierte mejor que dejarlo en la portada,
-  # y Google premia que el destino de una 301 sea relevante.
+  # library.html era la DLL CutLib y contac.html el contacto: cada una a su
+  # página equivalente, no a la portada.
   Redirect 301 /1dnest/library.html  https://1d-solutions.com/es/product.html
   Redirect 301 /1dnest/contac.html   https://1d-solutions.com/es/contact.html
 
-  # Cualquier otra cosa colgando de /1dnest/ va a la home en español. Va al final
-  # porque gana la primera regla que encaja: las cuatro de arriba deben poder ganar.
+  # Resto de /1dnest/ a la home española. Al final, porque gana la primera regla
+  # que encaja y las de arriba deben poder ganar.
   #
-  # RedirectMatch y no Redirect, y no es estilo: "Redirect" casa por prefijo y
-  # AÑADE al destino lo que sobra de la ruta, así que /1dnest/otra.html habría
-  # acabado en ".../es/index.htmlotra.html". Se descubrió probándolo contra un
-  # Apache local el 2026-08-15. RedirectMatch sin grupos usa el destino tal cual.
+  # RedirectMatch y no Redirect: "Redirect" casa por PREFIJO y añade al destino
+  # lo que sobra de la ruta, así que /1dnest/otra.html acabaría en
+  # ".../es/index.htmlotra.html".
   RedirectMatch 301 ^/1dnest/ https://1d-solutions.com/es/index.html
 </IfModule>
 #
@@ -188,32 +134,19 @@ ExpiresByType application/x-msdownload "access 6 hour"
 
 # ▼▼▼ INICIO AÑADIDO 2026-08-15 — 4. Archivos que no deben servirse nunca ▼▼▼
 #
-# Hoy ninguno de estos existe en public_html (comprobado el 2026-08-15: todos
-# daban 404). Es una red de seguridad para el día en que alguien suba una carpeta
-# de más: el despliegue es arrastrar archivos a mano, y ya pasó una vez que el
-# sitio entero acabara duplicado en public_html/theme/.
+# Red de seguridad para el día en que una subida a mano cuele una carpeta de
+# más. Ninguno de estos archivos existe hoy en public_html.
 #
-# Sobre "^\." (archivos que empiezan por punto): SÍ hace falta. Parecía que este
-# hosting ya los bloqueaba, porque /.env y /.git/config devolvían 403 — pero
-# /.DS_Store devolvía 404, y si el bloqueo fuese por patrón habría dado 403
-# existiera o no. O sea: GoDaddy bloquea .env y .git por nombre, no el patrón.
-# Y .DS_Store es justo el que puede colarse en una subida a mano, filtrando el
-# listado del directorio.
+# El patrón "^\." hace falta: este hosting bloquea .env y .git por nombre, no
+# por patrón, y un .DS_Store filtraría el listado del directorio.
 #
-# Que este bloque alcance también al .htaccess, que ya tiene su <files> con
-# sintaxis de Apache 2.2 más arriba, se probó explícitamente: sigue devolviendo
-# 403 con los dos bloques activos. Son contextos distintos, así que no es la
-# mezcla de modelos de autorización que desaconseja la documentación de Apache.
+# No alcanza a .html, .css, .js, .svg, .webp ni a los .exe/.zip de /_downloads/.
 #
-# El patrón no toca .html, .css, .js, .svg, .webp ni nada que el sitio sirva. Los
-# .exe y .zip de /_downloads/ siguen funcionando. El .zip estuvo en la lista hasta
-# el 2026-08-18: circulan enlaces externos a /_downloads/*.zip (p. ej.
-# 1dn402_25.zip) que devolvían 403, así que se quitó — editado a mano en cPanel y
-# sincronizado aquí después.
+# vault: postura-de-seguridad-del-sitio · publicacion-del-sitio-1d
 #
 <FilesMatch "(^\.|composer\.(json|lock)|package(-lock)?\.json|gulpfile\.js|netlify\.toml|\.(sh|bak|sql|log|md)$)">
-  # El guardia IfModule no es decorativo: "Require" es sintaxis de Apache 2.4 y
-  # en 2.2 provoca un 500 en TODO el sitio, no sólo en los archivos afectados.
+  # "Require" es sintaxis de Apache 2.4: en 2.2 provoca un 500 en TODO el sitio,
+  # no sólo en los archivos afectados. De ahí el guardia IfModule.
   <IfModule mod_authz_core.c>
     Require all denied
   </IfModule>
@@ -223,8 +156,8 @@ ExpiresByType application/x-msdownload "access 6 hour"
   </IfModule>
 </FilesMatch>
 
-# El listado de directorios ya venía desactivado en este hosting; se deja
-# explícito para que no dependa de la configuración global de GoDaddy.
+# Listado de directorios desactivado explícitamente, para no depender de la
+# configuración global de GoDaddy.
 <IfModule mod_autoindex.c>
   Options -Indexes
 </IfModule>
@@ -232,37 +165,28 @@ ExpiresByType application/x-msdownload "access 6 hour"
 # ▲▲▲ FIN AÑADIDO — 4. Archivos que no deben servirse nunca ▲▲▲
 
 
-# ▼▼▼ INICIO AÑADIDO 2026-08-26 — 5. SEO: www → sin-www, y los zombis de /pt/ ▼▼▼
+# ▼▼▼ INICIO AÑADIDO 2026-08-26 — 5. SEO: www → sin-www, y restos de /pt/ y /esp/ ▼▼▼
 #
-# a) www.1d-solutions.com servía el sitio COMPLETO con 200, sin redirigir
-#    (verificado el 2026-08-26): un duplicado entero a ojos de Google. La regla
-#    de HTTPS de arriba conserva el host (%{HTTP_HOST}), así que nunca quitó el
-#    www pese a lo que dice su comentario. Esta regla lo hace. El certificado
-#    cubre www (curl -sI https://www... respondía 200 sin error TLS), así que
-#    la redirección funciona también para quien entre por https://www.
+# vault: plan-seo-organico · sitio-zombi-1dnest
 #
-#    Una petición http://www hará dos saltos (→ https://www → https://apex):
-#    aceptado a propósito para no tocar la regla original de arriba.
+# a) El dominio canónico es sin www. La regla de HTTPS de arriba conserva el host
+#    (%{HTTP_HOST}), así que no quita el www: sin esta regla, www sirve el sitio
+#    completo con 200 y Google ve un duplicado. El certificado cubre www.
+#    Una petición http://www hace dos saltos (→ https://www → apex).
 #
 RewriteCond %{HTTP_HOST} ^www\.1d-solutions\.com$ [NC]
 RewriteRule ^(.*)$ https://1d-solutions.com/$1 [L,R=301]
 
-# b) Los dos restos de /pt/ del sitio viejo (ver la nota sitio-zombi-1dnest del
-#    vault de 1d-ads). Los archivos se BORRARON en la limpieza de public_html
-#    del 2026-08-27 y hoy devuelven 404; estas 301 quedan para el enlazado
-#    externo antiguo que pueda apuntar ahí: mejor 301 al equivalente vivo que
-#    un 404. El bloque 3 solo cubría /1dnest/.
+# b) Restos portugueses del sitio anterior, hoy en 404. 301 al equivalente vivo
+#    para conservar el enlazado externo. El bloque 3 sólo cubre /1dnest/.
 #
 <IfModule mod_alias.c>
   Redirect 301 /pt/indice.html   https://1d-solutions.com/pt/index.html
   Redirect 301 /pt/library.html  https://1d-solutions.com/pt/index.html
 </IfModule>
 
-# c) La carpeta /esp/ del sitio viejo (anterior a /es/). Search Console registra
-#    147 clics y 1.261 impresiones, y GA4 unas 480 sesiones sólo para
-#    /esp/index.html. NO la borró la limpieza del 2026-08-27: la carpeta no está
-#    ni en public_html ni en _privado, y la última visita en GA4 es del
-#    2025-07-08. Lleva devolviendo 404 desde julio de 2025, trece meses.
+# c) /esp/ era la versión española anterior a /es/. Devuelve 404 desde julio de
+#    2025 y sigue recibiendo clics de búsqueda y de pago.
 #
 <IfModule mod_alias.c>
   Redirect 301 /esp/index.html    https://1d-solutions.com/es/index.html
@@ -274,81 +198,52 @@ RewriteRule ^(.*)$ https://1d-solutions.com/$1 [L,R=301]
 # ▲▲▲ FIN AÑADIDO — 5. SEO ▲▲▲
 
 
-# ▼▼▼ INICIO AÑADIDO 2026-08-27 — 6. Rutas antiguas que GA4 delató ▼▼▼
+# ▼▼▼ INICIO AÑADIDO 2026-08-27 — 6. Rutas antiguas con tráfico medido ▼▼▼
 #
-# POR QUÉ ESTE BLOQUE EXISTE, Y POR QUÉ NO BASTABA CON SEARCH CONSOLE.
+# Rutas del sitio anterior que devuelven 404 y que GA4 muestra recibiendo visitas
+# —por Bing, enlace directo y clics de pago, además de Google—, y que llevaban
+# enlaces a ShareIt, la pasarela que ya no cobra. El destino de cada una se
+# eligió por su idioma y su tema, no al bulto.
 #
-# La auditoría del 2026-08-27 (nota auditoria-urls-legacy-y-pasarela del vault de
-# 1d-ads) empezó midiendo con Search Console, que sólo ve la búsqueda de Google.
-# Al cruzar con GA4 aparecieron rutas con tráfico REAL y reciente que Search
-# Console no reporta por definición, porque llega por Bing, DuckDuckGo, Ecosia,
-# ChatGPT, enlace directo y marcadores:
-#
-#   /library.html          287 sesiones (135 orgánico Google, 75 de PAGO) —
-#                          el legacy con MÁS tráfico medido, y CERO filas en
-#                          Search Console. Era la página de la DLL CutLib.
-#   /z-OLD/index.html       52 sesiones (36 directo, 8 de pago, 5 Google, Bing…)
-#   /z-OLD/                 45 sesiones (39 de Bing, y nada de Google)
-#   /z-OLD/product.html     26 sesiones
-#   /z-OLD/library.html      8 sesiones — título «DLL of 1D Cutting Optimization»
-#
-# Con Consent Mode denegando por defecto, GA4 ve del orden de 1 de cada 5
-# sesiones, así que TODAS esas cifras son un suelo, no un total.
-#
-# Y todas esas páginas llevaban enlaces a order.shareit.com, una pasarela MUERTA
-# que no cobra: quien llegaba no podía comprar. Ahora devuelven 404, que pierde
-# al visitante igual. Con estas 301 acaba en una página viva donde sí se vende.
-#
-# Destinos elegidos por el idioma y el tema del <title> original, no al bulto:
-# lo de la DLL va a la página de producto (donde CutLib figura con su precio),
-# y /z-OLD/ estaba en inglés, así que va a la raíz inglesa y no a /es/.
+# vault: auditoria-urls-legacy-y-pasarela (cifras y método) · t0020 (subir este
+# archivo y verificarlo) · t0013 (borrar los archivos) · t0014 (el PAD)
 #
 <IfModule mod_alias.c>
-  # La DLL / CutLib, en la raíz y en sus copias antiguas
+  # La DLL CutLib, en la raíz y en sus copias antiguas
   Redirect 301 /library.html          https://1d-solutions.com/product.html
   Redirect 301 /z-OLD/library.html    https://1d-solutions.com/product.html
   Redirect 301 /z-OLD/product.html    https://1d-solutions.com/product.html
   Redirect 301 /z-OLD/contac.html     https://1d-solutions.com/es/contact.html
   Redirect 301 /z-OLD/index.html      https://1d-solutions.com/index.html
 
-  # Restos en la raíz del sitio de los 2000 (todos 404 hoy)
+  # Restos en la raíz
   Redirect 301 /contac.html           https://1d-solutions.com/contact.html
   Redirect 301 /indice.html           https://1d-solutions.com/es/index.html
 
-  # ¡CUIDADO! Estas dos van con RedirectMatch y con «$» final A PROPÓSITO.
-  # «Redirect 301 /index.htm» casaría también con /index.html —la home— porque
-  # casa por PREFIJO y añade el resto al destino: /index.html acabaría
-  # redirigido a /index.htm + "l" = /index.htmll, tumbando la portada. Lo mismo
-  # con /product.htm y /product.html. El «^...$» impide el prefijo.
+  # Estas dos van ancladas con «^...$» A PROPÓSITO: "Redirect 301 /index.htm"
+  # casaría por prefijo con /index.html —la portada— y la mandaría a
+  # /index.htmll. Igual con /product.htm y /product.html.
   RedirectMatch 301 ^/index\.htm$     https://1d-solutions.com/index.html
   RedirectMatch 301 ^/product\.htm$   https://1d-solutions.com/product.html
 
-  # Borradores y carpetas de pruebas que aún reciben algún enlace externo.
-  # Iban en inglés («1D Solutions - Length Cutting Optimizer»).
+  # Borradores en inglés
   Redirect 301 /index_EX.html         https://1d-solutions.com/index.html
   Redirect 301 /en/index1.html        https://1d-solutions.com/index.html
   Redirect 301 /en/product1.html      https://1d-solutions.com/product.html
 
-  # La página de venta que sobrevivió dentro del canal de descargas: la carpeta
-  # entp/ se conservó por sus instaladores por cliente, y nadie sabía que dentro
-  # había un product.html completo sirviendo 200 con enlaces a ShareIt. Es el
-  # único .htm/.html de todo _downloads/.
-  # Esta 301 surte efecto AUNQUE EL ARCHIVO SIGA AHÍ: mod_alias resuelve en la
-  # fase de traducción de la URL, antes de mapear al sistema de archivos. O sea
-  # que basta con subir este .htaccess para cerrar el callejón sin salida, sin
-  # esperar a borrar el fichero. Borrarlo después sigue siendo lo correcto.
+  # Página de venta con enlaces a ShareIt que quedó dentro del canal de
+  # descargas. La 301 la neutraliza aunque el archivo siga en el servidor:
+  # mod_alias resuelve antes de mapear al sistema de archivos.
   Redirect 301 /_downloads/entp/product.html  https://1d-solutions.com/product.html
 
-  # Los restos de /pt/ que el bloque 5b no cubría. El .htm va anclado por lo
-  # mismo que arriba: si no, casaría con /pt/indice.html.
+  # Restos de /pt/ que no cubre el bloque 5b. El .htm va anclado por lo mismo
+  # que arriba: si no, casaría con /pt/indice.html.
   RedirectMatch 301 ^/pt/indice\.htm$ https://1d-solutions.com/pt/index.html
   Redirect 301 /pt/contac.html        https://1d-solutions.com/pt/contact.html
   Redirect 301 /pt/page1.html         https://1d-solutions.com/pt/index.html
 
-  # Catch-all de las carpetas muertas, AL FINAL: gana la primera regla que
-  # encaja, así que las específicas de arriba deben poder ganar. RedirectMatch y
-  # no Redirect, porque «Redirect» casa por prefijo y AÑADE al destino lo que
-  # sobra de la ruta (la trampa documentada en el bloque 3).
+  # Carpetas muertas completas. Al final, porque gana la primera regla que
+  # encaja. RedirectMatch por el mismo motivo que en el bloque 3.
   RedirectMatch 301 ^/z-OLD/    https://1d-solutions.com/index.html
   RedirectMatch 301 ^/nuevo/    https://1d-solutions.com/es/index.html
   RedirectMatch 301 ^/new/      https://1d-solutions.com/index.html
@@ -356,10 +251,4 @@ RewriteRule ^(.*)$ https://1d-solutions.com/$1 [L,R=301]
   RedirectMatch 301 ^/J1DN/     https://1d-solutions.com/index.html
 </IfModule>
 #
-# NOTA sobre /1dnest/: sus 301 están en el bloque 3 y funcionan, pero mandan
-# TODO a /es/index.html salvo product.html. Con los títulos originales a la vista
-# hay destinos mejores (/1dnest/library.html era la DLL, /1dnest/contac.html era
-# contacto). No se cambia aquí para no tocar un bloque que ya está en producción
-# y verificado; queda como mejora de calidad en el vault.
-#
-# ▲▲▲ FIN AÑADIDO — 6. Rutas antiguas que GA4 delató ▲▲▲
+# ▲▲▲ FIN AÑADIDO — 6. Rutas antiguas con tráfico medido ▲▲▲
