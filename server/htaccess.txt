@@ -163,8 +163,15 @@ ExpiresByType application/x-msdownload "access 6 hour"
 <IfModule mod_alias.c>
   Redirect 301 /1dnest/product.html  https://1d-solutions.com/es/product.html
   Redirect 301 /1dnest/indice.html   https://1d-solutions.com/es/index.html
-  Redirect 301 /1dnest/library.html  https://1d-solutions.com/es/index.html
   Redirect 301 /1dnest/1DNest.html   https://1d-solutions.com/es/index.html
+
+  # AFINADO 2026-08-27: estas dos apuntaban a /es/index.html como todo lo demás.
+  # Al leer el <title> original se vio que library.html era «1D Solutions, DLL»
+  # (la CutLib) y contac.html era «Contacto». Mandar a quien buscaba la DLL a la
+  # página donde figura con su precio convierte mejor que dejarlo en la portada,
+  # y Google premia que el destino de una 301 sea relevante.
+  Redirect 301 /1dnest/library.html  https://1d-solutions.com/es/product.html
+  Redirect 301 /1dnest/contac.html   https://1d-solutions.com/es/contact.html
 
   # Cualquier otra cosa colgando de /1dnest/ va a la home en español. Va al final
   # porque gana la primera regla que encaja: las cuatro de arriba deben poder ganar.
@@ -250,5 +257,109 @@ RewriteRule ^(.*)$ https://1d-solutions.com/$1 [L,R=301]
   Redirect 301 /pt/indice.html   https://1d-solutions.com/pt/index.html
   Redirect 301 /pt/library.html  https://1d-solutions.com/pt/index.html
 </IfModule>
+
+# c) La carpeta /esp/ del sitio viejo (anterior a /es/). Search Console registra
+#    147 clics y 1.261 impresiones, y GA4 unas 480 sesiones sólo para
+#    /esp/index.html. NO la borró la limpieza del 2026-08-27: la carpeta no está
+#    ni en public_html ni en _privado, y la última visita en GA4 es del
+#    2025-07-08. Lleva devolviendo 404 desde julio de 2025, trece meses.
+#
+<IfModule mod_alias.c>
+  Redirect 301 /esp/index.html    https://1d-solutions.com/es/index.html
+  Redirect 301 /esp/product.html  https://1d-solutions.com/es/product.html
+  Redirect 301 /esp/contact.html  https://1d-solutions.com/es/contact.html
+  RedirectMatch 301 ^/esp/?$      https://1d-solutions.com/es/index.html
+</IfModule>
 #
 # ▲▲▲ FIN AÑADIDO — 5. SEO ▲▲▲
+
+
+# ▼▼▼ INICIO AÑADIDO 2026-08-27 — 6. Rutas antiguas que GA4 delató ▼▼▼
+#
+# POR QUÉ ESTE BLOQUE EXISTE, Y POR QUÉ NO BASTABA CON SEARCH CONSOLE.
+#
+# La auditoría del 2026-08-27 (nota auditoria-urls-legacy-y-pasarela del vault de
+# 1d-ads) empezó midiendo con Search Console, que sólo ve la búsqueda de Google.
+# Al cruzar con GA4 aparecieron rutas con tráfico REAL y reciente que Search
+# Console no reporta por definición, porque llega por Bing, DuckDuckGo, Ecosia,
+# ChatGPT, enlace directo y marcadores:
+#
+#   /library.html          287 sesiones (135 orgánico Google, 75 de PAGO) —
+#                          el legacy con MÁS tráfico medido, y CERO filas en
+#                          Search Console. Era la página de la DLL CutLib.
+#   /z-OLD/index.html       52 sesiones (36 directo, 8 de pago, 5 Google, Bing…)
+#   /z-OLD/                 45 sesiones (39 de Bing, y nada de Google)
+#   /z-OLD/product.html     26 sesiones
+#   /z-OLD/library.html      8 sesiones — título «DLL of 1D Cutting Optimization»
+#
+# Con Consent Mode denegando por defecto, GA4 ve del orden de 1 de cada 5
+# sesiones, así que TODAS esas cifras son un suelo, no un total.
+#
+# Y todas esas páginas llevaban enlaces a order.shareit.com, una pasarela MUERTA
+# que no cobra: quien llegaba no podía comprar. Ahora devuelven 404, que pierde
+# al visitante igual. Con estas 301 acaba en una página viva donde sí se vende.
+#
+# Destinos elegidos por el idioma y el tema del <title> original, no al bulto:
+# lo de la DLL va a la página de producto (donde CutLib figura con su precio),
+# y /z-OLD/ estaba en inglés, así que va a la raíz inglesa y no a /es/.
+#
+<IfModule mod_alias.c>
+  # La DLL / CutLib, en la raíz y en sus copias antiguas
+  Redirect 301 /library.html          https://1d-solutions.com/product.html
+  Redirect 301 /z-OLD/library.html    https://1d-solutions.com/product.html
+  Redirect 301 /z-OLD/product.html    https://1d-solutions.com/product.html
+  Redirect 301 /z-OLD/contac.html     https://1d-solutions.com/es/contact.html
+  Redirect 301 /z-OLD/index.html      https://1d-solutions.com/index.html
+
+  # Restos en la raíz del sitio de los 2000 (todos 404 hoy)
+  Redirect 301 /contac.html           https://1d-solutions.com/contact.html
+  Redirect 301 /indice.html           https://1d-solutions.com/es/index.html
+
+  # ¡CUIDADO! Estas dos van con RedirectMatch y con «$» final A PROPÓSITO.
+  # «Redirect 301 /index.htm» casaría también con /index.html —la home— porque
+  # casa por PREFIJO y añade el resto al destino: /index.html acabaría
+  # redirigido a /index.htm + "l" = /index.htmll, tumbando la portada. Lo mismo
+  # con /product.htm y /product.html. El «^...$» impide el prefijo.
+  RedirectMatch 301 ^/index\.htm$     https://1d-solutions.com/index.html
+  RedirectMatch 301 ^/product\.htm$   https://1d-solutions.com/product.html
+
+  # Borradores y carpetas de pruebas que aún reciben algún enlace externo.
+  # Iban en inglés («1D Solutions - Length Cutting Optimizer»).
+  Redirect 301 /index_EX.html         https://1d-solutions.com/index.html
+  Redirect 301 /en/index1.html        https://1d-solutions.com/index.html
+  Redirect 301 /en/product1.html      https://1d-solutions.com/product.html
+
+  # La página de venta que sobrevivió dentro del canal de descargas: la carpeta
+  # entp/ se conservó por sus instaladores por cliente, y nadie sabía que dentro
+  # había un product.html completo sirviendo 200 con enlaces a ShareIt. Es el
+  # único .htm/.html de todo _downloads/.
+  # Esta 301 surte efecto AUNQUE EL ARCHIVO SIGA AHÍ: mod_alias resuelve en la
+  # fase de traducción de la URL, antes de mapear al sistema de archivos. O sea
+  # que basta con subir este .htaccess para cerrar el callejón sin salida, sin
+  # esperar a borrar el fichero. Borrarlo después sigue siendo lo correcto.
+  Redirect 301 /_downloads/entp/product.html  https://1d-solutions.com/product.html
+
+  # Los restos de /pt/ que el bloque 5b no cubría. El .htm va anclado por lo
+  # mismo que arriba: si no, casaría con /pt/indice.html.
+  RedirectMatch 301 ^/pt/indice\.htm$ https://1d-solutions.com/pt/index.html
+  Redirect 301 /pt/contac.html        https://1d-solutions.com/pt/contact.html
+  Redirect 301 /pt/page1.html         https://1d-solutions.com/pt/index.html
+
+  # Catch-all de las carpetas muertas, AL FINAL: gana la primera regla que
+  # encaja, así que las específicas de arriba deben poder ganar. RedirectMatch y
+  # no Redirect, porque «Redirect» casa por prefijo y AÑADE al destino lo que
+  # sobra de la ruta (la trampa documentada en el bloque 3).
+  RedirectMatch 301 ^/z-OLD/    https://1d-solutions.com/index.html
+  RedirectMatch 301 ^/nuevo/    https://1d-solutions.com/es/index.html
+  RedirectMatch 301 ^/new/      https://1d-solutions.com/index.html
+  RedirectMatch 301 ^/prueba/   https://1d-solutions.com/index.html
+  RedirectMatch 301 ^/J1DN/     https://1d-solutions.com/index.html
+</IfModule>
+#
+# NOTA sobre /1dnest/: sus 301 están en el bloque 3 y funcionan, pero mandan
+# TODO a /es/index.html salvo product.html. Con los títulos originales a la vista
+# hay destinos mejores (/1dnest/library.html era la DLL, /1dnest/contac.html era
+# contacto). No se cambia aquí para no tocar un bloque que ya está en producción
+# y verificado; queda como mejora de calidad en el vault.
+#
+# ▲▲▲ FIN AÑADIDO — 6. Rutas antiguas que GA4 delató ▲▲▲
