@@ -220,10 +220,16 @@ RewriteRule ^(.*)$ https://1d-solutions.com/$1 [L,R=301]
   Redirect 301 /contac.html           https://1d-solutions.com/contact.html
   Redirect 301 /indice.html           https://1d-solutions.com/es/index.html
 
-  # Estas dos van ancladas con «^...$» A PROPÓSITO: "Redirect 301 /index.htm"
-  # casaría por prefijo con /index.html —la portada— y la mandaría a
-  # /index.htmll. Igual con /product.htm y /product.html.
-  RedirectMatch 301 ^/index\.htm$     https://1d-solutions.com/index.html
+  # NO AÑADIR una regla para /index.htm. Se probó el 2026-08-27 y rompe la
+  # portada: al pedir «/», mod_dir busca el índice del directorio probando
+  # index.htm antes que index.html, y esa subpetición interna activa la regla,
+  # así que «/» acaba devolviendo 301 en vez de servir la página. Sólo afecta a
+  # la raíz —«/es/» genera /es/index.htm, que una regla anclada en ^/index no
+  # captura—, lo que hace el fallo fácil de pasar por alto.
+  # /index.htm no tenía ningún tráfico medido, así que no se pierde nada.
+  #
+  # El ancla «^...$» sigue siendo obligatoria aquí: "Redirect 301 /product.htm"
+  # casaría por prefijo con /product.html y la mandaría a /product.htmll.
   RedirectMatch 301 ^/product\.htm$   https://1d-solutions.com/product.html
 
   # Borradores en inglés
