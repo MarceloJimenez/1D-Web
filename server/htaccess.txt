@@ -120,6 +120,14 @@ ExpiresByType application/x-msdownload "access 6 hour"
   Redirect 301 /1dnest/library.html  https://1d-solutions.com/es/product.html
   Redirect 301 /1dnest/contac.html   https://1d-solutions.com/es/contact.html
 
+  # Enlaces de DESCARGA que las fichas de los directorios shareware siguen
+  # publicando. Van antes de la regla general y acaban en /product.html, no en
+  # la portada: quien pulsa «Descargar» busca el producto. En los logs aparecen
+  # con las dos capitalizaciones (engl/Engl, espa/Espa), de ahí el (?i).
+  # vault: pad-file-1dnest · 0007-el-pad-reescrito-refresca-las-fichas-de-terceros
+  RedirectMatch 301 (?i)^/1dnest/espa/ https://1d-solutions.com/es/product.html
+  RedirectMatch 301 (?i)^/1dnest/engl/ https://1d-solutions.com/product.html
+
   # Resto de /1dnest/ a la home española. Al final, porque gana la primera regla
   # que encaja y las de arriba deben poder ganar.
   #
@@ -241,6 +249,17 @@ RewriteRule ^(.*)$ https://1d-solutions.com/$1 [L,R=301]
   # descargas. La 301 la neutraliza aunque el archivo siga en el servidor:
   # mod_alias resuelve antes de mapear al sistema de archivos.
   Redirect 301 /_downloads/entp/product.html  https://1d-solutions.com/product.html
+
+  # Instaladores que anunciaba el PAD de 2019 y que hoy son 404 en las fichas
+  # de terceros (software.informer y compañía nunca releen el PAD, así que sus
+  # enlaces no se arreglan solos: hay que arreglarlos desde aquí).
+  # Anclados con RedirectMatch para no capturar por prefijo ningún fichero vivo
+  # de _downloads/ — la trampa de /index.htm que tumbó la portada en t0020.
+  RedirectMatch 301 ^/_downloads/1dn401_24\.exe$ https://1d-solutions.com/product.html
+  RedirectMatch 301 ^/_downloads/1dn35pt\.exe$   https://1d-solutions.com/pt/product.html
+
+  # El icono que esas mismas fichas intentan cargar: 32 peticiones al mes en 404.
+  RedirectMatch 301 ^/images/1dnicon\.ico$       https://1d-solutions.com/images/favicon.png
 
   # Restos de /pt/ que no cubre el bloque 5b. El .htm va anclado por lo mismo
   # que arriba: si no, casaría con /pt/indice.html.
