@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XML_DIZ_INFO>
+	<MASTER_PAD_VERSION_INFO>
+		<MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
+		<MASTER_PAD_EDITOR>PADGen 3.1.1.51 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://pad.asp-software.org</MASTER_PAD_INFO>
+	</MASTER_PAD_VERSION_INFO>
+	<Company_Info>
+		<Company_Name>1D Solutions SpA</Company_Name>
+		<Address_1>Av.Portugal 28</Address_1>
+		<Address_2 />
+		<City_Town>Santiago</City_Town>
+		<State_Province />
+		<Zip_Postal_Code>8330028</Zip_Postal_Code>
+		<Country>Chile</Country>
+		<Company_WebSite_URL>https://1d-solutions.com</Company_WebSite_URL>
+		<Contact_Info>
+			<Author_First_Name>Jaime</Author_First_Name>
+			<Author_Last_Name>Jimenez</Author_Last_Name>
+			<Author_Email>info@1d-solutions.com</Author_Email>
+			<Contact_First_Name>Jaime</Contact_First_Name>
+			<Contact_Last_Name>Jimenez</Contact_Last_Name>
+			<Contact_Email>info@1d-solutions.com</Contact_Email>
+		</Contact_Info>
+		<Support_Info>
+			<Sales_Email>sales@1d-solutions.com</Sales_Email>
+			<Support_Email>support@1d-solutions.com</Support_Email>
+			<General_Email>info@1d-solutions.com</General_Email>
+			<Sales_Phone />
+			<Support_Phone />
+			<General_Phone />
+			<Fax_Phone />
+		</Support_Info>
+	</Company_Info>
+	<Program_Info>
+		<Program_Name>1DNest: 1D Cutting Optimizer</Program_Name>
+		<Program_Version>4.02</Program_Version>
+		<Program_Release_Month>08</Program_Release_Month>
+		<Program_Release_Day>24</Program_Release_Day>
+		<Program_Release_Year>2026</Program_Release_Year>
+		<Program_Cost_Dollars>171</Program_Cost_Dollars>
+		<Program_Cost_Other_Code />
+		<Program_Cost_Other />
+		<Program_Type>Shareware</Program_Type>
+		<Program_Release_Status>New Release</Program_Release_Status>
+		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
+		<Program_OS_Support>Win7,Win8,Win8.1,Win10,Win11,WinServer</Program_OS_Support>
+		<Program_Language>English,Czech,Dutch,French,German,Italian,Portuguese,Spanish</Program_Language>
+		<Program_Change_Info>Version 4.02 is the current release. Details and full feature list at https://1d-solutions.com/product.html</Program_Change_Info>
+		<Program_Specific_Category>Business</Program_Specific_Category>
+		<Program_Category_Class>Business::Other</Program_Category_Class>
+		<Program_System_Requirements>Upper than 1 Gb RAM recommended</Program_System_Requirements>
+		<File_Info>
+			<File_Size_Bytes>5826190</File_Size_Bytes>
+			<File_Size_K>5690</File_Size_K>
+			<File_Size_MB>5.56</File_Size_MB>
+		</File_Info>
+		<Expire_Info>
+			<Has_Expire_Info>Y</Has_Expire_Info>
+			<Expire_Count>30</Expire_Count>
+			<Expire_Based_On>Days</Expire_Based_On>
+			<Expire_Other_Info>After expiration  remains able to work, but can not  input more than  5 pieces to cut.</Expire_Other_Info>
+			<Expire_Month />
+			<Expire_Day />
+			<Expire_Year />
+		</Expire_Info>
+	</Program_Info>
+	<Program_Descriptions>
+		<English>
+			<Keywords>1D cutting optimizer,length cutting,cut optimizer,1d nesting,cutting optimization, pipe cutting, cutting optimizer, length nesting,1D optimizer, structural steel cutting</Keywords>
+			<Char_Desc_45>1D Cutting Optimizer,  Length Nesting Softwar</Char_Desc_45>
+			<Char_Desc_80> Linear Cutting Optimizer 1DNest:  Simple, efficient &amp; powerful.</Char_Desc_80>
+			<Char_Desc_250>1DNest - 1D cutting optimizer is the most  efficient, friendly &amp; versatile tool for  length cutting optimization useful in cutting of materials provided in standard lengths like bars, tubes, structural profiles, extrusions, paper rolls, etc.</Char_Desc_250>
+			<Char_Desc_450>1D cutting optimizer, 1DNest is the most  efficient, friendly and productive software for length cutting optimization (linear cutting optimizer) to make cutting plans with tol efficiency for manufacturers who cut in pieces of smaller size,  materials provided in standard lengths (linear materials) like bars, tubes, structural profiles, structural steel beams, aluminium extrusions, paper rolls, etc.</Char_Desc_450>
+			<Char_Desc_2000>1D cutting optimizer, 1DNest is the most  efficient, friendly and productive one-dimensional cutting optimization software to make cutting plans with top efficiency for manufacturers who cut in pieces of smaller size,  materials provided in standard lengths (linear materials) like bars, tubes, structural profiles, beams, aluminium extrusions, paper rolls, etc.</Char_Desc_2000>
+		</English>
+		<Portuguese>
+			<Keywords>Otimizador de corte, Corte de perfis, optimização de corte, corte lineal, aproveitamento do corte, corte de barras, aproveitamento de materiais</Keywords>
+			<Char_Desc_45>Otimizador de Corte Linear, 1DNest</Char_Desc_45>
+			<Char_Desc_80>Otimizador de Corte de Comprimentos, 1DNest</Char_Desc_80>
+			<Char_Desc_250>Otimizador de Corte Linear é uma ferramenta criada para aqueles trabalhos em que temos de minimizar as perdas de material de resíduos, quando se cortan em pedaços, materiais como tubos ou perfis estruturais. perfis de aluminio, etc. </Char_Desc_250>
+			<Char_Desc_450>O Otimizador de Corte Linear é uma ferramenta criada para aqueles indùstrias (ou trabalhos) em que cortamos em  diferentes comprimentos  mais pequenos, o materiais fornecidos em comprimentos padrão fixo como: tubos, perfis estruturais, perfis de aluminio, barras, etc.  Serve para  minimizar as perdas por  resíduos sobrantes do corte  e  melhorar ea eficiência na produção.</Char_Desc_450>
+			<Char_Desc_2000>O "Otimizador de Corte Linear" é uma ferramenta criada para aqueles indùstrias (ou trabalhos) em que cortamos em  diferentes comprimentos  mais pequenos, o materiais fornecidos em comprimentos padrão fixo como: tubos, perfis estruturais, perfis de aluminio, barras, etc.  
+O otimizador de corte linear 1DNEST serve para  minimizar as perdas por  resíduos sobrantes do corte, e além disso, pode incorporar o custo ou preço dos materiais na otimização.  Assim podemos calcular  planos de corte, com um ótimo desempenho e  melhorar a produtividade ea eficiência no processo de produção.
+Este otimizador é projetado para a operação fácil, acessível a qualquer usuário.
+Permite:
+- Digite qualquer número de cortes (não quantidades limitadas)
+- Inscreva-se até 1500 diferentes comprimentos de corte
+- Digite até 300 diferentes comprimentos de matérias-primas
+- vários tipos de impressão de relatórios
+- importação direta de folhas de dados (excel)
+- Exportação de corte planos para MS Excel
+- Imprimir etiquetas
+- E mais ...</Char_Desc_2000>
+		</Portuguese>
+		<Spanish>
+			<Keywords>Optimizador de corte, Corte de perfiles, optimización de corte, corte lineal, aprovechamiento del corte, corte de barras, </Keywords>
+			<Char_Desc_45>Optimizador de Corte Lineal: 1DNest</Char_Desc_45>
+			<Char_Desc_80>Programa 1D-Nest, Software para la optimización de corte lineal</Char_Desc_80>
+			<Char_Desc_250>1D-Nest es una herramienta eficiente, simple y poderosa para obtener planes óptimos para corte de materiales tales como barras, perfiles metálicos, tubos,  etc.,</Char_Desc_250>
+			<Char_Desc_450>El program de optimización de corte lineal 1D-Nest es la herramienta mas eficiente, simple y poderosa para generar planes de corte óptimos en manufacturas y empresas que trabajan materiales o insumos que se proveen originalmente en longitudes fijas estandarizadas, como barras, perfiles metálicos, tubos, cañerías etc.,los que en fábrica requieren ser cortados en trozos de menor medida.</Char_Desc_450>
+			<Char_Desc_2000>El optimizador de corte lineal 1D-Nest es la herramienta mas eficiente, simple y poderosa para generar planes de corte óptimos en manufacturas y empresas que trabajan materiales o insumos que se proveen originalmente en longitudes fijas estandarizadas, como barras, perfiles metálicos, tubos, cañerías etc., y que para trabajarlos se requiere cortalos en piezas de menor medida. En este proceso de corte se pueden lograr economías notables si se optimiza el proceso de corte siguiendo planes de corte optimizados.</Char_Desc_2000>
+		</Spanish>
+	</Program_Descriptions>
+	<Web_Info>
+		<Application_URLs>
+			<Application_Info_URL>https://1d-solutions.com/product.html</Application_Info_URL>
+			<Application_Order_URL>https://store.payproglobal.com/checkout?products[1][id]=96924</Application_Order_URL>
+			<Application_Screenshot_URL>https://1d-solutions.com/images/zused/1dSoftwareTest.png</Application_Screenshot_URL>
+			<Application_Icon_URL>https://1d-solutions.com/images/favicon.png</Application_Icon_URL>
+			<Application_XML_File_URL>https://1d-solutions.com/1dnest.xml</Application_XML_File_URL>
+		</Application_URLs>
+		<Download_URLs>
+			<Primary_Download_URL>https://1d-solutions.com/_downloads/1dn402_26.zip</Primary_Download_URL>
+			<Secondary_Download_URL>https://1d-solutions.com/_downloads/1DNest_software_version_402.exe</Secondary_Download_URL>
+			<Additional_Download_URL_1>https://1d-solutions.com/_downloads/1dn402_25.zip</Additional_Download_URL_1>
+			<Additional_Download_URL_2 />
+		</Download_URLs>
+	</Web_Info>
+	<Permissions>
+        <EULA>
+		<Distribution_Permissions>This file is freely distributable </Distribution_Permissions>
+		</EULA>
+	</Permissions>
+</XML_DIZ_INFO>
