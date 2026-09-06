@@ -1,14 +1,15 @@
 
 <div id="cookie-consent-banner" class="cookie-consent-banner">
     <h3>${{index.consent.heading}}$</h3>
-    <p>${{index.consent.subHeading}}$</p>
+    <p>${{index.consent.subHeading}}$
+       <a href="privacy.html">${{index.consent.privacyLink}}$</a></p>
     <button id="btn-accept-all" class="cookie-consent-button btn-success">${{index.consent.acceptAll}}$</button>
     <button id="btn-accept-some" class="cookie-consent-button btn-outline">${{index.consent.acceptSel}}$</button>
     <button id="btn-reject-all" class="cookie-consent-button btn-grayscale">${{index.consent.rejectAll}}$</button>
     <div class="cookie-consent-options">
       <label><input id="consent-necessary" type="checkbox" value="Necessary" checked disabled>${{index.consent.necessary}}$</label>
-      <label><input id="consent-analytics" type="checkbox" value="Analytics" checked>${{index.consent.analytics}}$</label>
-      <label><input id="consent-preferences" type="checkbox" value="Preferences" checked>${{index.consent.preferences}}$</label>
+      <label><input id="consent-analytics" type="checkbox" value="Analytics">${{index.consent.analytics}}$</label>
+      <label><input id="consent-preferences" type="checkbox" value="Preferences">${{index.consent.preferences}}$</label>
       <label><input id="consent-marketing" type="checkbox" value="Marketing">${{index.consent.marketing}}$</label>
     </div>
 </div>
@@ -19,9 +20,69 @@
     document.getElementById('cookie-consent-banner').style.display = 'none';
   }
 
-  if(localStorage.getItem('consentMode') === null) {
-    
-    document.getElementById('btn-accept-all').addEventListener('click', function() {
+  // Al abrir, las casillas reflejan lo que el visitante ya eligió — si vuelve
+  // desde el enlace del pie tiene que ver su decisión, no una pantalla en blanco.
+  // En la primera visita quedan todas sin marcar (salvo "necesarias"): una casilla
+  // pre-marcada no es consentimiento válido en la UE (Planet49, TJUE).
+  function showBanner() {
+    var previo = null;
+    try { previo = JSON.parse(localStorage.getItem('consentMode')); } catch (e) {}
+    if (previo) {
+      document.getElementById('consent-analytics').checked   = previo.analytics_storage === 'granted';
+      document.getElementById('consent-preferences').checked = previo.personalization_storage === 'granted';
+      document.getElementById('consent-marketing').checked   = previo.ad_storage === 'granted';
+    }
+    document.getElementById('cookie-consent-banner').style.display = 'block';
+  }
+
+  // Lo llama el enlace "preferencias de cookies" del pie. Es la única forma de
+  // rechazar fuera de las regiones estrictas, donde el banner no se pinta solo.
+  window.openCookiePreferences = function () { showBanner(); return false; };
+
+  // ¿Estamos en una región donde se espera consentimiento previo? La zona horaria
+  // es una heurística —falla con VPN y con viajeros— pero no cuesta ninguna
+  // petición y no entrega la IP a ningún tercero, que sería el remedio peor que
+  // la enfermedad. **Falla CERRADA**: si no se puede determinar, se enseña.
+  //
+  // IMPORTANTE: esto decide solo si se PINTA el banner. Lo que de verdad protege
+  // es el `region` de gtag('consent','default') en header.htm, que Google
+  // resuelve por IP en su servidor y sí es fiable. Si esta heurística se
+  // equivoca con un europeo, el almacenamiento le sigue quedando denegado.
+  var ZONAS_ESTRICTAS = [
+    // Brasil
+    'America/Sao_Paulo','America/Bahia','America/Fortaleza','America/Recife',
+    'America/Belem','America/Manaus','America/Cuiaba','America/Campo_Grande',
+    'America/Porto_Velho','America/Boa_Vista','America/Rio_Branco',
+    'America/Eirunepe','America/Noronha','America/Maceio','America/Araguaina',
+    'America/Santarem',
+    // Chile
+    'America/Santiago','America/Punta_Arenas','Pacific/Easter',
+    // Canadá
+    'America/Toronto','America/Vancouver','America/Edmonton','America/Winnipeg',
+    'America/Halifax','America/St_Johns','America/Regina','America/Moncton',
+    'America/Whitehorse','America/Dawson_Creek','America/Fort_Nelson',
+    'America/Swift_Current','America/Goose_Bay','America/Glace_Bay',
+    'America/Cambridge_Bay','America/Inuvik','America/Iqaluit',
+    'America/Rankin_Inlet','America/Resolute','America/Atikokan',
+    // Turquía, Corea del Sur, Sudáfrica
+    'Asia/Istanbul','Asia/Seoul','Africa/Johannesburg'
+  ];
+
+  function enRegionEstricta() {
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (!tz) return true;                                  // no se sabe → enseñar
+      if (tz.indexOf('Europe/') === 0) return true;          // EEE, UK, CH, TR
+      if (tz.indexOf('Atlantic/') === 0) return true;        // Azores, Madeira, Canarias, Reikiavik
+      return ZONAS_ESTRICTAS.indexOf(tz) !== -1;
+    } catch (e) {
+      return true;                                           // sin Intl → enseñar
+    }
+  }
+
+  // Los listeners se ponen SIEMPRE: el banner puede reabrirse desde el pie aunque
+  // el visitante ya hubiera decidido.
+  document.getElementById('btn-accept-all').addEventListener('click', function() {
       setConsent({
         necessary: true,
         analytics: true,
@@ -48,7 +109,10 @@
       });
       hideBanner();
     });
-    document.getElementById('cookie-consent-banner').style.display = 'block';
+  // Se pinta solo en la primera visita y únicamente donde se espera opt-in previo.
+  // Fuera de ahí el default ya es 'granted' y el visitante llega por el pie.
+  if (localStorage.getItem('consentMode') === null && enRegionEstricta()) {
+    showBanner();
   }
   
   function setConsent(consent) {
@@ -59,7 +123,7 @@
       'analytics_storage': consent.analytics ? 'granted' : 'denied',
       'ad_user_data':consent.marketing? 'granted':'denied',
       'ad_personalization':consent.marketing? 'granted':'denied',
-      'personalization': consent.preferences ? 'granted' : 'denied',     
+      'personalization_storage': consent.preferences ? 'granted' : 'denied',     
     };
     gtag('consent', 'update', consentMode);  
     localStorage.setItem('consentMode', JSON.stringify(consentMode));

@@ -6,7 +6,42 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     
-    if(localStorage.getItem('consentMode') === null){
+    // Dos defaults por región. Google resuelve el país por IP en su servidor al
+    // cargar la etiqueta: no hay llamada extra, ni terceros, ni latencia. El
+    // default con `region` gana sobre el general, que actúa como "resto del mundo".
+    //
+    // Estricto = donde se espera consentimiento previo: EEE + Reino Unido + Suiza,
+    // más Brasil (LGPD), Turquía (KVKK), Corea del Sur (PIPA), Canadá (Quebec,
+    // ley 25), Sudáfrica (POPIA) y Chile (ley 21.719), que es nuestra propia
+    // jurisdicción. EE. UU. NO va aquí a propósito: sus leyes estatales son de
+    // exclusión (opt-out), no de consentimiento previo — es otro mecanismo.
+    var CONSENT_ESTRICTO = [
+      'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE',
+      'IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE',
+      'IS','LI','NO',              // resto del EEE
+      'GB','CH',                   // Reino Unido y Suiza
+      'BR','TR','KR','CA','ZA','CL'
+    ];
+
+    // Lo guardado se lee con cuidado: si está corrupto se descarta y se trata como
+    // primera visita, en vez de dejar la página sin ningún default.
+    var consentGuardado = null;
+    try { consentGuardado = JSON.parse(localStorage.getItem('consentMode')); } catch (e) {}
+    if (consentGuardado && typeof consentGuardado === 'object') {
+        // Migración. Hasta el 2026-09-06 se guardaba la clave 'personalization',
+        // que no es una señal válida de Consent Mode. Quien ya había consentido la
+        // reinyectaba en cada visita, así que su 'personalization_storage' no se
+        // concedía nunca. Se renombra conservando su elección — no se le vuelve a
+        // preguntar, que sería perder un consentimiento ya dado.
+        if (consentGuardado.personalization !== undefined &&
+            consentGuardado.personalization_storage === undefined) {
+            consentGuardado.personalization_storage = consentGuardado.personalization;
+            delete consentGuardado.personalization;
+            try { localStorage.setItem('consentMode', JSON.stringify(consentGuardado)); } catch (e) {}
+        }
+        gtag('consent', 'default', consentGuardado);
+    } else {
+        try { localStorage.removeItem('consentMode'); } catch (e) {}
         gtag('consent', 'default', {
             'ad_storage': 'denied',
             'analytics_storage': 'denied',
@@ -15,10 +50,25 @@
             'functionality_storage': 'denied',
             'security_storage': 'denied',
             'personalization_storage': 'denied',
+            'region': CONSENT_ESTRICTO
             });
-    } else {
-        gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+        gtag('consent', 'default', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted',
+            'ad_user_data':'granted',
+            'ad_personalization':'granted',
+            'functionality_storage': 'granted',
+            'security_storage': 'granted',
+            'personalization_storage': 'granted'
+            });
     }
+
+    // Recuperan parte de la atribución de Ads cuando el visitante NO consiente,
+    // sin pedirle nada: url_passthrough lleva el gclid en la URL entre páginas
+    // (en vez de en una cookie) y ads_data_redaction redacta los identificadores
+    // de clic. Ambas solo actúan mientras ad_storage esté denegado.
+    gtag('set', 'url_passthrough', true);
+    gtag('set', 'ads_data_redaction', true);
   </script>
 
 
@@ -29,86 +79,6 @@
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-TGXKJ8P');</script>
       <!-- End Google Tag Manager -->
-
-      <!-- Google tag (gtag.js) -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1072606647">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-1072606647');
-</script> -->
-
-<!-- Google tag (gtag.js) event - delayed navigation helper -->
-<!-- <script>
-  // Helper function to delay opening a URL until a gtag event is sent.
-  // Call it in response to an action that should navigate to a URL.
-  function gtagSendEvent(url) {
-    var callback = function () {
-      if (typeof url === 'string') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'add_to_cart', {
-      'event_callback': callback,
-      'event_timeout': 2000,
-      // <event_parameters>
-    });
-    return false;
-  }
-</script> -->
-
-<!-- Google tag (gtag.js) event - delayed navigation helper -->
-<!-- <script>
-  // Helper function to delay opening a URL until a gtag event is sent.
-  // Call it in response to an action that should navigate to a URL.
-  function gtagSendEvent(url) {
-    var callback = function () {
-      if (typeof url === 'string') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'file_download', {
-      'event_callback': callback,
-      'event_timeout': 2000,
-      // <event_parameters>
-    });
-    return false;
-  }
-</script> -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1072606647">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-1072606647');
-</script>
-
-<!-- Google tag (gtag.js) event - delayed navigation helper -->
-<script>
-  // Helper function to delay opening a URL until a gtag event is sent.
-  // Call it in response to an action that should navigate to a URL.
-  function gtagSendEvent(url) {
-    var callback = function () {
-      if (typeof url === 'string') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'conversion_event_begin_checkout', {
-      'event_callback': callback,
-      'event_timeout': 2000,
-      // <event_parameters>
-    });
-    return false;
-  }
-</script>
-
-
 
   <!-- Basic Page Needs
   ================================================== -->

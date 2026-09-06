@@ -34,7 +34,11 @@
 }
 
 .cookie-consent-button.btn-success {
-    background-color: primary-color;
+    // Verde de Bootstrap (.btn-success). Hasta 2026-09-06 esta línea decía
+    // `primary-color` sin `$`: CSS inválido que el navegador descartaba, así que
+    // el verde lo ponía Bootstrap por debajo. Se fija aquí explícitamente para
+    // no depender de esa cascada — el aspecto es el mismo de siempre.
+    background-color: #28a745;
     color: white;
 }
 
@@ -45,7 +49,7 @@
 
 .cookie-consent-button.btn-outline {
     background-color: #e6f4ea;
-    color: primary-color;
+    color: $primary-color;
 }
 
 .cookie-consent-options {

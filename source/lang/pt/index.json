@@ -114,8 +114,10 @@
   },
 
   "consent": {
-    "heading": "Configurações de Cookies",
-    "subHeading": "Usamos cookies padrão. Eles nos permitem analisar e melhorar nossos esforços de marketing.",
+    "heading":"Ajude-nos a melhorar este site",
+    "subHeading":"Usamos cookies do Google Analytics e do Google Ads para saber quais páginas são úteis e quais anúncios valem o investimento.",
+    "privacyLink":"Leia nossa Política de Privacidade",
+    "managePreferences":"Preferências de cookies",
     "acceptAll": "Aceitar Tudo",
     "acceptSel": "Aceitar Seleção",
     "rejectAll": "Rejeitar Tudo",

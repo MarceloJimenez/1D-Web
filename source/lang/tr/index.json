@@ -115,8 +115,10 @@
   },
 
   "consent": {
-    "heading": "Çerez ayarları",
-    "subHeading": "Standart çerezleri kullanıyoruz. Pazarlama çabalarımızı analiz etmeyi ve iyileştirmeyi sağlarlar.",
+    "heading":"Bu siteyi geliştirmemize yardım edin",
+    "subHeading":"Hangi sayfaların yararlı olduğunu ve hangi reklamların değdiğini görmek için Google Analytics ve Google Ads çerezlerini kullanıyoruz.",
+    "privacyLink":"Gizlilik Politikamızı okuyun",
+    "managePreferences":"Çerez tercihleri",
     "acceptAll": "Hepsini Kabul Et",
     "acceptSel": "Seçimi Kabul Et",
     "rejectAll": "Hepsini Reddet",
