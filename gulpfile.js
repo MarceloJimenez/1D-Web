@@ -18,11 +18,50 @@ const through = require("through2");
 
 const isProd = process.env.NODE_ENV === "production";
 
-// Swallow unhandled rejections from critical/Puppeteer (timeout fires after our task has finished)
+// critical:extract lanza `critical`, que lanza Puppeteer, que lanza Chromium.
+// Esas librerias crean promises que NO encadenan a lo que devuelven -- un
+// `page.close()` contra un browser ya muerto, un waitForTarget interno -- y su
+// rechazo llega aqui sin dueno. Relanzarlo mata el build entero y se quedan
+// fuera critical:inject y css:purge: el sitio se publica sin CSS critico y sin
+// purgar. Es el fallo de [[t0040-el-build-muere-al-azar-en-critical-extract]].
+//
+// Se reconoce por ORIGEN y nunca por el texto del mensaje. El filtro anterior
+// exigia "Timed out" Y "browser" en el mensaje, y un crash de Chromium no trae
+// ninguna de las dos, asi que pasaba de largo y mataba el build. El texto
+// cambia con cada version de Chromium; el origen no.
+//
+// Dos senales, porque una sola no basta: la pila, cuando el rechazo la trae con
+// frames de la libreria, y el hecho de que critical:extract haya arrancado --
+// esta tarea es lo UNICO de este build que habla con Chromium, y sus fallos
+// llegan precisamente despues de que la tarea haya terminado, que es lo que
+// hace inservible cualquier ventana de tiempo corta.
+let criticalArrancado = false;
+const marcarCriticalArrancado = function () { criticalArrancado = true; };
+const vieneDeLaTuberiaCritical = function (reason) {
+  if (criticalArrancado) return true;
+  const pila = (reason && reason.stack) || "";
+  return pila.indexOf("node_modules/critical") !== -1 ||
+         pila.indexOf("node_modules/puppeteer") !== -1;
+};
+const ignorarDeCritical = function (via, reason) {
+  require("fancy-log")(
+    "critical/Puppeteer: " + via + " ignorado, el build sigue:",
+    (reason && reason.message) || reason);
+};
 process.on("unhandledRejection", function (reason) {
-  const msg = (reason && reason.message) || "";
-  if (msg.indexOf("Timed out") !== -1 && msg.indexOf("browser") !== -1) return;
+  if (vieneDeLaTuberiaCritical(reason)) return ignorarDeCritical("rechazo sin dueno", reason);
   setImmediate(function () { throw reason; });
+});
+// Y este es el camino por el que se moria de verdad, que el handler de arriba
+// no ve: gulp corre cada tarea dentro de un `domain` (via async-done), y un
+// rechazo sin dueno dentro de un domain activo se emite como 'error' del
+// domain, no como unhandledRejection del proceso. Sin nadie escuchandolo se
+// convierte en excepcion no capturada y el build muere -- exactamente el
+// "Emitted 'error' event on Domain instance" que aparece en el crash de
+// Chromium en puppeteer/lib/Launcher.js.
+process.on("uncaughtException", function (err) {
+  if (vieneDeLaTuberiaCritical(err)) return ignorarDeCritical("excepcion via domain", err);
+  throw err;
 });
 
 var path = {
@@ -202,6 +241,7 @@ gulp.task("translation:build", function() {
 // Requires Puppeteer (headless Chrome); if it fails or times out (e.g. in CI), build continues without critical inlining.
 gulp.task("critical:extract", function (done) {
   if (!isProd) return done();
+  marcarCriticalArrancado();
   const themeDir = pathModule.join(__dirname, "theme");
   const htmlSrc = "en/index.html";
   const cssOut = pathModule.join(themeDir, "css", "critical.css");
