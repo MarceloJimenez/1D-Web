@@ -1,7 +1,7 @@
 { 
   "header": {
-    "title": "Software de Corte 1DNest - Optimizador de Corte Lineal",
-    "description": "Optimiza cortes con nuestro software gratuito 1D. Ideal para madera y metal. Incluye soporte técnico y licencias flexibles. Descárgalo ahora.",
+    "title": "Optimizador de corte lineal gratis: perfiles, tubos | 1DNest",
+    "description": "Optimizador de corte lineal para perfiles, tubos y barras de aluminio y acero. Prueba gratis 30 días, luego versión gratuita. Pago único, sin suscripción.",
     "htmlLang": "es",
     "langPath": "es/",
     "ogLocale": "es_ES"
@@ -29,7 +29,7 @@
   },
 
   "slider": {
-    "heading": "1D Nest: Software de optimización de corte",
+    "heading": "1DNest: optimizador de corte lineal para perfiles, tubos y aluminio",
     "subHeading": "La herramienta de software más simple y productiva para minimizar el desperdicio y generar planes de corte con la eficiencia óptima para ahorrar materiales como perfiles metálicos, barras, vigas, tubos, varillas, rollos o cualquier material que para ser fabricado debe cortarse en piezas más pequeñas.",
     "freeTrial": "¡Prueba gratis!",
     "buyNow": "¡Compra Ahora!",

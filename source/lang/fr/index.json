@@ -1,7 +1,7 @@
 {
   "header": {
-    "title": "Logiciel de Découpe 1D - Optimiseur de Nesting, Essai Gratuit",
-    "description": "Optimisez la découpe avec notre logiciel gratuit 1D. Idéal pour le métal et le bois. Assistance incluse, licences flexibles. Téléchargez-le maintenant.",
+    "title": "Logiciel d'optimisation de coupe de barres - Essai gratuit",
+    "description": "1DNest : logiciel d'optimisation de débit de barres, profilés et tubes pour Windows. Paiement unique, sans abonnement. Essai gratuit 30 jours.",
     "htmlLang": "fr",
     "langPath": "fr/",
     "ogLocale": "fr_FR"
@@ -29,7 +29,7 @@
   },
 
   "slider": {
-    "heading": "1D Nest : logiciel d'optimisation de coupe",
+    "heading": "1DNest : logiciel d'optimisation de coupe de barres, profilés et tubes",
     "subHeading": "L'outil logiciel le plus simple et productif pour minimiser les déchets et générer des plans de coupe avec une efficacité optimale pour économiser des matériaux tels que des profilés métalliques, des barres, des poutres, des tubes, des tiges, des rouleaux ou tout autre matériau qui, pour être fabriqué, doit être coupé en morceaux plus petits.",
     "freeTrial": "Essai gratuit !",
     "buyNow": "Acheter maintenant !",

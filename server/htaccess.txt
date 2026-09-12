@@ -277,3 +277,22 @@ RewriteRule ^(.*)$ https://1d-solutions.com/$1 [L,R=301]
 </IfModule>
 #
 # ▲▲▲ FIN AÑADIDO — 6. Rutas antiguas con tráfico medido ▲▲▲
+
+
+# ▼▼▼ INICIO AÑADIDO 2026-09-12 — 7. /en/ → raíz ▼▼▼
+#
+# El inglés vive en la raíz; /en/ es un artefacto del build que canonicaliza a la
+# raíz desde 2026-08-27. Medido el 2026-09-12: 0 clics orgánicos de Google a /en/*
+# desde 2025-09, ~1,5 entradas al día (selector de idioma, ChatGPT, Bing, directo),
+# ningún anuncio activo apunta ahí. El selector «English» ya enlaza a /index.html;
+# esta regla recoge lo demás y evita que una entrada por /en/ arranque una sesión
+# duplicada. Va después del bloque 6, cuyas reglas /en/index1.html y
+# /en/product1.html siguen ganando por orden.
+#
+# vault: investigacion-seo-y-competencia (§12) · bloque A q15 · plan-seo-organico
+#
+<IfModule mod_alias.c>
+  RedirectMatch 301 ^/en/(.*)$ https://1d-solutions.com/$1
+</IfModule>
+#
+# ▲▲▲ FIN AÑADIDO — 7. /en/ → raíz ▲▲▲

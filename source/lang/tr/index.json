@@ -1,7 +1,7 @@
 {
   "header": {
     "title": "1D Kesim Yazılımı – Nesting Optimizasyonu, Ücretsiz Deneme",
-    "description": "Ücretsiz 1D yazılımımızla kesimlerinizi optimize edin. Ahşap ve metal için idealdir. Destek ve lisans seçenekleriyle hemen indirin.",
+    "description": "Ücretsiz 1D yazılımımızla kesimlerinizi optimize edin. Çelik, alüminyum, boru ve profil için idealdir. Destek ve lisans seçenekleriyle hemen indirin.",
     "htmlLang": "tr",
     "langPath": "tr/",
     "ogLocale": "tr_TR"
@@ -29,7 +29,7 @@
   },
 
   "slider": {
-    "heading": "1D Nest: Kesim Optimizasyon Yazılımı",
+    "heading": "1DNest: Çubuk, Boru ve Profil Kesimi için Nesting Programı",
     "subHeading": "Atıkları en aza indirmek ve kesim planlarını en yüksek verimlilikle oluşturmak için en basit ve üretken yazılım aracı, metal profiller, çubuklar, kirişler, borular, çubuklar, rulolar veya daha küçük parçalara kesilmesi gereken herhangi bir malzemeyi korumak için.",
     "freeTrial": "Ücretsiz deneme!",
     "buyNow": "Şimdi Satın Al!",

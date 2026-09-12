@@ -1,7 +1,7 @@
 {
   "header":{
-    "description": "Free 1D cutting optimization software for metal and wood. Get support, license options, and boost productivity with our products. Download now.",
-    "title": "1D Cutting Software - Nesting Optimizer, Free Trial",
+    "description": "1D cutting optimizer for steel, aluminium, tubes and profiles: fit your cut list into stock lengths with minimum waste. One-time payment, no subscription.",
+    "title": "1D Cutting Optimizer for Bars and Tubes - 1DNest, Free Trial",
     "htmlLang": "en",
     "langPath": "",
     "ogLocale": "en_US"
@@ -29,7 +29,7 @@
   },
 
   "slider":{ 
-    "heading": "1D Nest: Cutting Optimizer Software",
+    "heading": "1DNest: 1D Cutting Optimizer for Bars, Tubes and Profiles",
     "subHeading": "The most simple and productive software tool to minimize waste and generate cutting plans with optimum efficiency to save materials such as metal profiles, bars, beams, tubes, rods, rolls or any material which to be manufactured must cut into smaller length pieces.",
     "freeTrial": "Free Trial!",
     "buyNow": "Buy Now!",

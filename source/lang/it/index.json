@@ -1,7 +1,7 @@
 {
   "header": {
-    "title": "Software di Taglio 1D - Ottimizzatore Nesting, Prova Gratuita",
-    "description": "Ottimizza il materiale con il nostro software gratuito 1D. Perfetto per metallo e legno. Supporto incluso. Scaricalo ora.",
+    "title": "Software di Taglio 1D - Ottimizzatore Nesting, Prova Gratis",
+    "description": "Ottimizza il materiale con il nostro software gratuito 1D. Perfetto per acciaio, alluminio, tubi e profili. Supporto incluso. Scaricalo ora.",
     "htmlLang": "it",
     "langPath": "it/",
     "ogLocale": "it_IT"
@@ -29,7 +29,7 @@
   },
 
   "slider": {
-    "heading": "1D Nest: Software di ottimizzazione del taglio",
+    "heading": "1DNest: Software di Nesting di Taglio per Barre, Tubi e Profili",
     "subHeading": "Lo strumento software più semplice e produttivo per minimizzare gli scarti e generare piani di taglio con efficienza ottimale per risparmiare materiali come profili metallici, barre, travi, tubi, aste, rotoli o qualsiasi materiale che, per essere fabbricato, deve essere tagliato in pezzi più piccoli.",
     "freeTrial": "Prova gratuita!",
     "buyNow": "Acquista ora!",

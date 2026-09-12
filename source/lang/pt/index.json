@@ -1,7 +1,7 @@
 {
   "header": {
-  "title": "Software de Corte 1D - Otimizador de Nesting, Teste Grátis",
-  "description": "Otimize seus cortes com nosso software 1D gratuito. Ideal para madeira e metal. Suporte técnico e licenças flexíveis. Baixe agora mesmo.",
+  "title": "Software de Plano de Corte de Barras e Perfis - Teste Grátis",
+  "description": "1DNest: otimização de corte linear de barras, perfis e tubos para Windows. Licença perpétua, sem assinatura anual. Teste grátis de 30 dias.",
   "htmlLang": "pt",
   "langPath": "pt/",
   "ogLocale": "pt_BR"
@@ -29,7 +29,7 @@
   },
 
   "slider": {
-    "heading": "1D Nest: Software de Otimização de Corte",
+    "heading": "1DNest: Software de Plano de Corte de Barras e Perfis",
     "subHeading": "A ferramenta de software mais simples e produtiva para minimizar o desperdício e gerar planos de corte com eficiência ótima para economizar materiais como perfis metálicos, barras, vigas, tubos, varas, rolos ou qualquer material que para ser fabricado deve ser cortado em pedaços menores.",
     "freeTrial": "Teste grátis!",
     "buyNow": "Compre Agora!",
