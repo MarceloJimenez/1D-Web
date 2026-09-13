@@ -1,54 +1,43 @@
-<section id="about" class="section bg-grey">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-6">
-                    <div class="img-block">
-                        <img src="../images/zused/hero3-700w.webp" srcset="../images/zused/hero3-540w.webp 540w, ../images/zused/hero3-700w.webp 700w, ../images/zused/hero3-1080w.webp 1080w" sizes="(max-width: 768px) 100vw, 651px" width="651" height="488" alt="Computer showing 1d-Nest software" class="img-fluid" loading="lazy">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="row justy-content-center">
-                        <div class="col-lg-6 col-sm-6 col-md-6 mb-5">
-                            <div class="text-center about-block">
-                                <div class="img-icon mb-4">
-                                     <i class="ti-thumb-up"></i>
-                                </div>
-                                <h4 class="mb-2"> ${{index.about.title1}}$ </h4>
-                                <p>${{index.about.par1}}$</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-6 col-md-6 mb-5">
-                            <div class="text-center about-block">
-                                <div class="img-icon mb-4">
-                                   <i class="ti-direction-alt"></i>
-                                </div>
-                                <h4 class="mb-2">${{index.about.title2}}$</h4>
-                                <p>${{index.about.par2}}$</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-6 col-md-6">
-                            <div class="text-center about-block">
-                                <div class="img-icon mb-4">
-                                    <i class="ti-cup"></i>
-                                </div>
-                                <h4 class="mb-2">${{index.about.title3}}$</h4>
-                                <p>${{index.about.par3}}$</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-6 col-md-6">
-                            <div class="text-center about-block">
-                                <div class="img-icon mb-4">
-                                    <i class="ti-user"></i>
-                                </div>
-                                <h4 class="mb-2">${{index.about.title4}}$</h4>
-                                <p>${{index.about.par4}}$</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- ABOUT — software screenshot in a monitor bezel + four qualities as group-boxes -->
+<section id="about" class="section section-alt section-fill">
+  <div class="container">
+    <div class="section-heading">
+      <h2 class="section-title rails-title"><span>${{index.nav.about}}$</span></h2>
+    </div>
+    <div class="about-layout">
+      <figure class="about-figure frame">
+        <span class="screw screw-tl" aria-hidden="true"></span>
+        <span class="screw screw-tr" aria-hidden="true"></span>
+        <div class="well">
+          <img src="../images/zused/hero3-700w.webp"
+            srcset="../images/zused/hero3-540w.webp 540w, ../images/zused/hero3-700w.webp 700w, ../images/zused/hero3-1080w.webp 1080w"
+            sizes="(max-width: 960px) 100vw, 480px" width="651" height="488"
+            alt="Computer showing the 1DNest cutting optimization software" loading="lazy">
         </div>
-    </section>
+        <figcaption class="figure-meta">
+          <span>1DNEST · MAIN WORKSPACE</span>
+          <span class="lcd">READY</span>
+        </figcaption>
+      </figure>
+
+      <div class="about-grid">
+        <div class="group-box">
+          <span class="legend">${{index.about.title1}}$</span>
+          <p>${{index.about.par1}}$</p>
+        </div>
+        <div class="group-box">
+          <span class="legend">${{index.about.title2}}$</span>
+          <p>${{index.about.par2}}$</p>
+        </div>
+        <div class="group-box">
+          <span class="legend">${{index.about.title3}}$</span>
+          <p>${{index.about.par3}}$</p>
+        </div>
+        <div class="group-box">
+          <span class="legend">${{index.about.title4}}$</span>
+          <p>${{index.about.par4}}$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

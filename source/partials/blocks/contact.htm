@@ -1,133 +1,58 @@
-  <!-- SECTIONS
-    ================================================== -->
+<!-- CONTACT FORM — web3forms + hCaptcha preserved -->
+<section class="section section-fill" id="contact">
+  <div class="container contact-narrow">
+    <div class="contact-heading">
+      <h5 class="super-heading">${{index.contact.superHeading}}$</h5>
+      <h2 class="section-title rails-title"><span>${{index.contact.heading}}$</span></h2>
+      <p class="section-sub">${{index.contact.subHeading}}$</p>
+    </div>
 
-    <section class="section pt-0" id="contact">
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-md-8 col-lg-6">
-                    <h5>${{index.contact.superHeading}}$</h5>
-                    <!-- Heading -->
-                    <h2 class="section-title mb-2 ">
-                        ${{index.contact.heading}}$
-                    </h2>
+    <!-- form message -->
+    <div class="alert-success contact__msg" style="display: none" role="alert">
+      ${{index.contact.success}}$
+    </div>
+    <!-- end message -->
 
-                    <!-- Subheading -->
-                    <p class="mb-5 ">
-                        ${{index.contact.subHeading}}$                        
-                    </p>
+    <form class="contact_form plate" action="https://api.web3forms.com/submit" method="POST">
+      <span class="screw screw-tl" aria-hidden="true"></span>
+      <span class="screw screw-tr" aria-hidden="true"></span>
+      <span class="screw screw-bl" aria-hidden="true"></span>
+      <span class="screw screw-br" aria-hidden="true"></span>
 
-                </div>
-            </div> <!-- / .row -->
+      <!-- Replace with your Access Key -->
+      <input type="hidden" name="access_key" value="7d7a0ab3-e4ad-4a00-accf-396355e9c520">
 
-            <div class="row">
-                <div class="col-lg-6">
-                   <!-- form message -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                                ${{index.contact.success}}$
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end message -->
-                    <!-- Contacts Form -->
-                    <form class="contact_form" action="https://api.web3forms.com/submit" method="POST">
-                        <div class="row">
-                             <!-- Replace with your Access Key -->
-                            <input type="hidden" name="access_key" value="7d7a0ab3-e4ad-4a00-accf-396355e9c520">
-                            <!-- Input -->    
-                            <div class="col-sm-6 mb-6">
-                                <div class="form-group">
-                                    <label class="h6 small d-block text-uppercase">
-                                        ${{index.contact.name}}$
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <div class="input-group">
-                                        <input class="form-control" name="name" id="name" required="" placeholder="${{index.contact.name-ph}}$" type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Input -->
-
-                            <!-- Input -->
-                            <div class="col-sm-6 mb-6">
-                                <div class="form-group">
-                                    <label class="h6 small d-block text-uppercase">
-                                        ${{index.contact.email}}$
-                                        <span class="text-danger">*</span>
-                                    </label>
-
-                                    <div class="input-group ">
-                                        <input class="form-control" name="email" id="email" required="" placeholder="${{index.contact.email-ph}}$" type="email">
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Input -->
-
-                            <div class="w-100"></div>
-
-                            <!-- Input -->
-                            <div class="col-sm-12 mb-6">
-                                <div class="form-group">
-                                    <label class="h6 small d-block text-uppercase">
-                                        ${{index.contact.subject}}$
-                                        <span class="text-danger">*</span>
-                                    </label>
-
-                                    <div class="input-group">
-                                        <input class="form-control" name="subject" id="subject" required="" placeholder="${{index.contact.subject-ph}}$" type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Input -->
-
-                            <!-- Input -->
-                            <!-- <div class="col-sm-6 mb-6">
-                                <div class="form-group">
-                                    <label class="h6 small d-block text-uppercase">
-                                        Your Phone Number
-                                        <span class="text-danger">*</span>
-                                    </label>
-
-                                    <div class="input-group ">
-                                        <input class="form-control" id="phone" name="phone" required="" placeholder="1-800-643-4500" type="text">
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- End Input -->
-                        </div>
-
-                        <!-- Input -->
-                        <div class="form-group mb-5">
-                            <label class="h6 small d-block text-uppercase">
-                                ${{index.contact.body}}$
-                                <span class="text-danger">*</span>
-                            </label>
-
-                            <div class="input-group">
-                                <textarea class="form-control" rows="4" name="message" id="message" required="" placeholder="${{index.contact.body-ph}}$"></textarea>
-                            </div>
-                        </div>
-                        <!-- End Input -->
-                            <!-- hCaptcha Spam Protection -->
-                            <div class="h-captcha" data-captcha="true"></div>
-
-                        <div class="">
-                           <button name="submit" type="submit" class="btn btn-primary btn-circled"> ${{index.contact.button}}$</button>
-                           
-                            <p class="small pt-3">${{index.contact.par}}$</p>
-                        </div>
-                    </form>
-                    <!-- End Contacts Form -->
-                        <!-- Required for hCaptcha -->
-                        <script src="https://web3forms.com/client/script.js" async defer></script>
-                </div>
-
-                <!-- <div class="col-lg-6 col-md-6"> -->
-                    <!-- START MAP -->
-                    <!-- <div id="map" ></div> -->
-                    <!-- END MAP -->
-                <!-- </div> -->
-            </div>
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">${{index.contact.name}}$ <span class="req">*</span></label>
+          <input class="form-control" name="name" id="name" required placeholder="${{index.contact.name-ph}}$" type="text">
         </div>
-    </section>
+        <div class="field">
+          <label for="email">${{index.contact.email}}$ <span class="req">*</span></label>
+          <input class="form-control" name="email" id="email" required placeholder="${{index.contact.email-ph}}$" type="email">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="subject">${{index.contact.subject}}$ <span class="req">*</span></label>
+        <input class="form-control" name="subject" id="subject" required placeholder="${{index.contact.subject-ph}}$" type="text">
+      </div>
+
+      <div class="field">
+        <label for="message">${{index.contact.body}}$ <span class="req">*</span></label>
+        <textarea class="form-control" rows="5" name="message" id="message" required placeholder="${{index.contact.body-ph}}$"></textarea>
+      </div>
+
+      <!-- hCaptcha Spam Protection -->
+      <div class="h-captcha" data-captcha="true"></div>
+
+      <div class="form-actions">
+        <button name="submit" type="submit" class="btn btn-blue">${{index.contact.button}}$</button>
+        <p class="small">${{index.contact.par}}$</p>
+      </div>
+    </form>
+
+    <!-- Required for hCaptcha -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+  </div>
+</section>

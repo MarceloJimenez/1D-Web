@@ -1,44 +1,54 @@
-
-    <!-- HERO
+<!-- HERO — machined plate with the classic report + steel tubes photo
     ================================================== -->
-    <section class="banner-area section pt-8" style="height: 100vh; overflow-y: hidden;">
-        <!-- Content -->
-        <div class="container">
+<section class="hero" id="top">
+  <div class="container">
+    <p class="hero-kicker">Length cutting optimization software</p>
+    <h1 class="hero-title rails-title"><span class="hero-title-text">${{index.slider.heading}}$</span></h1>
 
-            <div class="row  align-items-center pt-4">
-                <div class="col-md-12 col-lg-7 text-center text-lg-left">
-                    <div class="main-banner pt-4" >
-                        <!-- Heading -->
-                        <h1 class="display-4 mb-4 font-weight-bold">
-                            ${{index.slider.heading}}$
-                        </h1>
-                        
+    <div class="plate hero-plate">
+      <span class="screw screw-tl" aria-hidden="true"></span>
+      <span class="screw screw-tr" aria-hidden="true"></span>
+      <span class="screw screw-bl" aria-hidden="true"></span>
+      <span class="screw screw-br" aria-hidden="true"></span>
 
-                        <!-- Subheading -->
-                        <!-- <p class="lead mb-4 ">
-                            Reduce waste and generate optimal cutting plans with the most simple and easy to learn optimization software tool for your one dimension materials.
-                        </p> -->
-                        <p class="lead mb-4 ">
-                         ${{index.slider.subHeading}}$ 
-                    </p>
-                        <!-- Button -->
-                        <p class="mb-0">
-                            <a href="https://1d-solutions.com/_downloads/1DNest_software_version_402.exe" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-circled btn-slider">
-                                ${{index.slider.freeTrial}}$ 
-                            </a>
-                            <a href=" https://store.payproglobal.com/checkout?products[1][id]=96924" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-circled" onclick="addToCartSingle()">
-                                ${{index.slider.buyNow}}$
-                            </a> 
-                        </p>
-                        <p class="lead mt-2 text-muted">${{index.slider.afterTrialMessage}}$</p>
-                    </div>
-                </div>
+      <figure class="hero-figure frame">
+        <div class="well">
+          <img fetchpriority="high" loading="eager" src="../images/zused/sobrep3_02.jpg"
+            width="325" height="383"
+            alt="Printed 1DNest cutting list report with optimized cut layouts, next to the steel tubes it was computed for">
+        </div>
+        <figcaption class="figure-meta">
+          <span>1DNEST · CUTTING PLAN</span>
+          <span class="lcd">EFF 98.6%</span>
+        </figcaption>
+      </figure>
 
-                <div class="col-lg-5 d-none d-lg-block text-center">
-                    <div class="banner-img-block img-block">
-                        <img fetchpriority="high" loading="eager" src="../images/zused/old-opti-pipes.webp" width="306" height="364" alt="Metal pipes and profiles ready for optimized cutting with 1DNest" class="img-fluid">
-                    </div>
-                </div>
-            </div> <!-- / .row -->
-        </div> <!-- / .container -->
-    </section>
+      <div class="hero-copy">
+        <p class="hero-lead">${{index.slider.subHeading}}$</p>
+
+        <div class="cta-tray">
+          <div class="cta-row">
+            <a href="https://1d-solutions.com/_downloads/1DNest_software_version_402.exe" target="_blank"
+              rel="noopener noreferrer" class="btn btn-blue btn-slider">${{index.slider.freeTrial}}$</a>
+            <span class="cta-note">30 days, no restriction to enter the data that you want.</span>
+          </div>
+          <hr class="rail">
+          <div class="cta-row">
+            <a href="https://store.payproglobal.com/checkout?products[1][id]=96924" target="_blank"
+              rel="noopener noreferrer" class="btn btn-metal" onclick="addToCartSingle()">${{index.slider.buyNow}}$</a>
+            <span class="cta-note">Safe purchase via PayPro Global. 70+ payment methods.</span>
+          </div>
+          <hr class="rail">
+          <div class="cta-row">
+            <a href="product.html" class="btn btn-metal">+ Information</a>
+            <span class="cta-note">About capabilities of this linear cutting optimizer.</span>
+          </div>
+        </div>
+
+        <p class="led-line"><span class="led" aria-hidden="true"></span> ${{index.slider.afterTrialMessage}}$</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="steel-divider" aria-hidden="true"></div>

@@ -8,33 +8,37 @@
 "description": "${{index.contact.description}}$"
 })
 
-<section id="contact-info" class="section mb-4">
+<section id="contact-info" class="section">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-sm-6 col-md-6">
-                <div class="contact-info-block text-center">
-                    <i class="pe-7s-map-marker"></i>
-                    <h4>${{index.contact.address}}$</h4>
-                    <p class="lead">Santiago, Chile</p>
-                </div>
+        <div class="info-grid">
+            <div class="plate info-tile">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11z"></path>
+                    <circle cx="12" cy="10" r="2.6"></circle>
+                </svg>
+                <h4>${{index.contact.address}}$</h4>
+                <p class="lead">Santiago, Chile</p>
             </div>
-            <div class="col-lg-4 col-sm-6 col-md-6">
-                <div class="contact-info-block text-center">
-                    <i class="pe-7s-mail"></i>
-                    <h4>${{index.contact.mail}}$</h4>
-                    <p class="lead">info@1d-solutions.com</p>
-                </div>
+            <div class="plate info-tile">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="1.5"></rect>
+                    <path d="M3.5 6.5 12 13l8.5-6.5"></path>
+                </svg>
+                <h4>${{index.contact.mail}}$</h4>
+                <p class="lead">info@1d-solutions.com</p>
             </div>
-            <div class="col-lg-4 col-sm-6 col-md-6">
-                <div class="contact-info-block text-center">
-                    <i class="pe-7s-help1"></i>
-                    <h4>Help</h4>
-                    <p class="lead">
-                        <a href="mailto:info@1d-solutions.com?subject=1D%20Support&body=Hello!%20My%20name%20is%20...%20%2C%20I%20have%20a%20single%2Fenterprise%2FDLL%20license%2C%20and%20I%20have%20encountered%20the%20following%20issue.">
-                            ${{index.contact.help}}$
-                           </a>
-                    </p>
-                </div>
+            <div class="plate info-tile">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <circle cx="12" cy="12" r="3.4"></circle>
+                    <path d="M5.7 5.7 9.6 9.6 M14.4 14.4l3.9 3.9 M18.3 5.7l-3.9 3.9 M9.6 14.4l-3.9 3.9"></path>
+                </svg>
+                <h4>Help</h4>
+                <p class="lead">
+                    <a href="mailto:info@1d-solutions.com?subject=1D%20Support&body=Hello!%20My%20name%20is%20...%20%2C%20I%20have%20a%20single%2Fenterprise%2FDLL%20license%2C%20and%20I%20have%20encountered%20the%20following%20issue.">
+                        ${{index.contact.help}}$
+                    </a>
+                </p>
             </div>
         </div>
     </div>
@@ -44,4 +48,3 @@
 @@include('blocks/footer.htm')
 
 @@include('footer.htm')
-   

@@ -1,80 +1,66 @@
-<!-- LOADER TEMPLATE -->
-<div id="page-loader">
-  <div class="loader-icon fa fa-spin colored-border"></div>
-</div>
-<!-- /LOADER TEMPLATE -->
-
-
-<!-- NAVBAR
+<!-- HEADER: glossy steel banner + machined tab bar
     ================================================= -->
-<!-- <nav class="navbar navbar-expand-lg navbar-dark trans-navigation fixed-top navbar-togglable"> -->
-  <nav class="navbar navbar-expand-lg navbar-dark header-white fixed-top navbar-togglable mb-4"> 
-  <div class="container" id="header">
-    <a class="navbar-brand" href="index.html">
-      <!-- <img src="../images/zused/Log_New_white_clean.webp" alt="Logo White of 1D-solutions"  height="35px"> -->
-      <picture>
-        <source srcset="../images/zused/1D_Solutions_Horizontal.webp" type="image/webp">
-        <img src="../images/zused/1D_Solutions_Horizontal.png" alt="Logo White of 1D-solutions" width="198" height="50" loading="eager">
-      </picture>
+<header class="site-top">
+  <div class="site-banner">
+    <a class="banner-brand" href="index.html" aria-label="1D-Solutions home">
+      <img src="../images/zused/1D_Solutions_Horizontal-removebg.png" alt="1D-Solutions logo" width="198" height="50" loading="eager">
     </a>
-    <!-- Toggler -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="fa fa-bars"></span>
-    </button>
+    <div class="banner-tools">
+      <div class="dropdown">
+        <button class="btn-chrome dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+          ${{index.nav.language}}$ <span class="caret">▼</span>
+        </button>
+        <ul class="dropdown-menu menu-right">
+          <li><a class="dropdown-item" href="/index.html">English</a></li>
+          <li><a class="dropdown-item" href="/es/index.html">Español</a></li>
+          <li><a class="dropdown-item" href="/fr/index.html">Français</a></li>
+          <li><a class="dropdown-item" href="/de/index.html">Deutsch</a></li>
+          <li><a class="dropdown-item" href="/it/index.html">Italiano</a></li>
+          <li><a class="dropdown-item" href="/pt/index.html">Português</a></li>
+          <li><a class="dropdown-item" href="/tr/index.html">Türkçe</a></li>
+          <li><a class="dropdown-item" href="/sa/index.html">العربية</a></li>
+        </ul>
+      </div>
+      <button id="theme-toggle" class="btn-chrome theme-toggle" type="button" aria-label="Toggle dark mode" title="Light / dark">
+        <span class="ico-moon" aria-hidden="true">☾</span><span class="ico-sun" aria-hidden="true">☀</span>
+      </button>
+    </div>
+  </div>
 
-    <!-- Collapse -->
-    <div class="collapse navbar-collapse has-dropdown" id="navbarCollapse">
-      <!-- Links -->
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item ">
-          <a href="index.html" class="nav-link js-scroll-trigger">
-            ${{index.nav.home}}$
-          </a>
-        </li> 
-        <li class="nav-item ">
-          <a href="index.html#about" class="nav-link js-scroll-trigger">
-            ${{index.nav.about}}$
+  <nav class="navbar" id="header" aria-label="Main navigation">
+    <div class="container navbar-inner">
+      <button class="navbar-toggler btn-metal btn" type="button" aria-controls="navbarCollapse"
+        aria-expanded="false" aria-label="Toggle navigation">☰</button>
 
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="index.html#services-2" id="navbarWelcome" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            ${{index.nav.products}}$
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarWelcome">
-            <li><a class="dropdown-item" href="product.html">1D-Nest Software</a></li>
-            <!-- <li><a class="dropdown-item" href="index-2.html">CutLib DLL</a></li> -->
-          </ul>
-        </li>
-        <li class="nav-item ">
-          <a href="index.html#pricing" class="nav-link js-scroll-trigger">
-            ${{index.nav.pricing}}$
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="index.html#services-2" id="navbarWelcome" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            ${{index.nav.language}}$
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarWelcome">
-            <li><a class="dropdown-item" href="/index.html"><span class="fi fi-gb mr-2"></span> English</a></li>
-            <li><a class="dropdown-item" href="/es/index.html"><span class="fi fi-es mr-2"></span> Español</a></li>
-            <li><a class="dropdown-item" href="/fr/index.html"><span class="fi fi-fr mr-2"></span> Français</a></li>
-            <li><a class="dropdown-item" href="/de/index.html"><span class="fi fi-de mr-2"></span> Deutsch</a></li>
-            <li><a class="dropdown-item" href="/it/index.html"><span class="fi fi-it mr-2"></span> Italiano</a></li>
-            <li><a class="dropdown-item" href="/pt/index.html"><span class="fi fi-pt mr-2"></span> Português</a></li>
-            <li><a class="dropdown-item" href="/tr/index.html"><span class="fi fi-tr mr-2"></span> Türkçe</a></li>
-            <li><a class="dropdown-item" href="/sa/index.html"><span class="fi fi-sa mr-2"></span> العربية</a></li>
-          </ul>
-        </li>
-        <li class="nav-item ">
-          <a href="contact.html#contact" class="nav-link">
-            ${{index.nav.contact}}$
-          </a>
-        </li>
-      </ul>
-    </div> <!-- / .navbar-collapse -->
-  </div> <!-- / .container -->
-</nav>
+      <div class="navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav">
+          <li>
+            <a href="index.html" class="nav-tab js-scroll-trigger">${{index.nav.home}}$</a>
+          </li>
+          <li>
+            <a href="index.html#about" class="nav-tab js-scroll-trigger">${{index.nav.about}}$</a>
+          </li>
+          <li class="dropdown">
+            <button class="nav-tab dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+              ${{index.nav.products}}$ <span class="caret">▾</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="product.html">1D-Nest Software</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="index.html#pricing" class="nav-tab js-scroll-trigger">${{index.nav.pricing}}$</a>
+          </li>
+          <li>
+            <a href="index.html#client-map" class="nav-tab js-scroll-trigger">${{index.nav.clients}}$</a>
+          </li>
+          <li>
+            <a href="contact.html#contact" class="nav-tab">${{index.nav.contact}}$</a>
+          </li>
+        </ul>
+      </div>
+
+      <span class="nav-note">Windows 10 / 11 · v4.02</span>
+    </div>
+  </nav>
+</header>

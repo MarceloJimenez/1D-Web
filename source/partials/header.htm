@@ -83,10 +83,6 @@
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <!-- Preconnect + preload LCP image to shorten critical chain -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="../images/zused/old-opti-pipes.webp" as="image">
   <title>@@pageTitle</title>
   <!-- English lives at the root (langPath is empty for en), so the /en/ copies
        canonicalize back to the root pages instead of competing with them. -->
@@ -102,15 +98,12 @@
   <!-- Arabic pages are served under /sa/ (legacy folder name); the language code is still ar -->
   <link rel="alternate" hreflang="ar" href="https://1d-solutions.com/sa/${{ _filename_ }}$" />
 
-  
-
-
   <!-- Mobile Specific Metas
   ================================================== -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="@@pageDesc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="author" content="Marcelo Jiménez">
+  <meta name="theme-color" content="#0c4a74">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
@@ -124,38 +117,15 @@
   <meta name="twitter:title" content="@@pageTitle">
   <meta name="twitter:description" content="@@pageDesc">
   <meta name="twitter:image" content="https://1d-solutions.com/images/zused/1dSoftwareTest.png">
-  <!-- <meta name="generator" content="Themefisher Rappo HTML Template v1.0"> -->
-  
-  <!-- theme meta -->
-  <!-- <meta name="theme-name" content="rappo" /> -->
 
-  <!-- Critical CSS (blocking): layout and main styles only -->
-  <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <!-- Non-critical CSS: load after load event so LCP is not blocked (keeps them out of critical chain) -->
+  <!-- Dark mode is opt-in (manual toggle). Applied before first paint to avoid a flash. -->
   <script>
-  (function(){
-    function loadNonCritical(){
-      var l=[
-        {h:'../plugins/fontawesome/css/all.css'},
-        {h:'../plugins/themify/css/themify-icons.css'},
-        {h:'../plugins/flag-icons/css/flag-icons.min.css'},
-        {h:'https://fonts.googleapis.com/css?family=Muli:300,400,500,700,900&display=swap'}
-      ];
-      l.forEach(function(o){
-        var link=document.createElement('link');link.rel='stylesheet';link.href=o.h;document.head.appendChild(link);
-      });
-    }
-    if (document.readyState === 'complete') setTimeout(loadNonCritical, 0);
-    else window.addEventListener('load', function(){ setTimeout(loadNonCritical, 0); });
-  })();
+    (function(){try{if(localStorage.getItem('themeMode')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
   </script>
-  <noscript>
-  <link rel="stylesheet" href="../plugins/fontawesome/css/all.css">
-  <link rel="stylesheet" href="../plugins/themify/css/themify-icons.css">
-  <link rel="stylesheet" href="../plugins/flag-icons/css/flag-icons.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,500,700,900&display=swap">
-  </noscript>
+
+  <!-- Single stylesheet. System fonts only (Tahoma/Georgia): no webfont request,
+       no Bootstrap, no icon fonts — nothing else blocks rendering. -->
+  <link rel="stylesheet" href="../css/style.css">
 
   <!--Favicon-->
   <link rel="icon" href="../images/favicon.png" type="image/x-icon">

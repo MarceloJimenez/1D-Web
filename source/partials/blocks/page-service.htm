@@ -1,27 +1,14 @@
-
-   <!-- HERO
-    ================================================== -->
-    <section class="page-banner-area page-service">
-        <div class="overlay"></div>
-        <!-- Content -->
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9 col-md-12 col-12 text-center">
-                    <div class="page-banner-content">
-                        <h1 class="display-4 font-weight-bold">@@title</h1>
-                        <p>@@description</p>
-                    </div>
-                     <!-- Button -->
-                     <p class="mb-0">
-                        <a href="https://1d-solutions.com/_downloads/1DNest_software_version_402.exe" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-circled btn-slider">
-                            ${{index.product.freeTrial}}$
-                        </a>
-                        <a href="https://store.payproglobal.com/checkout?products[1][id]=96924" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-circled" onclick="addToCartSingle()">
-                            ${{index.product.buyNow}}$
-                        </a>
-                    </p>
-                    <p class="small mt-2 mb-0 text-white-50">${{index.product.afterTrialMessage}}$</p>
-                </div>
-            </div> <!-- / .row -->
-        </div> <!-- / .container -->
-    </section>
+<!-- PAGE BANNER (product) — dark steel band with CTAs -->
+<section class="page-banner page-service">
+  <div class="container">
+    <h1>@@title</h1>
+    <p class="banner-desc">@@description</p>
+    <div class="banner-actions">
+      <a href="https://1d-solutions.com/_downloads/1DNest_software_version_402.exe" target="_blank"
+        rel="noopener noreferrer" class="btn btn-blue btn-slider">${{index.product.freeTrial}}$</a>
+      <a href="https://store.payproglobal.com/checkout?products[1][id]=96924" target="_blank"
+        rel="noopener noreferrer" class="btn btn-silver" onclick="addToCartSingle()">${{index.product.buyNow}}$</a>
+    </div>
+    <p class="led-line"><span class="led" aria-hidden="true"></span> ${{index.product.afterTrialMessage}}$</p>
+  </div>
+</section>

@@ -1,81 +1,67 @@
-<section class="section" id="services-2">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 text-center">
-                    <div class="section-heading">
-                        <!-- Heading -->
-                        <h2 class="section-title mb-2 text-white">
-                            ${{index.service.heading}}$
-                        </h2>
+<!-- PRODUCTS — two application windows: 1DNest & CutLib -->
+<section class="section section-fill" id="services-2">
+  <div class="container">
+    <div class="section-heading">
+      <h2 class="section-title rails-title"><span>${{index.service.heading}}$</span></h2>
+      <p class="section-sub">${{index.service.subHeading}}$</p>
+    </div>
 
-                        <!-- Subheading -->
-                        <p class="mb-2 text-white">
-                            ${{index.service.subHeading}}$
-                        </p>
-                    </div>
-                </div>
-            </div> <!-- / .row -->
-
-            <div class="row justify-content-around">
-                <div class="col-lg-5 col-sm-6 col-md-6 mb-30 ">
-                    <div class="web-service-block px-5">
-                        <i class="ti-settings"></i>
-                        <h3>${{index.service.title1}}$</h3>
-                        <p>${{index.service.par1}}$</p>
-                         <!-- Button -->
-                         <p class="mb-0">
-                            <a href="https://1d-solutions.com/_downloads/1DNest_software_version_402.exe" target="_blank" rel="noopener noreferrer" class="btn btn-light btn-circled btn-service" > 
-                                <!-- <a href="https://1d-solutions.com/_downloads/1DNest_software_version_402.exe" target="_blank" rel="noopener noreferrer" class="btn btn-light btn-circled btn-service" onclick="ga('send', 'event', 'Demo Ingles', 'Descargar')"> -->
-                                ${{index.service.freeTrial}}$
-                            </a>
-                        </p>
-                        <p class="small mt-2 mb-0 text-white-50">${{index.service.afterTrialMessage}}$</p>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-sm-6 col-md-6 mb-30 ">
-                    <div class="web-service-block px-5">
-                        <i class="ti-desktop"></i>
-                        <h3>${{index.service.title2}}$</h3>
-                        <p>${{index.service.par2}}$</p>
-                         <!-- Button -->
-                         <p class="mb-0">
-                            <a href="mailto:info@1d-solutions.com?Subject=Quote%20request%20for%20CutLib%20&body=Hello,%20I%20would%20like%20to%20request%20a%20quote%20for%20the%201d-solutions%20CutLib%20library.%20"target="_blank" rel="noopener noreferrer" class="btn btn-light btn-circled btn-quote">${{index.service.quote}}$</a>
-<!-- 
-                            <a href="#!" target="_blank" rel="noopener noreferrer" class="btn btn-light btn-circled">
-                                Quote request
-                            </a> -->
-                        </p>
-                    </div>
-                </div>
-                <!-- <div class="col-lg-4 col-sm-6 col-md-6 mb-30">
-                    <div class="web-service-block">
-                        <i class="ti-announcement"></i>
-                        <h3>Digital Marketing</h3>
-                        <p>Afraid we praise lively he suffer family estate is. Ample order up in of in ready. Timed blind had .</p>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-lg-4 col-sm-6 col-md-6 ">
-                    <div class="web-service-block">
-                        <i class="ti-layers-alt"></i>
-                        <h3>Graphic Design</h3>
-                        <p>Afraid we praise lively he suffer family estate is. Ample order up in of in ready. Timed blind had .</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 col-md-6 ">
-                    <div class="web-service-block">
-                        <i class="ti-mobile"></i>
-                        <h3>App Development</h3>
-                        <p>Afraid we praise lively he suffer family estate is. Ample order up in of in ready. Timed blind had .</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 col-md-6 ">
-                    <div class="web-service-block">
-                        <i class="ti-settings"></i>
-                        <h3>Wordpress Installation</h3>
-                        <p>Afraid we praise lively he suffer family estate is. Ample order up in of in ready. Timed blind had .</p>
-                    </div>
-                </div> -->
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="titlebar">${{index.service.title1}}$</div>
+        <div class="product-body">
+          <p>${{index.service.par1}}$</p>
+          <div class="mini-diagram" aria-hidden="true">
+            <div>
+              <div class="bar-label">STOCK 6000</div>
+              <div class="bar"><span style="flex:31">TR-03</span><span style="flex:31">TR-03</span><span style="flex:19">TRA-02</span><span style="flex:11">NN-1</span><span class="waste" style="flex:4"></span></div>
             </div>
+            <div>
+              <div class="bar-label">STOCK 5500</div>
+              <div class="bar"><span style="flex:27">TRA-06</span><span style="flex:34">TR-03</span><span style="flex:25">NN-3</span><span style="flex:12">NN-2</span><span class="waste" style="flex:2"></span></div>
+            </div>
+            <div>
+              <div class="bar-label">OFFCUT 3250</div>
+              <div class="bar"><span style="flex:42">TRA-03</span><span style="flex:35">TRA-02</span><span style="flex:17">NN-1</span><span class="waste" style="flex:6"></span></div>
+            </div>
+            <div class="diagram-meta"><span class="lcd">EFF 98.6%</span><span class="lcd">WASTE 1.4%</span></div>
+          </div>
+          <p class="led-line"><span class="led" aria-hidden="true"></span> ${{index.service.afterTrialMessage}}$</p>
+          <div class="product-actions">
+            <a href="https://1d-solutions.com/_downloads/1DNest_software_version_402.exe" target="_blank"
+              rel="noopener noreferrer" class="btn btn-blue btn-service">${{index.service.freeTrial}}$</a>
+          </div>
         </div>
-    </section>
+      </div>
+
+      <div class="product-card">
+        <div class="titlebar titlebar-teal">${{index.service.title2}}$</div>
+        <div class="product-body">
+          <p>${{index.service.par2}}$</p>
+          <div class="mini-diagram mini-flow" aria-hidden="true">
+            <div class="flow-row">
+              <span class="chip-io">YOUR ERP · CAD</span>
+              <span class="flow-arrow">▸</span>
+              <span class="chip-dll">CutLib.dll</span>
+              <span class="flow-arrow">▸</span>
+              <span class="chip-io">CUTTING PLANS</span>
+            </div>
+            <div class="flow-caption">WORKS WITH</div>
+            <div class="flow-row">
+              <span class="chip-mini">VB</span>
+              <span class="chip-mini">C++</span>
+              <span class="chip-mini">DELPHI</span>
+              <span class="chip-mini">ANY DLL-CAPABLE STACK</span>
+            </div>
+            <div class="diagram-meta"><span class="lcd">CUTLIB.DLL</span><span class="lcd">READY</span></div>
+          </div>
+          <p class="led-line"><span class="led" aria-hidden="true"></span> ${{index.price.feat3-3}}$</p>
+          <div class="product-actions">
+            <a href="mailto:info@1d-solutions.com?Subject=Quote%20request%20for%20CutLib%20&body=Hello,%20I%20would%20like%20to%20request%20a%20quote%20for%20the%201d-solutions%20CutLib%20library.%20"
+              target="_blank" rel="noopener noreferrer" class="btn btn-metal btn-quote">${{index.service.quote}}$</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

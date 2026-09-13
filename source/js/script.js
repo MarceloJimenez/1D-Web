@@ -1,50 +1,92 @@
-(function ($) {
+(function () {
   'use strict';
 
-  // PRELOADER
-  $(window).on('load', function () {
-    $('#page-loader').fadeOut('slow', function () {
-      $(this).remove();
-    });
-  });
-
-  // navbarDropdown – use matchMedia to avoid layout read (no forced reflow)
-  if (window.matchMedia && window.matchMedia('(max-width: 991px)').matches) {
-    $('.has-dropdown .dropdown-toggle').on('click', function () {
-      $(this).siblings('.dropdown-menu').slideToggle(300);
+  // Mobile menu toggle
+  var toggler = document.querySelector('.navbar-toggler');
+  var collapse = document.getElementById('navbarCollapse');
+  if (toggler && collapse) {
+    toggler.addEventListener('click', function () {
+      var open = collapse.classList.toggle('show');
+      toggler.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   }
+  function closeMenu() {
+    if (collapse && collapse.classList.contains('show')) {
+      collapse.classList.remove('show');
+      if (toggler) toggler.setAttribute('aria-expanded', 'false');
+    }
+  }
 
-  // Single scroll handler + rAF to avoid forced reflow (read layout once per frame)
+  // Dropdowns (products, language)
+  var toggles = document.querySelectorAll('.dropdown-toggle');
+  function closeDropdowns(except) {
+    document.querySelectorAll('.dropdown-menu.show').forEach(function (m) {
+      if (m !== except) m.classList.remove('show');
+    });
+    toggles.forEach(function (t) {
+      var m = t.parentElement.querySelector('.dropdown-menu');
+      if (m && !m.classList.contains('show')) t.setAttribute('aria-expanded', 'false');
+    });
+  }
+  toggles.forEach(function (t) {
+    t.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var menu = t.parentElement.querySelector('.dropdown-menu');
+      if (!menu) return;
+      var willShow = !menu.classList.contains('show');
+      closeDropdowns();
+      if (willShow) menu.classList.add('show');
+      t.setAttribute('aria-expanded', willShow ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function () { closeDropdowns(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeDropdowns(); closeMenu(); }
+  });
+
+  // Scroll state: reveal scroll-to-top, shadow on sticky nav
   var scrollTicking = false;
+  var toTop = document.getElementById('scroll-to-top');
+  var navbar = document.querySelector('.navbar');
   function onScrollTick() {
     var top = window.pageYOffset || document.documentElement.scrollTop;
     var past = top > 70;
-    $('.scroll-to-top').toggleClass('reveal', past);
-    $('.site-navigation,.trans-navigation').toggleClass('header-white', past);
+    if (toTop) toTop.classList.toggle('reveal', past);
+    if (navbar) navbar.classList.toggle('header-white', past);
     scrollTicking = false;
   }
-  function onScroll() {
+  window.addEventListener('scroll', function () {
     if (!scrollTicking) {
       scrollTicking = true;
       requestAnimationFrame(onScrollTick);
     }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
+  }, { passive: true });
 
-  // scroll-to-top – native smooth scroll to avoid jQuery animate reflows
-  if ($('#scroll-to-top').length) {
-    $('#scroll-to-top').on('click', function (e) {
+  if (toTop) {
+    toTop.addEventListener('click', function (e) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
-  // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').on('click', function (event) {
-    $('.navbar-collapse').collapse('hide');
+  // Close the mobile menu when a nav link is used
+  document.querySelectorAll('.js-scroll-trigger').forEach(function (a) {
+    a.addEventListener('click', closeMenu);
   });
 
-})(jQuery);
-
-
+  // Manual dark mode toggle (light by default; choice remembered)
+  var themeBtn = document.getElementById('theme-toggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var root = document.documentElement;
+      var dark = root.getAttribute('data-theme') === 'dark';
+      if (dark) {
+        root.removeAttribute('data-theme');
+      } else {
+        root.setAttribute('data-theme', 'dark');
+      }
+      try { localStorage.setItem('themeMode', dark ? 'light' : 'dark'); } catch (e) {}
+    });
+  }
+})();

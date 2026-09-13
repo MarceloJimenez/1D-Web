@@ -1,81 +1,58 @@
-<section class="section" id="pricing">
-        <!-- Content -->
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 text-center">
-                    <div class="section-heading">
-                        <!-- Heading -->
-                        <h2 class="section-title">
-                            ${{index.price.heading}}$
-                        </h2>
+<!-- PRICING — three machined plates; PayPro links and GTM classes preserved -->
+<section class="section section-alt section-fill" id="pricing">
+  <div class="container">
+    <div class="section-heading">
+      <h2 class="section-title rails-title"><span>${{index.price.heading}}$</span></h2>
+      <p class="section-sub">${{index.price.subHeading}}$</p>
+    </div>
 
-                        <!-- Subheading -->
-                        <p>
-                            ${{index.price.subHeading}}$ 
-                        </p>
-                    </div>
-                </div>
-            </div> <!-- / .row -->
+    <div class="price-grid">
+      <div class="plate price-card">
+        <span class="screw screw-tl" aria-hidden="true"></span>
+        <span class="screw screw-tr" aria-hidden="true"></span>
+        <h3>${{index.price.title1}}$</h3>
+        <div class="price-amt"><small>$</small>171<span>USD</span></div>
+        <ul class="price-features">
+          <li>${{index.price.feat1-1}}$</li>
+          <li>${{index.price.feat1-2}}$</li>
+          <li>${{index.price.feat1-3}}$</li>
+          <li>${{index.price.feat1-4}}$</li>
+          <li class="na">${{index.price.feat1-5}}$</li>
+          <li class="na">${{index.price.feat1-6}}$</li>
+        </ul>
+        <a href="https://store.payproglobal.com/checkout?products[1][id]=96924"
+          class="btn btn-metal btn-block btn-buy-single" onclick="addToCartSingle()">Purchase Now</a>
+      </div>
 
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-sm-6 col-md-6">
-                    <div class="pricing-box">
-                       <h3> ${{index.price.title1}}$</h3>
-                        <div class="price-block">
-                             <h2><small>$</small>171<span>USD</span></h2>
-                        </div>
+      <div class="plate price-card price-featured">
+        <span class="screw screw-tl" aria-hidden="true"></span>
+        <span class="screw screw-tr" aria-hidden="true"></span>
+        <h3>${{index.price.title2}}$</h3>
+        <div class="price-amt"><small>$</small>675<span>USD</span></div>
+        <ul class="price-features">
+          <li>${{index.price.feat2-1}}$</li>
+          <li>${{index.price.feat2-2}}$</li>
+          <li>${{index.price.feat2-3}}$</li>
+          <li>${{index.price.feat2-4}}$</li>
+          <li>${{index.price.feat2-5}}$</li>
+        </ul>
+        <a href="https://store.payproglobal.com/checkout?products[1][id]=96926"
+          class="btn btn-blue btn-block btn-buy-enterprise" onclick="addToCartEnterprise()">Purchase Now</a>
+      </div>
 
-                        <ul class="price-features list-unstyled">
-                            <li>${{index.price.feat1-1}}$</li>
-                            <li>${{index.price.feat1-2}}$</li>
-                            <li>${{index.price.feat1-3}}$</li>
-                            <li>${{index.price.feat1-4}}$</li>
-                            <li class="na">${{index.price.feat1-5}}$</li>
-                            <li class="na">${{index.price.feat1-6}}$</li>
-                        </ul>
-
-                        <a href="https://store.payproglobal.com/checkout?products[1][id]=96924" class="btn btn-outline-dark btn-circled btn-buy-single" onclick="addToCartSingle()">Purchase Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 col-md-6">
-                    <div class="pricing-box">
-                        <h3>${{index.price.title2}}$</h3>
-                        <div class="price-block">
-                             <h2><small>$</small>675<span>USD</span></h2>
-                        </div>
-
-                        <ul class="price-features list-unstyled">
-                            <li>${{index.price.feat2-1}}$</li>
-                            <li>${{index.price.feat2-2}}$</li>
-                            <li>${{index.price.feat2-3}}$</li>
-                            <li>${{index.price.feat2-4}}$</li>
-                            <li>${{index.price.feat2-5}}$</li>
-
-                        </ul>
-
-                        <a href="https://store.payproglobal.com/checkout?products[1][id]=96926" class="btn btn-primary btn-circled btn-buy-enterprise" onclick="addToCartEnterprise()">Purchase Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-8 col-md-6">
-                    <div class="pricing-box ">
-                        <h3>${{index.price.title3}}$</h3>
-                        <div class="price-block">
-                             <h2><small>$</small>770<span>USD</span></h2>
-                        </div>
-
-                        <ul class="price-features list-unstyled">
-                            <li>${{index.price.feat3-1}}$</li>
-                            <li>${{index.price.feat3-2}}$</li>
-                            <li>${{index.price.feat3-3}}$</li>
-                        </ul>
-
-                        <a href=" https://store.payproglobal.com/checkout?products[1][id]=96927" class="btn btn-outline-dark btn-circled btn-buy-dll" onclick="addToCartDLL()">Purchase Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    
+      <div class="plate price-card">
+        <span class="screw screw-tl" aria-hidden="true"></span>
+        <span class="screw screw-tr" aria-hidden="true"></span>
+        <h3>${{index.price.title3}}$</h3>
+        <div class="price-amt"><small>$</small>770<span>USD</span></div>
+        <ul class="price-features">
+          <li>${{index.price.feat3-1}}$</li>
+          <li>${{index.price.feat3-2}}$</li>
+          <li>${{index.price.feat3-3}}$</li>
+        </ul>
+        <a href="https://store.payproglobal.com/checkout?products[1][id]=96927"
+          class="btn btn-metal btn-block btn-buy-dll" onclick="addToCartDLL()">Purchase Now</a>
+      </div>
+    </div>
+  </div>
+</section>
