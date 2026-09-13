@@ -29,6 +29,11 @@
   },
 
   "slider": {
+    "kicker": "Logiciel d'optimisation de coupe",
+    "noteTrial": "30 jours, sans restriction pour saisir les données que vous voulez.",
+    "noteBuy": "Achat sécurisé via PayPro Global. Plus de 70 moyens de paiement.",
+    "moreInfo": "+ Informations",
+    "noteInfo": "Sur les capacités de ce logiciel d'optimisation de coupe.",
     "heading": "1DNest : logiciel d'optimisation de coupe de barres, profilés et tubes",
     "subHeading": "L'outil logiciel le plus simple et productif pour minimiser les déchets et générer des plans de coupe avec une efficacité optimale pour économiser des matériaux tels que des profilés métalliques, des barres, des poutres, des tubes, des tiges, des rouleaux ou tout autre matériau qui, pour être fabriqué, doit être coupé en morceaux plus petits.",
     "freeTrial": "Essai gratuit !",

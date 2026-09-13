@@ -29,6 +29,11 @@
   },
 
   "slider": {
+    "kicker": "Kesim optimizasyonu yazılımı",
+    "noteTrial": "30 gün, istediğiniz verileri girmede kısıtlama yok.",
+    "noteBuy": "PayPro Global ile güvenli satın alma. 70'ten fazla ödeme yöntemi.",
+    "moreInfo": "+ Bilgi",
+    "noteInfo": "Bu kesim nesting programının özellikleri hakkında.",
     "heading": "1DNest: Çubuk, Boru ve Profil Kesimi için Nesting Programı",
     "subHeading": "Atıkları en aza indirmek ve kesim planlarını en yüksek verimlilikle oluşturmak için en basit ve üretken yazılım aracı, metal profiller, çubuklar, kirişler, borular, çubuklar, rulolar veya daha küçük parçalara kesilmesi gereken herhangi bir malzemeyi korumak için.",
     "freeTrial": "Ücretsiz deneme!",

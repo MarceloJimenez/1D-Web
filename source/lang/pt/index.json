@@ -29,6 +29,11 @@
   },
 
   "slider": {
+    "kicker": "Software de otimização de corte",
+    "noteTrial": "30 dias, sem restrições para introduzir os dados que quiser.",
+    "noteBuy": "Compra segura via PayPro Global. Mais de 70 métodos de pagamento.",
+    "moreInfo": "+ Informação",
+    "noteInfo": "Sobre as capacidades deste software de plano de corte.",
     "heading": "1DNest: Software de Plano de Corte de Barras e Perfis",
     "subHeading": "A ferramenta de software mais simples e produtiva para minimizar o desperdício e gerar planos de corte com eficiência ótima para economizar materiais como perfis metálicos, barras, vigas, tubos, varas, rolos ou qualquer material que para ser fabricado deve ser cortado em pedaços menores.",
     "freeTrial": "Teste grátis!",
