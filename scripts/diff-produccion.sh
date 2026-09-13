@@ -98,8 +98,10 @@ for idioma in "${IDIOMAS[@]}"; do
       divergentes=$((divergentes + 1))
       printf '  \033[31m✗\033[0m /%-20s %s líneas distintas\n' "$ruta" "$n"
       if [[ "$DETALLE" == "si" ]]; then
+        # `|| true`: diff sale con 1 cuando hay diferencias y, con pipefail, eso
+        # mataba el script tras la primera página divergente (visto 2026-09-13).
         diff <(normalizar "${TMP}/vivo.html") <(normalizar "$local_") \
-          | sed 's/^/      /' | head -30
+          | sed 's/^/      /' | head -30 || true
         printf '\n'
       fi
     fi

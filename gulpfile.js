@@ -14,6 +14,7 @@ const i18n = require ("./lib/index");
 const sharp = require("sharp");
 const pathModule = require("path");
 const fs = require("fs");
+const crypto = require("crypto");
 const through = require("through2");
 
 const isProd = process.env.NODE_ENV === "production";
@@ -325,6 +326,48 @@ gulp.task("css:purge", function () {
     .pipe(gulp.dest(path.build.dirDev + "css/"));
 });
 
+// Versión de los assets (cache busting): añade ?v=<hash> a style.css, script.js y
+// checkout-attribution.js en todos los HTML de theme/. El hash es de CONTENIDO, no
+// de fecha: si el fichero no cambia, la URL tampoco, y diff-produccion.sh sigue
+// viendo solo lo que de verdad cambió. Va al final del build porque css:purge
+// reescribe style.css después del HTML — el hash sólo es definitivo aquí.
+//
+// Por qué existe: el .htaccess da 24 h de caché a todo (ExpiresDefault), y CSS/JS
+// tienen nombre fijo; sin esto, publicar no se veía hasta el día siguiente. El
+// HTML va aparte, con Cache-Control: no-cache en el .htaccess (bloque 8).
+// vault (1d-ads): publicacion-del-sitio-1d
+const ASSETS_VERSIONADOS = ["css/style.css", "js/script.js", "js/checkout-attribution.js"];
+function hashCorto(fichero) {
+  return crypto.createHash("md5").update(fs.readFileSync(fichero)).digest("hex").slice(0, 8);
+}
+gulp.task("assets:version", function () {
+  const versiones = {};
+  ASSETS_VERSIONADOS.forEach(function (rel) {
+    const abs = pathModule.join(__dirname, "theme", rel);
+    if (fs.existsSync(abs)) versiones[rel] = hashCorto(abs);
+  });
+  // Casa `../css/style.css` seguido de comilla: si ya lleva ?v=, no casa (idempotente).
+  const patron = new RegExp(
+    "(\\.\\./(" + ASSETS_VERSIONADOS.map(function (r) { return r.replace(/[.\/]/g, "\\$&"); }).join("|") + "))(?=[\"'])",
+    "g"
+  );
+  return gulp
+    .src(path.build.dirDev + "**/*.html")
+    .pipe(
+      through.obj(function (file, enc, cb) {
+        if (file.isBuffer()) {
+          const html = file.contents.toString("utf8").replace(patron, function (m, ruta, rel) {
+            return versiones[rel] ? ruta + "?v=" + versiones[rel] : ruta;
+          });
+          file.contents = Buffer.from(html, "utf8");
+        }
+        this.push(file);
+        cb();
+      })
+    )
+    .pipe(gulp.dest(path.build.dirDev));
+});
+
 // Clean Build Folder
 gulp.task("clean", function (cb) {
   rimraf("./theme", cb);
@@ -386,7 +429,8 @@ gulp.task(
     "translation:build",
     "critical:extract",
     "critical:inject",
-    "css:purge"
+    "css:purge",
+    "assets:version"
   )
 );
 

@@ -296,3 +296,27 @@ RewriteRule ^(.*)$ https://1d-solutions.com/$1 [L,R=301]
 </IfModule>
 #
 # ▲▲▲ FIN AÑADIDO — 7. /en/ → raíz ▲▲▲
+
+
+# ▼▼▼ INICIO AÑADIDO 2026-09-13 — 8. El HTML no se guarda en caché ▼▼▼
+#
+# El ExpiresDefault de arriba da 24 h a TODO, HTML incluido: quien visitaba el
+# sitio veía la versión vieja hasta el día siguiente de publicar, y el 2026-09-13
+# eso escondió el rediseño entero. Aquí el HTML pasa a no-cache: el navegador
+# pregunta siempre, pero con ETag y Last-Modified la respuesta es un 304 de unos
+# bytes. CSS, JS e imágenes conservan sus 24 h; el build les añade ?v=<hash del
+# contenido> (gulp assets:version), así que cambiar uno cambia su URL y el
+# navegador lo baja al momento. Ninguna directiva afecta a redirecciones ni rutas.
+#
+# vault: publicacion-del-sitio-1d
+#
+<FilesMatch "\.html?$">
+  <IfModule mod_expires.c>
+    ExpiresActive Off
+  </IfModule>
+  <IfModule mod_headers.c>
+    Header set Cache-Control "no-cache"
+  </IfModule>
+</FilesMatch>
+#
+# ▲▲▲ FIN AÑADIDO — 8. El HTML no se guarda en caché ▲▲▲
