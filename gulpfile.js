@@ -68,7 +68,7 @@ process.on("uncaughtException", function (err) {
 var path = {
   src: {
     html: "source/*.html",
-    others: "source/*.+(php|ico|png|xml)",
+    others: "source/*.+(php|ico|png|xml|txt)",  // txt: la clave de IndexNow
     htminc: "source/partials/**/*.htm",
     incdir: "source/partials/",
     plugins: "source/plugins/**/*.*",
