@@ -87,6 +87,14 @@
   },
 
   "clients":{
+    "reliance": "United States · Metals service centers",
+    "ryerson": "United States · Metals distribution and processing",
+    "sisttemex": "Mexico · Telecom towers and power transmission structures",
+    "bauer": "Brazil · Irrigation equipment",
+    "hmv": "Colombia · Energy and infrastructure engineering",
+    "ivanar": "Argentina · Steel distribution, cutting and bending",
+    "bradnams": "Australia · Aluminium windows and doors",
+    "alucraft": "Ireland · Architectural façades and glazing",
     "heading": "Clients",
     "subHeading": " With a 21-year journey, we've empowered over 3000 clients worldwide with expert cutting optimization solutions."
   },

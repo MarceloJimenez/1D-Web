@@ -86,6 +86,14 @@
   },
 
   "clients": {
+    "reliance": "États-Unis · Centres de service métallurgiques",
+    "ryerson": "États-Unis · Distribution et transformation de métaux",
+    "sisttemex": "Mexique · Pylônes de télécommunication et structures de transport d'énergie",
+    "bauer": "Brésil · Matériel d'irrigation",
+    "hmv": "Colombie · Ingénierie de l'énergie et des infrastructures",
+    "ivanar": "Argentine · Distribution d'acier, coupe et pliage",
+    "bradnams": "Australie · Fenêtres et portes en aluminium",
+    "alucraft": "Irlande · Façades architecturales et vitrage",
     "heading": "Clients",
     "subHeading": "Avec un parcours de 21 ans, nous avons aidé plus de 3000 clients dans le monde entier avec des solutions expertes d'optimisation de coupe."
   },

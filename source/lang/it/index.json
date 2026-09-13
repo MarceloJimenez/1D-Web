@@ -87,6 +87,14 @@
   },
 
   "clients": {
+    "reliance": "Stati Uniti · Centri servizi metallurgici",
+    "ryerson": "Stati Uniti · Distribuzione e lavorazione di metalli",
+    "sisttemex": "Messico · Torri per telecomunicazioni e strutture di trasmissione",
+    "bauer": "Brasile · Impianti di irrigazione",
+    "hmv": "Colombia · Ingegneria per energia e infrastrutture",
+    "ivanar": "Argentina · Distribuzione di acciaio, taglio e piegatura",
+    "bradnams": "Australia · Finestre e porte in alluminio",
+    "alucraft": "Irlanda · Facciate architettoniche e vetrate",
     "heading": "Clienti",
     "subHeading": "Con un percorso di 21 anni, abbiamo aiutato oltre 3000 clienti in tutto il mondo con soluzioni esperte di ottimizzazione del taglio."
   },

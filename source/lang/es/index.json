@@ -87,6 +87,14 @@
   },
 
   "clients": {
+    "reliance": "Estados Unidos · Centros de servicio de metales",
+    "ryerson": "Estados Unidos · Distribución y procesado de metales",
+    "sisttemex": "México · Torres de telecomunicaciones y estructuras de transmisión",
+    "bauer": "Brasil · Equipos de riego",
+    "hmv": "Colombia · Ingeniería de energía e infraestructura",
+    "ivanar": "Argentina · Distribución de acero, corte y doblado",
+    "bradnams": "Australia · Ventanas y puertas de aluminio",
+    "alucraft": "Irlanda · Fachadas arquitectónicas y acristalamiento",
     "heading": "Clientes",
     "subHeading": "Con un recorrido de 21 años, hemos empoderado a más de 3000 clientes en todo el mundo con soluciones expertas de optimización de corte."
   },

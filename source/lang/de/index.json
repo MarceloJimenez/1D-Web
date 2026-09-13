@@ -87,6 +87,14 @@
     },
   
     "clients": {
+      "reliance": "USA · Metall-Service-Center",
+      "ryerson": "USA · Metallhandel und -bearbeitung",
+      "sisttemex": "Mexiko · Telekommunikationsmasten und Übertragungsstrukturen",
+      "bauer": "Brasilien · Bewässerungstechnik",
+      "hmv": "Kolumbien · Ingenieurwesen für Energie und Infrastruktur",
+      "ivanar": "Argentinien · Stahlhandel, Schneiden und Biegen",
+      "bradnams": "Australien · Aluminiumfenster und -türen",
+      "alucraft": "Irland · Architekturfassaden und Verglasung",
       "heading": "Kunden",
       "subHeading": "Mit einer 21-jährigen Erfahrung haben wir über 3000 Kunden weltweit mit erstklassigen Schneidoptimierungslösungen unterstützt."
     },

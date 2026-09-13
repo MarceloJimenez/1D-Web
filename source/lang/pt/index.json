@@ -86,6 +86,14 @@
   },
 
   "clients": {
+    "reliance": "Estados Unidos · Centros de serviço em metais",
+    "ryerson": "Estados Unidos · Distribuição e processamento de metais",
+    "sisttemex": "México · Torres de telecomunicações e estruturas de transmissão",
+    "bauer": "Brasil · Equipamentos de irrigação",
+    "hmv": "Colômbia · Engenharia de energia e infraestrutura",
+    "ivanar": "Argentina · Distribuição de aço, corte e dobra",
+    "bradnams": "Austrália · Janelas e portas de alumínio",
+    "alucraft": "Irlanda · Fachadas arquitetônicas e envidraçamento",
     "heading": "Clientes",
     "subHeading": "Com uma jornada de 21 anos, capacitamos mais de 3000 clientes em todo o mundo com soluções especializadas de otimização de corte."
   },

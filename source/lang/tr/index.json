@@ -87,6 +87,14 @@
   },
 
   "clients": {
+    "reliance": "ABD · Metal servis merkezleri",
+    "ryerson": "ABD · Metal dağıtımı ve işleme",
+    "sisttemex": "Meksika · Telekomünikasyon kuleleri ve enerji iletim yapıları",
+    "bauer": "Brezilya · Sulama ekipmanları",
+    "hmv": "Kolombiya · Enerji ve altyapı mühendisliği",
+    "ivanar": "Arjantin · Çelik dağıtımı, kesme ve bükme",
+    "bradnams": "Avustralya · Alüminyum pencere ve kapılar",
+    "alucraft": "İrlanda · Mimari cepheler ve cam giydirme",
     "heading": "Müşteriler",
     "subHeading": "21 yıllık bir yolculukla, dünya çapında 3000'den fazla müşteriye uzman kesim optimizasyon çözümleri sağladık."
   },
